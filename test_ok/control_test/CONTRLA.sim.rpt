@@ -1,0 +1,316 @@
+Simulator report for CONTRLA
+Tue Feb 15 19:29:18 2022
+Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 10.0 us      ;
+; Simulation Netlist Size     ; 115 nodes    ;
+; Simulation Coverage         ;      57.27 % ;
+; Total Number of Transitions ; 409          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C35F672C6 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      57.27 % ;
+; Total nodes checked                                 ; 115          ;
+; Total output ports checked                          ; 110          ;
+; Total output ports with complete 1/0-value coverage ; 63           ;
+; Total output ports with no 1/0-value coverage       ; 44           ;
+; Total output ports with no 1-value coverage         ; 46           ;
+; Total output ports with no 0-value coverage         ; 45           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                    ;
++--------------------------------------+--------------------------------------+------------------+
+; Node Name                            ; Output Port Name                     ; Output Port Type ;
++--------------------------------------+--------------------------------------+------------------+
+; |CONTRLA|current_state.reset2        ; |CONTRLA|current_state.reset2        ; regout           ;
+; |CONTRLA|current_state.incPc2        ; |CONTRLA|current_state.incPc2        ; regout           ;
+; |CONTRLA|current_state.loadI4        ; |CONTRLA|current_state.loadI4        ; regout           ;
+; |CONTRLA|WideOr9~0                   ; |CONTRLA|WideOr9~0                   ; combout          ;
+; |CONTRLA|current_state.incPC         ; |CONTRLA|current_state.incPC         ; regout           ;
+; |CONTRLA|current_state.loadI2        ; |CONTRLA|current_state.loadI2        ; regout           ;
+; |CONTRLA|Selector4~6                 ; |CONTRLA|Selector4~6                 ; combout          ;
+; |CONTRLA|next_state.add2~0           ; |CONTRLA|next_state.add2~0           ; combout          ;
+; |CONTRLA|current_state.execute       ; |CONTRLA|current_state.execute       ; regout           ;
+; |CONTRLA|Selector4~7                 ; |CONTRLA|Selector4~7                 ; combout          ;
+; |CONTRLA|WideOr11                    ; |CONTRLA|WideOr11                    ; combout          ;
+; |CONTRLA|WideOr6~0                   ; |CONTRLA|WideOr6~0                   ; combout          ;
+; |CONTRLA|WideOr6                     ; |CONTRLA|WideOr6                     ; combout          ;
+; |CONTRLA|current_state.loadI3        ; |CONTRLA|current_state.loadI3        ; regout           ;
+; |CONTRLA|WideOr9                     ; |CONTRLA|WideOr9                     ; combout          ;
+; |CONTRLA|Selector0~0                 ; |CONTRLA|Selector0~0                 ; combout          ;
+; |CONTRLA|Selector2~0                 ; |CONTRLA|Selector2~0                 ; combout          ;
+; |CONTRLA|Selector0~2                 ; |CONTRLA|Selector0~2                 ; combout          ;
+; |CONTRLA|current_state.reset3        ; |CONTRLA|current_state.reset3        ; regout           ;
+; |CONTRLA|current_state.incPc3        ; |CONTRLA|current_state.incPc3        ; regout           ;
+; |CONTRLA|WideOr12~0                  ; |CONTRLA|WideOr12~0                  ; combout          ;
+; |CONTRLA|current_state.loadI6        ; |CONTRLA|current_state.loadI6        ; regout           ;
+; |CONTRLA|WideOr16~2                  ; |CONTRLA|WideOr16~2                  ; combout          ;
+; |CONTRLA|WideOr19~0                  ; |CONTRLA|WideOr19~0                  ; combout          ;
+; |CONTRLA|current_state.loadI5        ; |CONTRLA|current_state.loadI5        ; regout           ;
+; |CONTRLA|WideOr12                    ; |CONTRLA|WideOr12                    ; combout          ;
+; |CONTRLA|Mux2~0                      ; |CONTRLA|Mux2~0                      ; combout          ;
+; |CONTRLA|Selector3~0                 ; |CONTRLA|Selector3~0                 ; combout          ;
+; |CONTRLA|Selector3~1                 ; |CONTRLA|Selector3~1                 ; combout          ;
+; |CONTRLA|next_state.move1~0          ; |CONTRLA|next_state.move1~0          ; combout          ;
+; |CONTRLA|next_state.add2~1           ; |CONTRLA|next_state.add2~1           ; combout          ;
+; |CONTRLA|Selector4~8                 ; |CONTRLA|Selector4~8                 ; combout          ;
+; |CONTRLA|WideOr16                    ; |CONTRLA|WideOr16                    ; combout          ;
+; |CONTRLA|Selector4~9                 ; |CONTRLA|Selector4~9                 ; combout          ;
+; |CONTRLA|current_state.execute~0     ; |CONTRLA|current_state.execute~0     ; combout          ;
+; |CONTRLA|progCntrWr                  ; |CONTRLA|progCntrWr                  ; padio            ;
+; |CONTRLA|progCntrRd                  ; |CONTRLA|progCntrRd                  ; padio            ;
+; |CONTRLA|addrRegWr                   ; |CONTRLA|addrRegWr                   ; padio            ;
+; |CONTRLA|outRegWr                    ; |CONTRLA|outRegWr                    ; padio            ;
+; |CONTRLA|outRegRd                    ; |CONTRLA|outRegRd                    ; padio            ;
+; |CONTRLA|aluSel[0]                   ; |CONTRLA|aluSel[0]                   ; padio            ;
+; |CONTRLA|aluSel[1]                   ; |CONTRLA|aluSel[1]                   ; padio            ;
+; |CONTRLA|aluSel[2]                   ; |CONTRLA|aluSel[2]                   ; padio            ;
+; |CONTRLA|instrWr                     ; |CONTRLA|instrWr                     ; padio            ;
+; |CONTRLA|regWr                       ; |CONTRLA|regWr                       ; padio            ;
+; |CONTRLA|vma                         ; |CONTRLA|vma                         ; padio            ;
+; |CONTRLA|instrReg[13]                ; |CONTRLA|instrReg[13]~corein         ; combout          ;
+; |CONTRLA|instrReg[12]                ; |CONTRLA|instrReg[12]~corein         ; combout          ;
+; |CONTRLA|instrReg[11]                ; |CONTRLA|instrReg[11]~corein         ; combout          ;
+; |CONTRLA|instrReg[14]                ; |CONTRLA|instrReg[14]~corein         ; combout          ;
+; |CONTRLA|instrReg[15]                ; |CONTRLA|instrReg[15]~corein         ; combout          ;
+; |CONTRLA|instrReg[0]                 ; |CONTRLA|instrReg[0]~corein          ; combout          ;
+; |CONTRLA|instrReg[3]                 ; |CONTRLA|instrReg[3]~corein          ; combout          ;
+; |CONTRLA|instrReg[1]                 ; |CONTRLA|instrReg[1]~corein          ; combout          ;
+; |CONTRLA|instrReg[4]                 ; |CONTRLA|instrReg[4]~corein          ; combout          ;
+; |CONTRLA|instrReg[2]                 ; |CONTRLA|instrReg[2]~corein          ; combout          ;
+; |CONTRLA|instrReg[5]                 ; |CONTRLA|instrReg[5]~corein          ; combout          ;
+; |CONTRLA|clock                       ; |CONTRLA|clock~corein                ; combout          ;
+; |CONTRLA|reset                       ; |CONTRLA|reset~corein                ; combout          ;
+; |CONTRLA|clock~clkctrl               ; |CONTRLA|clock~clkctrl               ; outclk           ;
+; |CONTRLA|reset~clkctrl               ; |CONTRLA|reset~clkctrl               ; outclk           ;
+; |CONTRLA|current_state.incPc3~feeder ; |CONTRLA|current_state.incPc3~feeder ; combout          ;
+; |CONTRLA|current_state.loadI4~feeder ; |CONTRLA|current_state.loadI4~feeder ; combout          ;
++--------------------------------------+--------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                       ;
++--------------------------------------+--------------------------------------+------------------+
+; Node Name                            ; Output Port Name                     ; Output Port Type ;
++--------------------------------------+--------------------------------------+------------------+
+; |CONTRLA|current_state.store2        ; |CONTRLA|current_state.store2        ; regout           ;
+; |CONTRLA|current_state.load2         ; |CONTRLA|current_state.load2         ; regout           ;
+; |CONTRLA|current_state.add3          ; |CONTRLA|current_state.add3          ; regout           ;
+; |CONTRLA|current_state.inc2          ; |CONTRLA|current_state.inc2          ; regout           ;
+; |CONTRLA|current_state.move1         ; |CONTRLA|current_state.move1         ; regout           ;
+; |CONTRLA|current_state.inc4          ; |CONTRLA|current_state.inc4          ; regout           ;
+; |CONTRLA|current_state.move2         ; |CONTRLA|current_state.move2         ; regout           ;
+; |CONTRLA|current_state.inc3          ; |CONTRLA|current_state.inc3          ; regout           ;
+; |CONTRLA|current_state.add4          ; |CONTRLA|current_state.add4          ; regout           ;
+; |CONTRLA|WideOr9~1                   ; |CONTRLA|WideOr9~1                   ; combout          ;
+; |CONTRLA|Selector0~1                 ; |CONTRLA|Selector0~1                 ; combout          ;
+; |CONTRLA|current_state.add2          ; |CONTRLA|current_state.add2          ; regout           ;
+; |CONTRLA|current_state.load3         ; |CONTRLA|current_state.load3         ; regout           ;
+; |CONTRLA|WideOr16~3                  ; |CONTRLA|WideOr16~3                  ; combout          ;
+; |CONTRLA|current_state.store3        ; |CONTRLA|current_state.store3        ; regout           ;
+; |CONTRLA|WideOr15~0                  ; |CONTRLA|WideOr15~0                  ; combout          ;
+; |CONTRLA|Selector7~0                 ; |CONTRLA|Selector7~0                 ; combout          ;
+; |CONTRLA|Selector7~1                 ; |CONTRLA|Selector7~1                 ; combout          ;
+; |CONTRLA|Selector6~0                 ; |CONTRLA|Selector6~0                 ; combout          ;
+; |CONTRLA|Selector6~1                 ; |CONTRLA|Selector6~1                 ; combout          ;
+; |CONTRLA|Selector5~0                 ; |CONTRLA|Selector5~0                 ; combout          ;
+; |CONTRLA|next_state.store2~0         ; |CONTRLA|next_state.store2~0         ; combout          ;
+; |CONTRLA|next_state.load2~0          ; |CONTRLA|next_state.load2~0          ; combout          ;
+; |CONTRLA|next_state.inc2~0           ; |CONTRLA|next_state.inc2~0           ; combout          ;
+; |CONTRLA|next_state.move1~1          ; |CONTRLA|next_state.move1~1          ; combout          ;
+; |CONTRLA|next_state.add2~2           ; |CONTRLA|next_state.add2~2           ; combout          ;
+; |CONTRLA|WideOr18                    ; |CONTRLA|WideOr18                    ; combout          ;
+; |CONTRLA|current_state.reset2~0      ; |CONTRLA|current_state.reset2~0      ; combout          ;
+; |CONTRLA|addrRegRd                   ; |CONTRLA|addrRegRd                   ; padio            ;
+; |CONTRLA|shiftSel[0]                 ; |CONTRLA|shiftSel[0]                 ; padio            ;
+; |CONTRLA|shiftSel[1]                 ; |CONTRLA|shiftSel[1]                 ; padio            ;
+; |CONTRLA|shiftSel[2]                 ; |CONTRLA|shiftSel[2]                 ; padio            ;
+; |CONTRLA|aluSel[3]                   ; |CONTRLA|aluSel[3]                   ; padio            ;
+; |CONTRLA|compSel[0]                  ; |CONTRLA|compSel[0]                  ; padio            ;
+; |CONTRLA|compSel[1]                  ; |CONTRLA|compSel[1]                  ; padio            ;
+; |CONTRLA|compSel[2]                  ; |CONTRLA|compSel[2]                  ; padio            ;
+; |CONTRLA|opRegRd                     ; |CONTRLA|opRegRd                     ; padio            ;
+; |CONTRLA|opRegWr                     ; |CONTRLA|opRegWr                     ; padio            ;
+; |CONTRLA|regSel[0]                   ; |CONTRLA|regSel[0]                   ; padio            ;
+; |CONTRLA|regSel[1]                   ; |CONTRLA|regSel[1]                   ; padio            ;
+; |CONTRLA|regSel[2]                   ; |CONTRLA|regSel[2]                   ; padio            ;
+; |CONTRLA|regRd                       ; |CONTRLA|regRd                       ; padio            ;
+; |CONTRLA|rw                          ; |CONTRLA|rw                          ; padio            ;
+; |CONTRLA|current_state.inc3~feeder   ; |CONTRLA|current_state.inc3~feeder   ; combout          ;
+; |CONTRLA|current_state.move2~feeder  ; |CONTRLA|current_state.move2~feeder  ; combout          ;
+; |CONTRLA|current_state.reset1~feeder ; |CONTRLA|current_state.reset1~feeder ; combout          ;
++--------------------------------------+--------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                       ;
++--------------------------------------+--------------------------------------+------------------+
+; Node Name                            ; Output Port Name                     ; Output Port Type ;
++--------------------------------------+--------------------------------------+------------------+
+; |CONTRLA|current_state.store2        ; |CONTRLA|current_state.store2        ; regout           ;
+; |CONTRLA|current_state.load2         ; |CONTRLA|current_state.load2         ; regout           ;
+; |CONTRLA|current_state.add3          ; |CONTRLA|current_state.add3          ; regout           ;
+; |CONTRLA|current_state.reset1        ; |CONTRLA|current_state.reset1        ; regout           ;
+; |CONTRLA|current_state.inc2          ; |CONTRLA|current_state.inc2          ; regout           ;
+; |CONTRLA|current_state.move1         ; |CONTRLA|current_state.move1         ; regout           ;
+; |CONTRLA|current_state.inc4          ; |CONTRLA|current_state.inc4          ; regout           ;
+; |CONTRLA|current_state.move2         ; |CONTRLA|current_state.move2         ; regout           ;
+; |CONTRLA|current_state.inc3          ; |CONTRLA|current_state.inc3          ; regout           ;
+; |CONTRLA|current_state.add4          ; |CONTRLA|current_state.add4          ; regout           ;
+; |CONTRLA|WideOr9~1                   ; |CONTRLA|WideOr9~1                   ; combout          ;
+; |CONTRLA|Selector0~1                 ; |CONTRLA|Selector0~1                 ; combout          ;
+; |CONTRLA|current_state.add2          ; |CONTRLA|current_state.add2          ; regout           ;
+; |CONTRLA|current_state.load3         ; |CONTRLA|current_state.load3         ; regout           ;
+; |CONTRLA|WideOr16~3                  ; |CONTRLA|WideOr16~3                  ; combout          ;
+; |CONTRLA|current_state.store3        ; |CONTRLA|current_state.store3        ; regout           ;
+; |CONTRLA|WideOr15~0                  ; |CONTRLA|WideOr15~0                  ; combout          ;
+; |CONTRLA|Selector7~0                 ; |CONTRLA|Selector7~0                 ; combout          ;
+; |CONTRLA|Selector7~1                 ; |CONTRLA|Selector7~1                 ; combout          ;
+; |CONTRLA|Selector6~0                 ; |CONTRLA|Selector6~0                 ; combout          ;
+; |CONTRLA|Selector6~1                 ; |CONTRLA|Selector6~1                 ; combout          ;
+; |CONTRLA|Selector5~0                 ; |CONTRLA|Selector5~0                 ; combout          ;
+; |CONTRLA|next_state.store2~0         ; |CONTRLA|next_state.store2~0         ; combout          ;
+; |CONTRLA|next_state.load2~0          ; |CONTRLA|next_state.load2~0          ; combout          ;
+; |CONTRLA|next_state.inc2~0           ; |CONTRLA|next_state.inc2~0           ; combout          ;
+; |CONTRLA|next_state.move1~1          ; |CONTRLA|next_state.move1~1          ; combout          ;
+; |CONTRLA|next_state.add2~2           ; |CONTRLA|next_state.add2~2           ; combout          ;
+; |CONTRLA|WideOr18                    ; |CONTRLA|WideOr18                    ; combout          ;
+; |CONTRLA|addrRegRd                   ; |CONTRLA|addrRegRd                   ; padio            ;
+; |CONTRLA|shiftSel[0]                 ; |CONTRLA|shiftSel[0]                 ; padio            ;
+; |CONTRLA|shiftSel[1]                 ; |CONTRLA|shiftSel[1]                 ; padio            ;
+; |CONTRLA|shiftSel[2]                 ; |CONTRLA|shiftSel[2]                 ; padio            ;
+; |CONTRLA|compSel[0]                  ; |CONTRLA|compSel[0]                  ; padio            ;
+; |CONTRLA|compSel[1]                  ; |CONTRLA|compSel[1]                  ; padio            ;
+; |CONTRLA|compSel[2]                  ; |CONTRLA|compSel[2]                  ; padio            ;
+; |CONTRLA|opRegRd                     ; |CONTRLA|opRegRd                     ; padio            ;
+; |CONTRLA|opRegWr                     ; |CONTRLA|opRegWr                     ; padio            ;
+; |CONTRLA|regSel[0]                   ; |CONTRLA|regSel[0]                   ; padio            ;
+; |CONTRLA|regSel[1]                   ; |CONTRLA|regSel[1]                   ; padio            ;
+; |CONTRLA|regSel[2]                   ; |CONTRLA|regSel[2]                   ; padio            ;
+; |CONTRLA|regRd                       ; |CONTRLA|regRd                       ; padio            ;
+; |CONTRLA|rw                          ; |CONTRLA|rw                          ; padio            ;
+; |CONTRLA|current_state.inc3~feeder   ; |CONTRLA|current_state.inc3~feeder   ; combout          ;
+; |CONTRLA|current_state.move2~feeder  ; |CONTRLA|current_state.move2~feeder  ; combout          ;
+; |CONTRLA|current_state.reset1~feeder ; |CONTRLA|current_state.reset1~feeder ; combout          ;
++--------------------------------------+--------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Tue Feb 15 19:29:18 2022
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off CONTRLA -c CONTRLA
+Info: Using vector source file "D:/Documents/Thesis/test_ok/control_test/CONTRLA.vwf"
+Warning: Can't display state machine states -- register holding state machine bit "|CONTRLA|current_state.nop" was synthesized away
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      57.27 %
+Info: Number of transitions in simulation is 409
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4317 megabytes
+    Info: Processing ended: Tue Feb 15 19:29:18 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

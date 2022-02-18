@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Feb 05 21:27:27 2022
+Quartus II 64-Bit Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : SFT4A
+Top-level Entity Name : SFT4A
+Family : Cyclone II
+Total logic elements : 51
+    Total combinational functions : 51
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 35
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

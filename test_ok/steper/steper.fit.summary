@@ -1,0 +1,17 @@
+Fitter Status : Successful - Sat Feb 05 22:55:04 2022
+Quartus II 64-Bit Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : steper
+Top-level Entity Name : steper
+Family : Stratix II
+Device : EP2S15F484C3
+Timing Models : Final
+Logic utilization : < 1 %
+    Combinational ALUTs : 2 / 12,480 ( < 1 % )
+    Dedicated logic registers : 3 / 12,480 ( < 1 % )
+Total registers : 3
+Total pins : 4 / 343 ( 1 % )
+Total virtual pins : 0
+Total block memory bits : 0 / 419,328 ( 0 % )
+DSP block 9-bit elements : 0 / 96 ( 0 % )
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 2 ( 0 % )

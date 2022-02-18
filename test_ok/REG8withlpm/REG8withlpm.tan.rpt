@@ -1,0 +1,808 @@
+Classic Timing Analyzer report for REG8withlpm
+Sat Feb 05 21:53:00 2022
+Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. tsu
+  7. tco
+  8. tpd
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                       ;
++------------------------------+-------+---------------+-------------+-------------------------+-------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From                    ; To                      ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+-------------+-------------------------+-------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 5.735 ns    ; sel[2]                  ; REG_AR8:inst|ramdata~88 ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 10.945 ns   ; REG_AR8:inst|ramdata~97 ; output[13]              ; clk        ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 12.023 ns   ; sel[2]                  ; output[4]               ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -0.897 ns   ; sel[1]                  ; REG_AR8:inst|ramdata~96 ; --         ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;             ;                         ;                         ;            ;          ; 0            ;
++------------------------------+-------+---------------+-------------+-------------------------+-------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C35F672C6       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-8 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                                         ;
++-----------------------------------------+-----------------------------------------------------+------------+----------+--------------------------+----------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From     ; To                       ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+----------+--------------------------+----------+
+; N/A                                     ; None                                                ; 5.735 ns   ; sel[2]   ; REG_AR8:inst|ramdata~95  ; clk      ;
+; N/A                                     ; None                                                ; 5.735 ns   ; sel[2]   ; REG_AR8:inst|ramdata~94  ; clk      ;
+; N/A                                     ; None                                                ; 5.735 ns   ; sel[2]   ; REG_AR8:inst|ramdata~93  ; clk      ;
+; N/A                                     ; None                                                ; 5.735 ns   ; sel[2]   ; REG_AR8:inst|ramdata~92  ; clk      ;
+; N/A                                     ; None                                                ; 5.735 ns   ; sel[2]   ; REG_AR8:inst|ramdata~91  ; clk      ;
+; N/A                                     ; None                                                ; 5.735 ns   ; sel[2]   ; REG_AR8:inst|ramdata~90  ; clk      ;
+; N/A                                     ; None                                                ; 5.735 ns   ; sel[2]   ; REG_AR8:inst|ramdata~89  ; clk      ;
+; N/A                                     ; None                                                ; 5.735 ns   ; sel[2]   ; REG_AR8:inst|ramdata~88  ; clk      ;
+; N/A                                     ; None                                                ; 5.512 ns   ; sel[2]   ; REG_AR8:inst|ramdata~83  ; clk      ;
+; N/A                                     ; None                                                ; 5.512 ns   ; sel[2]   ; REG_AR8:inst|ramdata~82  ; clk      ;
+; N/A                                     ; None                                                ; 5.512 ns   ; sel[2]   ; REG_AR8:inst|ramdata~81  ; clk      ;
+; N/A                                     ; None                                                ; 5.512 ns   ; sel[2]   ; REG_AR8:inst|ramdata~80  ; clk      ;
+; N/A                                     ; None                                                ; 5.512 ns   ; sel[2]   ; REG_AR8:inst|ramdata~79  ; clk      ;
+; N/A                                     ; None                                                ; 5.512 ns   ; sel[2]   ; REG_AR8:inst|ramdata~75  ; clk      ;
+; N/A                                     ; None                                                ; 5.504 ns   ; sel[2]   ; REG_AR8:inst|ramdata~87  ; clk      ;
+; N/A                                     ; None                                                ; 5.504 ns   ; sel[2]   ; REG_AR8:inst|ramdata~86  ; clk      ;
+; N/A                                     ; None                                                ; 5.504 ns   ; sel[2]   ; REG_AR8:inst|ramdata~85  ; clk      ;
+; N/A                                     ; None                                                ; 5.504 ns   ; sel[2]   ; REG_AR8:inst|ramdata~84  ; clk      ;
+; N/A                                     ; None                                                ; 5.486 ns   ; sel[2]   ; REG_AR8:inst|ramdata~119 ; clk      ;
+; N/A                                     ; None                                                ; 5.486 ns   ; sel[2]   ; REG_AR8:inst|ramdata~118 ; clk      ;
+; N/A                                     ; None                                                ; 5.486 ns   ; sel[2]   ; REG_AR8:inst|ramdata~117 ; clk      ;
+; N/A                                     ; None                                                ; 5.486 ns   ; sel[2]   ; REG_AR8:inst|ramdata~116 ; clk      ;
+; N/A                                     ; None                                                ; 5.484 ns   ; sel[2]   ; REG_AR8:inst|ramdata~101 ; clk      ;
+; N/A                                     ; None                                                ; 5.471 ns   ; sel[2]   ; REG_AR8:inst|ramdata~67  ; clk      ;
+; N/A                                     ; None                                                ; 5.471 ns   ; sel[2]   ; REG_AR8:inst|ramdata~66  ; clk      ;
+; N/A                                     ; None                                                ; 5.471 ns   ; sel[2]   ; REG_AR8:inst|ramdata~65  ; clk      ;
+; N/A                                     ; None                                                ; 5.471 ns   ; sel[2]   ; REG_AR8:inst|ramdata~64  ; clk      ;
+; N/A                                     ; None                                                ; 5.471 ns   ; sel[2]   ; REG_AR8:inst|ramdata~59  ; clk      ;
+; N/A                                     ; None                                                ; 5.469 ns   ; sel[2]   ; REG_AR8:inst|ramdata~28  ; clk      ;
+; N/A                                     ; None                                                ; 5.469 ns   ; sel[2]   ; REG_AR8:inst|ramdata~26  ; clk      ;
+; N/A                                     ; None                                                ; 5.469 ns   ; sel[2]   ; REG_AR8:inst|ramdata~25  ; clk      ;
+; N/A                                     ; None                                                ; 5.469 ns   ; sel[2]   ; REG_AR8:inst|ramdata~24  ; clk      ;
+; N/A                                     ; None                                                ; 5.469 ns   ; sel[2]   ; REG_AR8:inst|ramdata~23  ; clk      ;
+; N/A                                     ; None                                                ; 5.469 ns   ; sel[2]   ; REG_AR8:inst|ramdata~22  ; clk      ;
+; N/A                                     ; None                                                ; 5.469 ns   ; sel[2]   ; REG_AR8:inst|ramdata~21  ; clk      ;
+; N/A                                     ; None                                                ; 5.469 ns   ; sel[2]   ; REG_AR8:inst|ramdata~20  ; clk      ;
+; N/A                                     ; None                                                ; 5.459 ns   ; sel[2]   ; REG_AR8:inst|ramdata~44  ; clk      ;
+; N/A                                     ; None                                                ; 5.459 ns   ; sel[2]   ; REG_AR8:inst|ramdata~42  ; clk      ;
+; N/A                                     ; None                                                ; 5.459 ns   ; sel[2]   ; REG_AR8:inst|ramdata~41  ; clk      ;
+; N/A                                     ; None                                                ; 5.459 ns   ; sel[2]   ; REG_AR8:inst|ramdata~40  ; clk      ;
+; N/A                                     ; None                                                ; 5.459 ns   ; sel[2]   ; REG_AR8:inst|ramdata~39  ; clk      ;
+; N/A                                     ; None                                                ; 5.459 ns   ; sel[2]   ; REG_AR8:inst|ramdata~38  ; clk      ;
+; N/A                                     ; None                                                ; 5.459 ns   ; sel[2]   ; REG_AR8:inst|ramdata~37  ; clk      ;
+; N/A                                     ; None                                                ; 5.459 ns   ; sel[2]   ; REG_AR8:inst|ramdata~36  ; clk      ;
+; N/A                                     ; None                                                ; 5.455 ns   ; sel[2]   ; REG_AR8:inst|ramdata~51  ; clk      ;
+; N/A                                     ; None                                                ; 5.455 ns   ; sel[2]   ; REG_AR8:inst|ramdata~50  ; clk      ;
+; N/A                                     ; None                                                ; 5.455 ns   ; sel[2]   ; REG_AR8:inst|ramdata~49  ; clk      ;
+; N/A                                     ; None                                                ; 5.455 ns   ; sel[2]   ; REG_AR8:inst|ramdata~48  ; clk      ;
+; N/A                                     ; None                                                ; 5.455 ns   ; sel[2]   ; REG_AR8:inst|ramdata~47  ; clk      ;
+; N/A                                     ; None                                                ; 5.455 ns   ; sel[2]   ; REG_AR8:inst|ramdata~46  ; clk      ;
+; N/A                                     ; None                                                ; 5.455 ns   ; sel[2]   ; REG_AR8:inst|ramdata~45  ; clk      ;
+; N/A                                     ; None                                                ; 5.455 ns   ; sel[2]   ; REG_AR8:inst|ramdata~43  ; clk      ;
+; N/A                                     ; None                                                ; 5.299 ns   ; sel[2]   ; REG_AR8:inst|ramdata~141 ; clk      ;
+; N/A                                     ; None                                                ; 5.299 ns   ; sel[2]   ; REG_AR8:inst|ramdata~140 ; clk      ;
+; N/A                                     ; None                                                ; 5.299 ns   ; sel[2]   ; REG_AR8:inst|ramdata~139 ; clk      ;
+; N/A                                     ; None                                                ; 5.299 ns   ; sel[2]   ; REG_AR8:inst|ramdata~137 ; clk      ;
+; N/A                                     ; None                                                ; 5.299 ns   ; sel[2]   ; REG_AR8:inst|ramdata~136 ; clk      ;
+; N/A                                     ; None                                                ; 5.299 ns   ; sel[2]   ; REG_AR8:inst|ramdata~135 ; clk      ;
+; N/A                                     ; None                                                ; 5.299 ns   ; sel[2]   ; REG_AR8:inst|ramdata~134 ; clk      ;
+; N/A                                     ; None                                                ; 5.299 ns   ; sel[2]   ; REG_AR8:inst|ramdata~132 ; clk      ;
+; N/A                                     ; None                                                ; 5.282 ns   ; sel[2]   ; REG_AR8:inst|ramdata~127 ; clk      ;
+; N/A                                     ; None                                                ; 5.282 ns   ; sel[2]   ; REG_AR8:inst|ramdata~126 ; clk      ;
+; N/A                                     ; None                                                ; 5.282 ns   ; sel[2]   ; REG_AR8:inst|ramdata~125 ; clk      ;
+; N/A                                     ; None                                                ; 5.282 ns   ; sel[2]   ; REG_AR8:inst|ramdata~124 ; clk      ;
+; N/A                                     ; None                                                ; 5.282 ns   ; sel[2]   ; REG_AR8:inst|ramdata~123 ; clk      ;
+; N/A                                     ; None                                                ; 5.282 ns   ; sel[2]   ; REG_AR8:inst|ramdata~122 ; clk      ;
+; N/A                                     ; None                                                ; 5.282 ns   ; sel[2]   ; REG_AR8:inst|ramdata~121 ; clk      ;
+; N/A                                     ; None                                                ; 5.282 ns   ; sel[2]   ; REG_AR8:inst|ramdata~120 ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; sel[2]   ; REG_AR8:inst|ramdata~147 ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; sel[2]   ; REG_AR8:inst|ramdata~146 ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; sel[2]   ; REG_AR8:inst|ramdata~145 ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; sel[2]   ; REG_AR8:inst|ramdata~144 ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; sel[2]   ; REG_AR8:inst|ramdata~143 ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; sel[2]   ; REG_AR8:inst|ramdata~142 ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; sel[2]   ; REG_AR8:inst|ramdata~109 ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; sel[2]   ; REG_AR8:inst|ramdata~108 ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; sel[2]   ; REG_AR8:inst|ramdata~107 ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; sel[2]   ; REG_AR8:inst|ramdata~138 ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; sel[2]   ; REG_AR8:inst|ramdata~105 ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; sel[2]   ; REG_AR8:inst|ramdata~104 ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; sel[2]   ; REG_AR8:inst|ramdata~103 ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; sel[2]   ; REG_AR8:inst|ramdata~102 ; clk      ;
+; N/A                                     ; None                                                ; 5.281 ns   ; sel[2]   ; REG_AR8:inst|ramdata~100 ; clk      ;
+; N/A                                     ; None                                                ; 5.264 ns   ; sel[2]   ; REG_AR8:inst|ramdata~78  ; clk      ;
+; N/A                                     ; None                                                ; 5.264 ns   ; sel[2]   ; REG_AR8:inst|ramdata~77  ; clk      ;
+; N/A                                     ; None                                                ; 5.264 ns   ; sel[2]   ; REG_AR8:inst|ramdata~76  ; clk      ;
+; N/A                                     ; None                                                ; 5.264 ns   ; sel[2]   ; REG_AR8:inst|ramdata~74  ; clk      ;
+; N/A                                     ; None                                                ; 5.264 ns   ; sel[2]   ; REG_AR8:inst|ramdata~73  ; clk      ;
+; N/A                                     ; None                                                ; 5.263 ns   ; sel[2]   ; REG_AR8:inst|ramdata~63  ; clk      ;
+; N/A                                     ; None                                                ; 5.263 ns   ; sel[2]   ; REG_AR8:inst|ramdata~62  ; clk      ;
+; N/A                                     ; None                                                ; 5.263 ns   ; sel[2]   ; REG_AR8:inst|ramdata~61  ; clk      ;
+; N/A                                     ; None                                                ; 5.263 ns   ; sel[2]   ; REG_AR8:inst|ramdata~60  ; clk      ;
+; N/A                                     ; None                                                ; 5.263 ns   ; sel[2]   ; REG_AR8:inst|ramdata~58  ; clk      ;
+; N/A                                     ; None                                                ; 5.263 ns   ; sel[2]   ; REG_AR8:inst|ramdata~57  ; clk      ;
+; N/A                                     ; None                                                ; 5.263 ns   ; sel[2]   ; REG_AR8:inst|ramdata~56  ; clk      ;
+; N/A                                     ; None                                                ; 5.261 ns   ; sel[2]   ; REG_AR8:inst|ramdata~133 ; clk      ;
+; N/A                                     ; None                                                ; 5.260 ns   ; sel[2]   ; REG_AR8:inst|ramdata~115 ; clk      ;
+; N/A                                     ; None                                                ; 5.260 ns   ; sel[2]   ; REG_AR8:inst|ramdata~114 ; clk      ;
+; N/A                                     ; None                                                ; 5.260 ns   ; sel[2]   ; REG_AR8:inst|ramdata~113 ; clk      ;
+; N/A                                     ; None                                                ; 5.260 ns   ; sel[2]   ; REG_AR8:inst|ramdata~112 ; clk      ;
+; N/A                                     ; None                                                ; 5.260 ns   ; sel[2]   ; REG_AR8:inst|ramdata~111 ; clk      ;
+; N/A                                     ; None                                                ; 5.260 ns   ; sel[2]   ; REG_AR8:inst|ramdata~110 ; clk      ;
+; N/A                                     ; None                                                ; 5.260 ns   ; sel[2]   ; REG_AR8:inst|ramdata~106 ; clk      ;
+; N/A                                     ; None                                                ; 5.236 ns   ; sel[2]   ; REG_AR8:inst|ramdata~35  ; clk      ;
+; N/A                                     ; None                                                ; 5.236 ns   ; sel[2]   ; REG_AR8:inst|ramdata~34  ; clk      ;
+; N/A                                     ; None                                                ; 5.236 ns   ; sel[2]   ; REG_AR8:inst|ramdata~33  ; clk      ;
+; N/A                                     ; None                                                ; 5.236 ns   ; sel[2]   ; REG_AR8:inst|ramdata~32  ; clk      ;
+; N/A                                     ; None                                                ; 5.236 ns   ; sel[2]   ; REG_AR8:inst|ramdata~31  ; clk      ;
+; N/A                                     ; None                                                ; 5.236 ns   ; sel[2]   ; REG_AR8:inst|ramdata~30  ; clk      ;
+; N/A                                     ; None                                                ; 5.236 ns   ; sel[2]   ; REG_AR8:inst|ramdata~29  ; clk      ;
+; N/A                                     ; None                                                ; 5.236 ns   ; sel[2]   ; REG_AR8:inst|ramdata~27  ; clk      ;
+; N/A                                     ; None                                                ; 5.198 ns   ; sel[2]   ; REG_AR8:inst|ramdata~55  ; clk      ;
+; N/A                                     ; None                                                ; 5.198 ns   ; sel[2]   ; REG_AR8:inst|ramdata~54  ; clk      ;
+; N/A                                     ; None                                                ; 5.198 ns   ; sel[2]   ; REG_AR8:inst|ramdata~53  ; clk      ;
+; N/A                                     ; None                                                ; 5.198 ns   ; sel[2]   ; REG_AR8:inst|ramdata~52  ; clk      ;
+; N/A                                     ; None                                                ; 4.918 ns   ; sel[2]   ; REG_AR8:inst|ramdata~72  ; clk      ;
+; N/A                                     ; None                                                ; 4.918 ns   ; sel[2]   ; REG_AR8:inst|ramdata~71  ; clk      ;
+; N/A                                     ; None                                                ; 4.918 ns   ; sel[2]   ; REG_AR8:inst|ramdata~70  ; clk      ;
+; N/A                                     ; None                                                ; 4.918 ns   ; sel[2]   ; REG_AR8:inst|ramdata~69  ; clk      ;
+; N/A                                     ; None                                                ; 4.918 ns   ; sel[2]   ; REG_AR8:inst|ramdata~68  ; clk      ;
+; N/A                                     ; None                                                ; 4.784 ns   ; data[9]  ; REG_AR8:inst|ramdata~77  ; clk      ;
+; N/A                                     ; None                                                ; 4.783 ns   ; data[9]  ; REG_AR8:inst|ramdata~61  ; clk      ;
+; N/A                                     ; None                                                ; 4.778 ns   ; data[9]  ; REG_AR8:inst|ramdata~45  ; clk      ;
+; N/A                                     ; None                                                ; 4.771 ns   ; sel[2]   ; REG_AR8:inst|ramdata~131 ; clk      ;
+; N/A                                     ; None                                                ; 4.771 ns   ; sel[2]   ; REG_AR8:inst|ramdata~130 ; clk      ;
+; N/A                                     ; None                                                ; 4.771 ns   ; sel[2]   ; REG_AR8:inst|ramdata~129 ; clk      ;
+; N/A                                     ; None                                                ; 4.771 ns   ; sel[2]   ; REG_AR8:inst|ramdata~128 ; clk      ;
+; N/A                                     ; None                                                ; 4.770 ns   ; sel[2]   ; REG_AR8:inst|ramdata~99  ; clk      ;
+; N/A                                     ; None                                                ; 4.770 ns   ; sel[2]   ; REG_AR8:inst|ramdata~98  ; clk      ;
+; N/A                                     ; None                                                ; 4.770 ns   ; sel[2]   ; REG_AR8:inst|ramdata~97  ; clk      ;
+; N/A                                     ; None                                                ; 4.770 ns   ; sel[2]   ; REG_AR8:inst|ramdata~96  ; clk      ;
+; N/A                                     ; None                                                ; 4.732 ns   ; data[5]  ; REG_AR8:inst|ramdata~89  ; clk      ;
+; N/A                                     ; None                                                ; 4.728 ns   ; data[5]  ; REG_AR8:inst|ramdata~121 ; clk      ;
+; N/A                                     ; None                                                ; 4.725 ns   ; data[5]  ; REG_AR8:inst|ramdata~105 ; clk      ;
+; N/A                                     ; None                                                ; 4.722 ns   ; data[5]  ; REG_AR8:inst|ramdata~137 ; clk      ;
+; N/A                                     ; None                                                ; 4.713 ns   ; data[10] ; REG_AR8:inst|ramdata~142 ; clk      ;
+; N/A                                     ; None                                                ; 4.712 ns   ; data[10] ; REG_AR8:inst|ramdata~110 ; clk      ;
+; N/A                                     ; None                                                ; 4.705 ns   ; data[9]  ; REG_AR8:inst|ramdata~141 ; clk      ;
+; N/A                                     ; None                                                ; 4.704 ns   ; data[9]  ; REG_AR8:inst|ramdata~109 ; clk      ;
+; N/A                                     ; None                                                ; 4.622 ns   ; data[9]  ; REG_AR8:inst|ramdata~29  ; clk      ;
+; N/A                                     ; None                                                ; 4.456 ns   ; data[10] ; REG_AR8:inst|ramdata~94  ; clk      ;
+; N/A                                     ; None                                                ; 4.455 ns   ; data[10] ; REG_AR8:inst|ramdata~126 ; clk      ;
+; N/A                                     ; None                                                ; 4.451 ns   ; data[2]  ; REG_AR8:inst|ramdata~134 ; clk      ;
+; N/A                                     ; None                                                ; 4.447 ns   ; data[2]  ; REG_AR8:inst|ramdata~102 ; clk      ;
+; N/A                                     ; None                                                ; 4.423 ns   ; data[10] ; REG_AR8:inst|ramdata~30  ; clk      ;
+; N/A                                     ; None                                                ; 4.421 ns   ; data[10] ; REG_AR8:inst|ramdata~46  ; clk      ;
+; N/A                                     ; None                                                ; 4.315 ns   ; data[11] ; REG_AR8:inst|ramdata~143 ; clk      ;
+; N/A                                     ; None                                                ; 4.314 ns   ; data[11] ; REG_AR8:inst|ramdata~111 ; clk      ;
+; N/A                                     ; None                                                ; 4.304 ns   ; data[11] ; REG_AR8:inst|ramdata~127 ; clk      ;
+; N/A                                     ; None                                                ; 4.304 ns   ; data[11] ; REG_AR8:inst|ramdata~95  ; clk      ;
+; N/A                                     ; None                                                ; 4.271 ns   ; data[9]  ; REG_AR8:inst|ramdata~93  ; clk      ;
+; N/A                                     ; None                                                ; 4.268 ns   ; data[9]  ; REG_AR8:inst|ramdata~125 ; clk      ;
+; N/A                                     ; None                                                ; 4.256 ns   ; data[2]  ; REG_AR8:inst|ramdata~118 ; clk      ;
+; N/A                                     ; None                                                ; 4.254 ns   ; data[0]  ; REG_AR8:inst|ramdata~52  ; clk      ;
+; N/A                                     ; None                                                ; 4.254 ns   ; data[0]  ; REG_AR8:inst|ramdata~68  ; clk      ;
+; N/A                                     ; None                                                ; 4.252 ns   ; data[2]  ; REG_AR8:inst|ramdata~86  ; clk      ;
+; N/A                                     ; None                                                ; 4.209 ns   ; data[6]  ; REG_AR8:inst|ramdata~26  ; clk      ;
+; N/A                                     ; None                                                ; 4.208 ns   ; data[6]  ; REG_AR8:inst|ramdata~42  ; clk      ;
+; N/A                                     ; None                                                ; 4.202 ns   ; data[2]  ; REG_AR8:inst|ramdata~38  ; clk      ;
+; N/A                                     ; None                                                ; 4.199 ns   ; data[2]  ; REG_AR8:inst|ramdata~22  ; clk      ;
+; N/A                                     ; None                                                ; 4.194 ns   ; data[5]  ; REG_AR8:inst|ramdata~41  ; clk      ;
+; N/A                                     ; None                                                ; 4.192 ns   ; data[5]  ; REG_AR8:inst|ramdata~73  ; clk      ;
+; N/A                                     ; None                                                ; 4.190 ns   ; data[5]  ; REG_AR8:inst|ramdata~25  ; clk      ;
+; N/A                                     ; None                                                ; 4.188 ns   ; data[5]  ; REG_AR8:inst|ramdata~57  ; clk      ;
+; N/A                                     ; None                                                ; 4.154 ns   ; data[10] ; REG_AR8:inst|ramdata~62  ; clk      ;
+; N/A                                     ; None                                                ; 4.153 ns   ; data[10] ; REG_AR8:inst|ramdata~78  ; clk      ;
+; N/A                                     ; None                                                ; 4.117 ns   ; data[2]  ; REG_AR8:inst|ramdata~54  ; clk      ;
+; N/A                                     ; None                                                ; 4.113 ns   ; data[2]  ; REG_AR8:inst|ramdata~70  ; clk      ;
+; N/A                                     ; None                                                ; 4.088 ns   ; data[14] ; REG_AR8:inst|ramdata~114 ; clk      ;
+; N/A                                     ; None                                                ; 4.058 ns   ; data[3]  ; REG_AR8:inst|ramdata~119 ; clk      ;
+; N/A                                     ; None                                                ; 4.058 ns   ; data[3]  ; REG_AR8:inst|ramdata~87  ; clk      ;
+; N/A                                     ; None                                                ; 4.058 ns   ; data[14] ; REG_AR8:inst|ramdata~98  ; clk      ;
+; N/A                                     ; None                                                ; 4.057 ns   ; data[14] ; REG_AR8:inst|ramdata~130 ; clk      ;
+; N/A                                     ; None                                                ; 4.052 ns   ; data[0]  ; REG_AR8:inst|ramdata~100 ; clk      ;
+; N/A                                     ; None                                                ; 4.050 ns   ; data[0]  ; REG_AR8:inst|ramdata~132 ; clk      ;
+; N/A                                     ; None                                                ; 4.044 ns   ; data[8]  ; REG_AR8:inst|ramdata~108 ; clk      ;
+; N/A                                     ; None                                                ; 4.042 ns   ; data[0]  ; REG_AR8:inst|ramdata~116 ; clk      ;
+; N/A                                     ; None                                                ; 4.042 ns   ; data[8]  ; REG_AR8:inst|ramdata~140 ; clk      ;
+; N/A                                     ; None                                                ; 4.041 ns   ; data[0]  ; REG_AR8:inst|ramdata~84  ; clk      ;
+; N/A                                     ; None                                                ; 4.021 ns   ; data[8]  ; REG_AR8:inst|ramdata~124 ; clk      ;
+; N/A                                     ; None                                                ; 4.011 ns   ; data[11] ; REG_AR8:inst|ramdata~63  ; clk      ;
+; N/A                                     ; None                                                ; 4.008 ns   ; data[7]  ; REG_AR8:inst|ramdata~59  ; clk      ;
+; N/A                                     ; None                                                ; 4.008 ns   ; data[7]  ; REG_AR8:inst|ramdata~75  ; clk      ;
+; N/A                                     ; None                                                ; 4.004 ns   ; data[11] ; REG_AR8:inst|ramdata~47  ; clk      ;
+; N/A                                     ; None                                                ; 3.998 ns   ; data[8]  ; REG_AR8:inst|ramdata~28  ; clk      ;
+; N/A                                     ; None                                                ; 3.995 ns   ; data[8]  ; REG_AR8:inst|ramdata~44  ; clk      ;
+; N/A                                     ; None                                                ; 3.987 ns   ; data[6]  ; REG_AR8:inst|ramdata~106 ; clk      ;
+; N/A                                     ; None                                                ; 3.987 ns   ; data[6]  ; REG_AR8:inst|ramdata~138 ; clk      ;
+; N/A                                     ; None                                                ; 3.982 ns   ; data[6]  ; REG_AR8:inst|ramdata~74  ; clk      ;
+; N/A                                     ; None                                                ; 3.980 ns   ; data[3]  ; REG_AR8:inst|ramdata~55  ; clk      ;
+; N/A                                     ; None                                                ; 3.979 ns   ; data[6]  ; REG_AR8:inst|ramdata~58  ; clk      ;
+; N/A                                     ; None                                                ; 3.978 ns   ; data[3]  ; REG_AR8:inst|ramdata~71  ; clk      ;
+; N/A                                     ; None                                                ; 3.967 ns   ; data[3]  ; REG_AR8:inst|ramdata~103 ; clk      ;
+; N/A                                     ; None                                                ; 3.967 ns   ; data[6]  ; REG_AR8:inst|ramdata~90  ; clk      ;
+; N/A                                     ; None                                                ; 3.963 ns   ; data[6]  ; REG_AR8:inst|ramdata~122 ; clk      ;
+; N/A                                     ; None                                                ; 3.946 ns   ; data[14] ; REG_AR8:inst|ramdata~146 ; clk      ;
+; N/A                                     ; None                                                ; 3.941 ns   ; data[13] ; REG_AR8:inst|ramdata~129 ; clk      ;
+; N/A                                     ; None                                                ; 3.937 ns   ; data[13] ; REG_AR8:inst|ramdata~97  ; clk      ;
+; N/A                                     ; None                                                ; 3.925 ns   ; data[8]  ; REG_AR8:inst|ramdata~92  ; clk      ;
+; N/A                                     ; None                                                ; 3.894 ns   ; data[11] ; REG_AR8:inst|ramdata~31  ; clk      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;          ;                          ;          ;
++-----------------------------------------+-----------------------------------------------------+------------+----------+--------------------------+----------+
+
+
++----------------------------------------------------------------------------------------+
+; tco                                                                                    ;
++-------+--------------+------------+--------------------------+------------+------------+
+; Slack ; Required tco ; Actual tco ; From                     ; To         ; From Clock ;
++-------+--------------+------------+--------------------------+------------+------------+
+; N/A   ; None         ; 10.945 ns  ; REG_AR8:inst|ramdata~97  ; output[13] ; clk        ;
+; N/A   ; None         ; 10.834 ns  ; REG_AR8:inst|ramdata~98  ; output[14] ; clk        ;
+; N/A   ; None         ; 10.818 ns  ; REG_AR8:inst|ramdata~129 ; output[13] ; clk        ;
+; N/A   ; None         ; 10.773 ns  ; REG_AR8:inst|ramdata~96  ; output[12] ; clk        ;
+; N/A   ; None         ; 10.723 ns  ; REG_AR8:inst|ramdata~88  ; output[4]  ; clk        ;
+; N/A   ; None         ; 10.705 ns  ; REG_AR8:inst|ramdata~130 ; output[14] ; clk        ;
+; N/A   ; None         ; 10.639 ns  ; REG_AR8:inst|ramdata~128 ; output[12] ; clk        ;
+; N/A   ; None         ; 10.595 ns  ; REG_AR8:inst|ramdata~120 ; output[4]  ; clk        ;
+; N/A   ; None         ; 10.494 ns  ; REG_AR8:inst|ramdata~90  ; output[6]  ; clk        ;
+; N/A   ; None         ; 10.450 ns  ; REG_AR8:inst|ramdata~24  ; output[4]  ; clk        ;
+; N/A   ; None         ; 10.376 ns  ; REG_AR8:inst|ramdata~26  ; output[6]  ; clk        ;
+; N/A   ; None         ; 10.350 ns  ; REG_AR8:inst|ramdata~85  ; output[1]  ; clk        ;
+; N/A   ; None         ; 10.318 ns  ; REG_AR8:inst|ramdata~40  ; output[4]  ; clk        ;
+; N/A   ; None         ; 10.314 ns  ; REG_AR8:inst|ramdata~72  ; output[4]  ; clk        ;
+; N/A   ; None         ; 10.312 ns  ; REG_AR8:inst|ramdata~20  ; output[0]  ; clk        ;
+; N/A   ; None         ; 10.271 ns  ; REG_AR8:inst|ramdata~91  ; output[7]  ; clk        ;
+; N/A   ; None         ; 10.247 ns  ; REG_AR8:inst|ramdata~42  ; output[6]  ; clk        ;
+; N/A   ; None         ; 10.224 ns  ; REG_AR8:inst|ramdata~117 ; output[1]  ; clk        ;
+; N/A   ; None         ; 10.175 ns  ; REG_AR8:inst|ramdata~32  ; output[12] ; clk        ;
+; N/A   ; None         ; 10.119 ns  ; REG_AR8:inst|ramdata~94  ; output[10] ; clk        ;
+; N/A   ; None         ; 10.115 ns  ; REG_AR8:inst|ramdata~33  ; output[13] ; clk        ;
+; N/A   ; None         ; 10.072 ns  ; REG_AR8:inst|ramdata~74  ; output[6]  ; clk        ;
+; N/A   ; None         ; 10.054 ns  ; REG_AR8:inst|ramdata~122 ; output[6]  ; clk        ;
+; N/A   ; None         ; 10.045 ns  ; REG_AR8:inst|ramdata~48  ; output[12] ; clk        ;
+; N/A   ; None         ; 9.988 ns   ; REG_AR8:inst|ramdata~84  ; output[0]  ; clk        ;
+; N/A   ; None         ; 9.984 ns   ; REG_AR8:inst|ramdata~49  ; output[13] ; clk        ;
+; N/A   ; None         ; 9.970 ns   ; REG_AR8:inst|ramdata~87  ; output[3]  ; clk        ;
+; N/A   ; None         ; 9.947 ns   ; REG_AR8:inst|ramdata~34  ; output[14] ; clk        ;
+; N/A   ; None         ; 9.919 ns   ; REG_AR8:inst|ramdata~36  ; output[0]  ; clk        ;
+; N/A   ; None         ; 9.886 ns   ; REG_AR8:inst|ramdata~23  ; output[3]  ; clk        ;
+; N/A   ; None         ; 9.873 ns   ; REG_AR8:inst|ramdata~136 ; output[4]  ; clk        ;
+; N/A   ; None         ; 9.872 ns   ; REG_AR8:inst|ramdata~89  ; output[5]  ; clk        ;
+; N/A   ; None         ; 9.862 ns   ; REG_AR8:inst|ramdata~116 ; output[0]  ; clk        ;
+; N/A   ; None         ; 9.859 ns   ; REG_AR8:inst|ramdata~144 ; output[12] ; clk        ;
+; N/A   ; None         ; 9.842 ns   ; REG_AR8:inst|ramdata~119 ; output[3]  ; clk        ;
+; N/A   ; None         ; 9.834 ns   ; REG_AR8:inst|ramdata~123 ; output[7]  ; clk        ;
+; N/A   ; None         ; 9.813 ns   ; REG_AR8:inst|ramdata~50  ; output[14] ; clk        ;
+; N/A   ; None         ; 9.796 ns   ; REG_AR8:inst|ramdata~145 ; output[13] ; clk        ;
+; N/A   ; None         ; 9.785 ns   ; REG_AR8:inst|ramdata~21  ; output[1]  ; clk        ;
+; N/A   ; None         ; 9.782 ns   ; REG_AR8:inst|ramdata~79  ; output[11] ; clk        ;
+; N/A   ; None         ; 9.775 ns   ; REG_AR8:inst|ramdata~133 ; output[1]  ; clk        ;
+; N/A   ; None         ; 9.753 ns   ; REG_AR8:inst|ramdata~39  ; output[3]  ; clk        ;
+; N/A   ; None         ; 9.742 ns   ; REG_AR8:inst|ramdata~104 ; output[4]  ; clk        ;
+; N/A   ; None         ; 9.736 ns   ; REG_AR8:inst|ramdata~121 ; output[5]  ; clk        ;
+; N/A   ; None         ; 9.726 ns   ; REG_AR8:inst|ramdata~126 ; output[10] ; clk        ;
+; N/A   ; None         ; 9.723 ns   ; REG_AR8:inst|ramdata~56  ; output[4]  ; clk        ;
+; N/A   ; None         ; 9.704 ns   ; REG_AR8:inst|ramdata~81  ; output[13] ; clk        ;
+; N/A   ; None         ; 9.686 ns   ; REG_AR8:inst|ramdata~31  ; output[11] ; clk        ;
+; N/A   ; None         ; 9.685 ns   ; REG_AR8:inst|ramdata~146 ; output[14] ; clk        ;
+; N/A   ; None         ; 9.682 ns   ; REG_AR8:inst|ramdata~132 ; output[0]  ; clk        ;
+; N/A   ; None         ; 9.673 ns   ; REG_AR8:inst|ramdata~58  ; output[6]  ; clk        ;
+; N/A   ; None         ; 9.666 ns   ; REG_AR8:inst|ramdata~93  ; output[9]  ; clk        ;
+; N/A   ; None         ; 9.664 ns   ; REG_AR8:inst|ramdata~113 ; output[13] ; clk        ;
+; N/A   ; None         ; 9.656 ns   ; REG_AR8:inst|ramdata~37  ; output[1]  ; clk        ;
+; N/A   ; None         ; 9.651 ns   ; REG_AR8:inst|ramdata~92  ; output[8]  ; clk        ;
+; N/A   ; None         ; 9.650 ns   ; REG_AR8:inst|ramdata~99  ; output[15] ; clk        ;
+; N/A   ; None         ; 9.644 ns   ; REG_AR8:inst|ramdata~135 ; output[3]  ; clk        ;
+; N/A   ; None         ; 9.643 ns   ; REG_AR8:inst|ramdata~86  ; output[2]  ; clk        ;
+; N/A   ; None         ; 9.629 ns   ; REG_AR8:inst|ramdata~138 ; output[6]  ; clk        ;
+; N/A   ; None         ; 9.576 ns   ; REG_AR8:inst|ramdata~82  ; output[14] ; clk        ;
+; N/A   ; None         ; 9.560 ns   ; REG_AR8:inst|ramdata~80  ; output[12] ; clk        ;
+; N/A   ; None         ; 9.555 ns   ; REG_AR8:inst|ramdata~114 ; output[14] ; clk        ;
+; N/A   ; None         ; 9.553 ns   ; REG_AR8:inst|ramdata~47  ; output[11] ; clk        ;
+; N/A   ; None         ; 9.536 ns   ; REG_AR8:inst|ramdata~125 ; output[9]  ; clk        ;
+; N/A   ; None         ; 9.532 ns   ; REG_AR8:inst|ramdata~68  ; output[0]  ; clk        ;
+; N/A   ; None         ; 9.516 ns   ; REG_AR8:inst|ramdata~124 ; output[8]  ; clk        ;
+; N/A   ; None         ; 9.515 ns   ; REG_AR8:inst|ramdata~131 ; output[15] ; clk        ;
+; N/A   ; None         ; 9.514 ns   ; REG_AR8:inst|ramdata~118 ; output[2]  ; clk        ;
+; N/A   ; None         ; 9.450 ns   ; REG_AR8:inst|ramdata~112 ; output[12] ; clk        ;
+; N/A   ; None         ; 9.376 ns   ; REG_AR8:inst|ramdata~101 ; output[1]  ; clk        ;
+; N/A   ; None         ; 9.341 ns   ; REG_AR8:inst|ramdata~71  ; output[3]  ; clk        ;
+; N/A   ; None         ; 9.285 ns   ; REG_AR8:inst|ramdata~22  ; output[2]  ; clk        ;
+; N/A   ; None         ; 9.285 ns   ; REG_AR8:inst|ramdata~35  ; output[15] ; clk        ;
+; N/A   ; None         ; 9.282 ns   ; REG_AR8:inst|ramdata~100 ; output[0]  ; clk        ;
+; N/A   ; None         ; 9.271 ns   ; REG_AR8:inst|ramdata~142 ; output[10] ; clk        ;
+; N/A   ; None         ; 9.265 ns   ; REG_AR8:inst|ramdata~25  ; output[5]  ; clk        ;
+; N/A   ; None         ; 9.241 ns   ; REG_AR8:inst|ramdata~103 ; output[3]  ; clk        ;
+; N/A   ; None         ; 9.239 ns   ; REG_AR8:inst|ramdata~69  ; output[1]  ; clk        ;
+; N/A   ; None         ; 9.222 ns   ; REG_AR8:inst|ramdata~106 ; output[6]  ; clk        ;
+; N/A   ; None         ; 9.157 ns   ; REG_AR8:inst|ramdata~64  ; output[12] ; clk        ;
+; N/A   ; None         ; 9.156 ns   ; REG_AR8:inst|ramdata~38  ; output[2]  ; clk        ;
+; N/A   ; None         ; 9.155 ns   ; REG_AR8:inst|ramdata~51  ; output[15] ; clk        ;
+; N/A   ; None         ; 9.136 ns   ; REG_AR8:inst|ramdata~41  ; output[5]  ; clk        ;
+; N/A   ; None         ; 9.119 ns   ; REG_AR8:inst|ramdata~65  ; output[13] ; clk        ;
+; N/A   ; None         ; 9.110 ns   ; REG_AR8:inst|ramdata~30  ; output[10] ; clk        ;
+; N/A   ; None         ; 9.096 ns   ; REG_AR8:inst|ramdata~52  ; output[0]  ; clk        ;
+; N/A   ; None         ; 9.091 ns   ; REG_AR8:inst|ramdata~140 ; output[8]  ; clk        ;
+; N/A   ; None         ; 9.074 ns   ; REG_AR8:inst|ramdata~139 ; output[7]  ; clk        ;
+; N/A   ; None         ; 9.033 ns   ; REG_AR8:inst|ramdata~95  ; output[11] ; clk        ;
+; N/A   ; None         ; 9.028 ns   ; REG_AR8:inst|ramdata~147 ; output[15] ; clk        ;
+; N/A   ; None         ; 9.024 ns   ; REG_AR8:inst|ramdata~137 ; output[5]  ; clk        ;
+; N/A   ; None         ; 9.008 ns   ; REG_AR8:inst|ramdata~27  ; output[7]  ; clk        ;
+; N/A   ; None         ; 9.004 ns   ; REG_AR8:inst|ramdata~29  ; output[9]  ; clk        ;
+; N/A   ; None         ; 8.969 ns   ; REG_AR8:inst|ramdata~63  ; output[11] ; clk        ;
+; N/A   ; None         ; 8.955 ns   ; REG_AR8:inst|ramdata~66  ; output[14] ; clk        ;
+; N/A   ; None         ; 8.946 ns   ; REG_AR8:inst|ramdata~107 ; output[7]  ; clk        ;
+; N/A   ; None         ; 8.902 ns   ; REG_AR8:inst|ramdata~127 ; output[11] ; clk        ;
+; N/A   ; None         ; 8.899 ns   ; REG_AR8:inst|ramdata~55  ; output[3]  ; clk        ;
+; N/A   ; None         ; 8.889 ns   ; REG_AR8:inst|ramdata~105 ; output[5]  ; clk        ;
+; N/A   ; None         ; 8.877 ns   ; REG_AR8:inst|ramdata~43  ; output[7]  ; clk        ;
+; N/A   ; None         ; 8.873 ns   ; REG_AR8:inst|ramdata~45  ; output[9]  ; clk        ;
+; N/A   ; None         ; 8.865 ns   ; REG_AR8:inst|ramdata~110 ; output[10] ; clk        ;
+; N/A   ; None         ; 8.796 ns   ; REG_AR8:inst|ramdata~53  ; output[1]  ; clk        ;
+; N/A   ; None         ; 8.758 ns   ; REG_AR8:inst|ramdata~134 ; output[2]  ; clk        ;
+; N/A   ; None         ; 8.745 ns   ; REG_AR8:inst|ramdata~70  ; output[2]  ; clk        ;
+; N/A   ; None         ; 8.736 ns   ; REG_AR8:inst|ramdata~28  ; output[8]  ; clk        ;
+; N/A   ; None         ; 8.730 ns   ; REG_AR8:inst|ramdata~75  ; output[7]  ; clk        ;
+; N/A   ; None         ; 8.718 ns   ; REG_AR8:inst|ramdata~78  ; output[10] ; clk        ;
+; N/A   ; None         ; 8.714 ns   ; REG_AR8:inst|ramdata~46  ; output[10] ; clk        ;
+; N/A   ; None         ; 8.655 ns   ; REG_AR8:inst|ramdata~108 ; output[8]  ; clk        ;
+; N/A   ; None         ; 8.626 ns   ; REG_AR8:inst|ramdata~115 ; output[15] ; clk        ;
+; N/A   ; None         ; 8.622 ns   ; REG_AR8:inst|ramdata~102 ; output[2]  ; clk        ;
+; N/A   ; None         ; 8.604 ns   ; REG_AR8:inst|ramdata~44  ; output[8]  ; clk        ;
+; N/A   ; None         ; 8.557 ns   ; REG_AR8:inst|ramdata~141 ; output[9]  ; clk        ;
+; N/A   ; None         ; 8.442 ns   ; REG_AR8:inst|ramdata~83  ; output[15] ; clk        ;
+; N/A   ; None         ; 8.425 ns   ; REG_AR8:inst|ramdata~109 ; output[9]  ; clk        ;
+; N/A   ; None         ; 8.420 ns   ; REG_AR8:inst|ramdata~76  ; output[8]  ; clk        ;
+; N/A   ; None         ; 8.415 ns   ; REG_AR8:inst|ramdata~143 ; output[11] ; clk        ;
+; N/A   ; None         ; 8.400 ns   ; REG_AR8:inst|ramdata~73  ; output[5]  ; clk        ;
+; N/A   ; None         ; 8.304 ns   ; REG_AR8:inst|ramdata~54  ; output[2]  ; clk        ;
+; N/A   ; None         ; 8.294 ns   ; REG_AR8:inst|ramdata~59  ; output[7]  ; clk        ;
+; N/A   ; None         ; 8.274 ns   ; REG_AR8:inst|ramdata~57  ; output[5]  ; clk        ;
+; N/A   ; None         ; 8.127 ns   ; REG_AR8:inst|ramdata~62  ; output[10] ; clk        ;
+; N/A   ; None         ; 8.037 ns   ; REG_AR8:inst|ramdata~67  ; output[15] ; clk        ;
+; N/A   ; None         ; 8.012 ns   ; REG_AR8:inst|ramdata~60  ; output[8]  ; clk        ;
+; N/A   ; None         ; 8.010 ns   ; REG_AR8:inst|ramdata~111 ; output[11] ; clk        ;
+; N/A   ; None         ; 7.920 ns   ; REG_AR8:inst|ramdata~77  ; output[9]  ; clk        ;
+; N/A   ; None         ; 7.791 ns   ; REG_AR8:inst|ramdata~61  ; output[9]  ; clk        ;
++-------+--------------+------------+--------------------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; tpd                                                               ;
++-------+-------------------+-----------------+--------+------------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From   ; To         ;
++-------+-------------------+-----------------+--------+------------+
+; N/A   ; None              ; 12.023 ns       ; sel[2] ; output[4]  ;
+; N/A   ; None              ; 11.864 ns       ; sel[2] ; output[1]  ;
+; N/A   ; None              ; 11.862 ns       ; sel[2] ; output[0]  ;
+; N/A   ; None              ; 11.854 ns       ; sel[2] ; output[3]  ;
+; N/A   ; None              ; 11.842 ns       ; sel[2] ; output[12] ;
+; N/A   ; None              ; 11.807 ns       ; sel[2] ; output[6]  ;
+; N/A   ; None              ; 11.802 ns       ; sel[2] ; output[13] ;
+; N/A   ; None              ; 11.781 ns       ; sel[2] ; output[14] ;
+; N/A   ; None              ; 11.250 ns       ; sel[2] ; output[2]  ;
+; N/A   ; None              ; 11.065 ns       ; sel[2] ; output[10] ;
+; N/A   ; None              ; 10.943 ns       ; sel[2] ; output[7]  ;
+; N/A   ; None              ; 10.868 ns       ; sel[2] ; output[15] ;
+; N/A   ; None              ; 10.777 ns       ; sel[2] ; output[5]  ;
+; N/A   ; None              ; 10.765 ns       ; sel[2] ; output[11] ;
+; N/A   ; None              ; 10.692 ns       ; sel[1] ; output[13] ;
+; N/A   ; None              ; 10.656 ns       ; sel[0] ; output[13] ;
+; N/A   ; None              ; 10.645 ns       ; sel[0] ; output[4]  ;
+; N/A   ; None              ; 10.576 ns       ; sel[1] ; output[14] ;
+; N/A   ; None              ; 10.538 ns       ; sel[0] ; output[14] ;
+; N/A   ; None              ; 10.522 ns       ; sel[1] ; output[4]  ;
+; N/A   ; None              ; 10.511 ns       ; sel[1] ; output[12] ;
+; N/A   ; None              ; 10.510 ns       ; sel[2] ; output[8]  ;
+; N/A   ; None              ; 10.475 ns       ; sel[0] ; output[12] ;
+; N/A   ; None              ; 10.415 ns       ; sel[1] ; output[6]  ;
+; N/A   ; None              ; 10.331 ns       ; sel[1] ; output[1]  ;
+; N/A   ; None              ; 10.287 ns       ; sel[2] ; output[9]  ;
+; N/A   ; None              ; 10.255 ns       ; sel[0] ; output[6]  ;
+; N/A   ; None              ; 10.089 ns       ; EN     ; output[10] ;
+; N/A   ; None              ; 10.060 ns       ; sel[1] ; output[0]  ;
+; N/A   ; None              ; 10.013 ns       ; sel[0] ; output[1]  ;
+; N/A   ; None              ; 9.944 ns        ; sel[1] ; output[3]  ;
+; N/A   ; None              ; 9.898 ns        ; EN     ; output[5]  ;
+; N/A   ; None              ; 9.882 ns        ; EN     ; output[7]  ;
+; N/A   ; None              ; 9.882 ns        ; EN     ; output[15] ;
+; N/A   ; None              ; 9.858 ns        ; EN     ; output[9]  ;
+; N/A   ; None              ; 9.786 ns        ; sel[0] ; output[5]  ;
+; N/A   ; None              ; 9.760 ns        ; sel[0] ; output[3]  ;
+; N/A   ; None              ; 9.748 ns        ; sel[0] ; output[10] ;
+; N/A   ; None              ; 9.716 ns        ; sel[1] ; output[11] ;
+; N/A   ; None              ; 9.664 ns        ; sel[1] ; output[5]  ;
+; N/A   ; None              ; 9.654 ns        ; sel[0] ; output[0]  ;
+; N/A   ; None              ; 9.627 ns        ; EN     ; output[11] ;
+; N/A   ; None              ; 9.621 ns        ; sel[1] ; output[2]  ;
+; N/A   ; None              ; 9.617 ns        ; EN     ; output[8]  ;
+; N/A   ; None              ; 9.581 ns        ; sel[0] ; output[9]  ;
+; N/A   ; None              ; 9.562 ns        ; sel[0] ; output[11] ;
+; N/A   ; None              ; 9.560 ns        ; sel[0] ; output[8]  ;
+; N/A   ; None              ; 9.538 ns        ; sel[0] ; output[7]  ;
+; N/A   ; None              ; 9.494 ns        ; sel[1] ; output[7]  ;
+; N/A   ; None              ; 9.468 ns        ; sel[1] ; output[9]  ;
+; N/A   ; None              ; 9.448 ns        ; sel[1] ; output[8]  ;
+; N/A   ; None              ; 9.388 ns        ; sel[1] ; output[15] ;
+; N/A   ; None              ; 9.384 ns        ; sel[1] ; output[10] ;
+; N/A   ; None              ; 9.350 ns        ; sel[0] ; output[15] ;
+; N/A   ; None              ; 9.303 ns        ; sel[0] ; output[2]  ;
+; N/A   ; None              ; 9.085 ns        ; EN     ; output[2]  ;
+; N/A   ; None              ; 9.085 ns        ; EN     ; output[6]  ;
+; N/A   ; None              ; 9.075 ns        ; EN     ; output[1]  ;
+; N/A   ; None              ; 9.075 ns        ; EN     ; output[3]  ;
+; N/A   ; None              ; 8.850 ns        ; EN     ; output[4]  ;
+; N/A   ; None              ; 8.850 ns        ; EN     ; output[12] ;
+; N/A   ; None              ; 8.840 ns        ; EN     ; output[0]  ;
+; N/A   ; None              ; 8.830 ns        ; EN     ; output[14] ;
+; N/A   ; None              ; 8.825 ns        ; EN     ; output[13] ;
++-------+-------------------+-----------------+--------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                       ;
++-----------------------------------------+-----------------------------------------------------+-----------+--------+--------------------------+----------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From   ; To                       ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+-----------+--------+--------------------------+----------+
+; N/A                                     ; None                                                ; -0.897 ns ; sel[1] ; REG_AR8:inst|ramdata~99  ; clk      ;
+; N/A                                     ; None                                                ; -0.897 ns ; sel[1] ; REG_AR8:inst|ramdata~98  ; clk      ;
+; N/A                                     ; None                                                ; -0.897 ns ; sel[1] ; REG_AR8:inst|ramdata~97  ; clk      ;
+; N/A                                     ; None                                                ; -0.897 ns ; sel[1] ; REG_AR8:inst|ramdata~96  ; clk      ;
+; N/A                                     ; None                                                ; -0.901 ns ; sel[1] ; REG_AR8:inst|ramdata~131 ; clk      ;
+; N/A                                     ; None                                                ; -0.901 ns ; sel[1] ; REG_AR8:inst|ramdata~130 ; clk      ;
+; N/A                                     ; None                                                ; -0.901 ns ; sel[1] ; REG_AR8:inst|ramdata~129 ; clk      ;
+; N/A                                     ; None                                                ; -0.901 ns ; sel[1] ; REG_AR8:inst|ramdata~128 ; clk      ;
+; N/A                                     ; None                                                ; -0.985 ns ; sel[0] ; REG_AR8:inst|ramdata~99  ; clk      ;
+; N/A                                     ; None                                                ; -0.985 ns ; sel[0] ; REG_AR8:inst|ramdata~98  ; clk      ;
+; N/A                                     ; None                                                ; -0.985 ns ; sel[0] ; REG_AR8:inst|ramdata~97  ; clk      ;
+; N/A                                     ; None                                                ; -0.985 ns ; sel[0] ; REG_AR8:inst|ramdata~96  ; clk      ;
+; N/A                                     ; None                                                ; -0.988 ns ; sel[0] ; REG_AR8:inst|ramdata~131 ; clk      ;
+; N/A                                     ; None                                                ; -0.988 ns ; sel[0] ; REG_AR8:inst|ramdata~130 ; clk      ;
+; N/A                                     ; None                                                ; -0.988 ns ; sel[0] ; REG_AR8:inst|ramdata~129 ; clk      ;
+; N/A                                     ; None                                                ; -0.988 ns ; sel[0] ; REG_AR8:inst|ramdata~128 ; clk      ;
+; N/A                                     ; None                                                ; -1.046 ns ; sel[1] ; REG_AR8:inst|ramdata~72  ; clk      ;
+; N/A                                     ; None                                                ; -1.046 ns ; sel[1] ; REG_AR8:inst|ramdata~71  ; clk      ;
+; N/A                                     ; None                                                ; -1.046 ns ; sel[1] ; REG_AR8:inst|ramdata~70  ; clk      ;
+; N/A                                     ; None                                                ; -1.046 ns ; sel[1] ; REG_AR8:inst|ramdata~69  ; clk      ;
+; N/A                                     ; None                                                ; -1.046 ns ; sel[1] ; REG_AR8:inst|ramdata~68  ; clk      ;
+; N/A                                     ; None                                                ; -1.180 ns ; sel[0] ; REG_AR8:inst|ramdata~72  ; clk      ;
+; N/A                                     ; None                                                ; -1.180 ns ; sel[0] ; REG_AR8:inst|ramdata~71  ; clk      ;
+; N/A                                     ; None                                                ; -1.180 ns ; sel[0] ; REG_AR8:inst|ramdata~70  ; clk      ;
+; N/A                                     ; None                                                ; -1.180 ns ; sel[0] ; REG_AR8:inst|ramdata~69  ; clk      ;
+; N/A                                     ; None                                                ; -1.180 ns ; sel[0] ; REG_AR8:inst|ramdata~68  ; clk      ;
+; N/A                                     ; None                                                ; -1.329 ns ; sel[1] ; REG_AR8:inst|ramdata~55  ; clk      ;
+; N/A                                     ; None                                                ; -1.329 ns ; sel[1] ; REG_AR8:inst|ramdata~54  ; clk      ;
+; N/A                                     ; None                                                ; -1.329 ns ; sel[1] ; REG_AR8:inst|ramdata~53  ; clk      ;
+; N/A                                     ; None                                                ; -1.329 ns ; sel[1] ; REG_AR8:inst|ramdata~52  ; clk      ;
+; N/A                                     ; None                                                ; -1.367 ns ; sel[1] ; REG_AR8:inst|ramdata~35  ; clk      ;
+; N/A                                     ; None                                                ; -1.367 ns ; sel[1] ; REG_AR8:inst|ramdata~34  ; clk      ;
+; N/A                                     ; None                                                ; -1.367 ns ; sel[1] ; REG_AR8:inst|ramdata~33  ; clk      ;
+; N/A                                     ; None                                                ; -1.367 ns ; sel[1] ; REG_AR8:inst|ramdata~32  ; clk      ;
+; N/A                                     ; None                                                ; -1.367 ns ; sel[1] ; REG_AR8:inst|ramdata~31  ; clk      ;
+; N/A                                     ; None                                                ; -1.367 ns ; sel[1] ; REG_AR8:inst|ramdata~30  ; clk      ;
+; N/A                                     ; None                                                ; -1.367 ns ; sel[1] ; REG_AR8:inst|ramdata~29  ; clk      ;
+; N/A                                     ; None                                                ; -1.367 ns ; sel[1] ; REG_AR8:inst|ramdata~27  ; clk      ;
+; N/A                                     ; None                                                ; -1.388 ns ; sel[1] ; REG_AR8:inst|ramdata~115 ; clk      ;
+; N/A                                     ; None                                                ; -1.388 ns ; sel[1] ; REG_AR8:inst|ramdata~114 ; clk      ;
+; N/A                                     ; None                                                ; -1.388 ns ; sel[1] ; REG_AR8:inst|ramdata~113 ; clk      ;
+; N/A                                     ; None                                                ; -1.388 ns ; sel[1] ; REG_AR8:inst|ramdata~112 ; clk      ;
+; N/A                                     ; None                                                ; -1.388 ns ; sel[1] ; REG_AR8:inst|ramdata~111 ; clk      ;
+; N/A                                     ; None                                                ; -1.388 ns ; sel[1] ; REG_AR8:inst|ramdata~110 ; clk      ;
+; N/A                                     ; None                                                ; -1.388 ns ; sel[1] ; REG_AR8:inst|ramdata~106 ; clk      ;
+; N/A                                     ; None                                                ; -1.391 ns ; sel[1] ; REG_AR8:inst|ramdata~133 ; clk      ;
+; N/A                                     ; None                                                ; -1.392 ns ; sel[1] ; REG_AR8:inst|ramdata~78  ; clk      ;
+; N/A                                     ; None                                                ; -1.392 ns ; sel[1] ; REG_AR8:inst|ramdata~77  ; clk      ;
+; N/A                                     ; None                                                ; -1.392 ns ; sel[1] ; REG_AR8:inst|ramdata~76  ; clk      ;
+; N/A                                     ; None                                                ; -1.392 ns ; sel[1] ; REG_AR8:inst|ramdata~74  ; clk      ;
+; N/A                                     ; None                                                ; -1.392 ns ; sel[1] ; REG_AR8:inst|ramdata~73  ; clk      ;
+; N/A                                     ; None                                                ; -1.394 ns ; sel[1] ; REG_AR8:inst|ramdata~63  ; clk      ;
+; N/A                                     ; None                                                ; -1.394 ns ; sel[1] ; REG_AR8:inst|ramdata~62  ; clk      ;
+; N/A                                     ; None                                                ; -1.394 ns ; sel[1] ; REG_AR8:inst|ramdata~61  ; clk      ;
+; N/A                                     ; None                                                ; -1.394 ns ; sel[1] ; REG_AR8:inst|ramdata~60  ; clk      ;
+; N/A                                     ; None                                                ; -1.394 ns ; sel[1] ; REG_AR8:inst|ramdata~58  ; clk      ;
+; N/A                                     ; None                                                ; -1.394 ns ; sel[1] ; REG_AR8:inst|ramdata~57  ; clk      ;
+; N/A                                     ; None                                                ; -1.394 ns ; sel[1] ; REG_AR8:inst|ramdata~56  ; clk      ;
+; N/A                                     ; None                                                ; -1.409 ns ; sel[1] ; REG_AR8:inst|ramdata~109 ; clk      ;
+; N/A                                     ; None                                                ; -1.409 ns ; sel[1] ; REG_AR8:inst|ramdata~108 ; clk      ;
+; N/A                                     ; None                                                ; -1.409 ns ; sel[1] ; REG_AR8:inst|ramdata~107 ; clk      ;
+; N/A                                     ; None                                                ; -1.409 ns ; sel[1] ; REG_AR8:inst|ramdata~105 ; clk      ;
+; N/A                                     ; None                                                ; -1.409 ns ; sel[1] ; REG_AR8:inst|ramdata~104 ; clk      ;
+; N/A                                     ; None                                                ; -1.409 ns ; sel[1] ; REG_AR8:inst|ramdata~103 ; clk      ;
+; N/A                                     ; None                                                ; -1.409 ns ; sel[1] ; REG_AR8:inst|ramdata~102 ; clk      ;
+; N/A                                     ; None                                                ; -1.409 ns ; sel[1] ; REG_AR8:inst|ramdata~100 ; clk      ;
+; N/A                                     ; None                                                ; -1.411 ns ; sel[1] ; REG_AR8:inst|ramdata~147 ; clk      ;
+; N/A                                     ; None                                                ; -1.411 ns ; sel[1] ; REG_AR8:inst|ramdata~146 ; clk      ;
+; N/A                                     ; None                                                ; -1.411 ns ; sel[1] ; REG_AR8:inst|ramdata~145 ; clk      ;
+; N/A                                     ; None                                                ; -1.411 ns ; sel[1] ; REG_AR8:inst|ramdata~144 ; clk      ;
+; N/A                                     ; None                                                ; -1.411 ns ; sel[1] ; REG_AR8:inst|ramdata~143 ; clk      ;
+; N/A                                     ; None                                                ; -1.411 ns ; sel[1] ; REG_AR8:inst|ramdata~142 ; clk      ;
+; N/A                                     ; None                                                ; -1.411 ns ; sel[1] ; REG_AR8:inst|ramdata~138 ; clk      ;
+; N/A                                     ; None                                                ; -1.412 ns ; sel[1] ; REG_AR8:inst|ramdata~127 ; clk      ;
+; N/A                                     ; None                                                ; -1.412 ns ; sel[1] ; REG_AR8:inst|ramdata~126 ; clk      ;
+; N/A                                     ; None                                                ; -1.412 ns ; sel[1] ; REG_AR8:inst|ramdata~125 ; clk      ;
+; N/A                                     ; None                                                ; -1.412 ns ; sel[1] ; REG_AR8:inst|ramdata~124 ; clk      ;
+; N/A                                     ; None                                                ; -1.412 ns ; sel[1] ; REG_AR8:inst|ramdata~123 ; clk      ;
+; N/A                                     ; None                                                ; -1.412 ns ; sel[1] ; REG_AR8:inst|ramdata~122 ; clk      ;
+; N/A                                     ; None                                                ; -1.412 ns ; sel[1] ; REG_AR8:inst|ramdata~121 ; clk      ;
+; N/A                                     ; None                                                ; -1.412 ns ; sel[1] ; REG_AR8:inst|ramdata~120 ; clk      ;
+; N/A                                     ; None                                                ; -1.414 ns ; sel[0] ; REG_AR8:inst|ramdata~55  ; clk      ;
+; N/A                                     ; None                                                ; -1.414 ns ; sel[0] ; REG_AR8:inst|ramdata~54  ; clk      ;
+; N/A                                     ; None                                                ; -1.414 ns ; sel[0] ; REG_AR8:inst|ramdata~53  ; clk      ;
+; N/A                                     ; None                                                ; -1.414 ns ; sel[0] ; REG_AR8:inst|ramdata~52  ; clk      ;
+; N/A                                     ; None                                                ; -1.429 ns ; sel[1] ; REG_AR8:inst|ramdata~141 ; clk      ;
+; N/A                                     ; None                                                ; -1.429 ns ; sel[1] ; REG_AR8:inst|ramdata~140 ; clk      ;
+; N/A                                     ; None                                                ; -1.429 ns ; sel[1] ; REG_AR8:inst|ramdata~139 ; clk      ;
+; N/A                                     ; None                                                ; -1.429 ns ; sel[1] ; REG_AR8:inst|ramdata~137 ; clk      ;
+; N/A                                     ; None                                                ; -1.429 ns ; sel[1] ; REG_AR8:inst|ramdata~136 ; clk      ;
+; N/A                                     ; None                                                ; -1.429 ns ; sel[1] ; REG_AR8:inst|ramdata~135 ; clk      ;
+; N/A                                     ; None                                                ; -1.429 ns ; sel[1] ; REG_AR8:inst|ramdata~134 ; clk      ;
+; N/A                                     ; None                                                ; -1.429 ns ; sel[1] ; REG_AR8:inst|ramdata~132 ; clk      ;
+; N/A                                     ; None                                                ; -1.452 ns ; sel[0] ; REG_AR8:inst|ramdata~35  ; clk      ;
+; N/A                                     ; None                                                ; -1.452 ns ; sel[0] ; REG_AR8:inst|ramdata~34  ; clk      ;
+; N/A                                     ; None                                                ; -1.452 ns ; sel[0] ; REG_AR8:inst|ramdata~33  ; clk      ;
+; N/A                                     ; None                                                ; -1.452 ns ; sel[0] ; REG_AR8:inst|ramdata~32  ; clk      ;
+; N/A                                     ; None                                                ; -1.452 ns ; sel[0] ; REG_AR8:inst|ramdata~31  ; clk      ;
+; N/A                                     ; None                                                ; -1.452 ns ; sel[0] ; REG_AR8:inst|ramdata~30  ; clk      ;
+; N/A                                     ; None                                                ; -1.452 ns ; sel[0] ; REG_AR8:inst|ramdata~29  ; clk      ;
+; N/A                                     ; None                                                ; -1.452 ns ; sel[0] ; REG_AR8:inst|ramdata~27  ; clk      ;
+; N/A                                     ; None                                                ; -1.479 ns ; sel[0] ; REG_AR8:inst|ramdata~63  ; clk      ;
+; N/A                                     ; None                                                ; -1.479 ns ; sel[0] ; REG_AR8:inst|ramdata~62  ; clk      ;
+; N/A                                     ; None                                                ; -1.479 ns ; sel[0] ; REG_AR8:inst|ramdata~61  ; clk      ;
+; N/A                                     ; None                                                ; -1.479 ns ; sel[0] ; REG_AR8:inst|ramdata~60  ; clk      ;
+; N/A                                     ; None                                                ; -1.479 ns ; sel[0] ; REG_AR8:inst|ramdata~58  ; clk      ;
+; N/A                                     ; None                                                ; -1.479 ns ; sel[0] ; REG_AR8:inst|ramdata~57  ; clk      ;
+; N/A                                     ; None                                                ; -1.479 ns ; sel[0] ; REG_AR8:inst|ramdata~56  ; clk      ;
+; N/A                                     ; None                                                ; -1.490 ns ; sel[0] ; REG_AR8:inst|ramdata~115 ; clk      ;
+; N/A                                     ; None                                                ; -1.490 ns ; sel[0] ; REG_AR8:inst|ramdata~114 ; clk      ;
+; N/A                                     ; None                                                ; -1.490 ns ; sel[0] ; REG_AR8:inst|ramdata~113 ; clk      ;
+; N/A                                     ; None                                                ; -1.490 ns ; sel[0] ; REG_AR8:inst|ramdata~112 ; clk      ;
+; N/A                                     ; None                                                ; -1.490 ns ; sel[0] ; REG_AR8:inst|ramdata~111 ; clk      ;
+; N/A                                     ; None                                                ; -1.490 ns ; sel[0] ; REG_AR8:inst|ramdata~110 ; clk      ;
+; N/A                                     ; None                                                ; -1.490 ns ; sel[0] ; REG_AR8:inst|ramdata~106 ; clk      ;
+; N/A                                     ; None                                                ; -1.495 ns ; sel[0] ; REG_AR8:inst|ramdata~133 ; clk      ;
+; N/A                                     ; None                                                ; -1.499 ns ; sel[0] ; REG_AR8:inst|ramdata~127 ; clk      ;
+; N/A                                     ; None                                                ; -1.499 ns ; sel[0] ; REG_AR8:inst|ramdata~126 ; clk      ;
+; N/A                                     ; None                                                ; -1.499 ns ; sel[0] ; REG_AR8:inst|ramdata~125 ; clk      ;
+; N/A                                     ; None                                                ; -1.499 ns ; sel[0] ; REG_AR8:inst|ramdata~124 ; clk      ;
+; N/A                                     ; None                                                ; -1.499 ns ; sel[0] ; REG_AR8:inst|ramdata~123 ; clk      ;
+; N/A                                     ; None                                                ; -1.499 ns ; sel[0] ; REG_AR8:inst|ramdata~122 ; clk      ;
+; N/A                                     ; None                                                ; -1.499 ns ; sel[0] ; REG_AR8:inst|ramdata~121 ; clk      ;
+; N/A                                     ; None                                                ; -1.499 ns ; sel[0] ; REG_AR8:inst|ramdata~120 ; clk      ;
+; N/A                                     ; None                                                ; -1.511 ns ; sel[0] ; REG_AR8:inst|ramdata~109 ; clk      ;
+; N/A                                     ; None                                                ; -1.511 ns ; sel[0] ; REG_AR8:inst|ramdata~108 ; clk      ;
+; N/A                                     ; None                                                ; -1.511 ns ; sel[0] ; REG_AR8:inst|ramdata~107 ; clk      ;
+; N/A                                     ; None                                                ; -1.511 ns ; sel[0] ; REG_AR8:inst|ramdata~105 ; clk      ;
+; N/A                                     ; None                                                ; -1.511 ns ; sel[0] ; REG_AR8:inst|ramdata~104 ; clk      ;
+; N/A                                     ; None                                                ; -1.511 ns ; sel[0] ; REG_AR8:inst|ramdata~103 ; clk      ;
+; N/A                                     ; None                                                ; -1.511 ns ; sel[0] ; REG_AR8:inst|ramdata~102 ; clk      ;
+; N/A                                     ; None                                                ; -1.511 ns ; sel[0] ; REG_AR8:inst|ramdata~100 ; clk      ;
+; N/A                                     ; None                                                ; -1.515 ns ; sel[0] ; REG_AR8:inst|ramdata~147 ; clk      ;
+; N/A                                     ; None                                                ; -1.515 ns ; sel[0] ; REG_AR8:inst|ramdata~146 ; clk      ;
+; N/A                                     ; None                                                ; -1.515 ns ; sel[0] ; REG_AR8:inst|ramdata~145 ; clk      ;
+; N/A                                     ; None                                                ; -1.515 ns ; sel[0] ; REG_AR8:inst|ramdata~144 ; clk      ;
+; N/A                                     ; None                                                ; -1.515 ns ; sel[0] ; REG_AR8:inst|ramdata~143 ; clk      ;
+; N/A                                     ; None                                                ; -1.515 ns ; sel[0] ; REG_AR8:inst|ramdata~142 ; clk      ;
+; N/A                                     ; None                                                ; -1.515 ns ; sel[0] ; REG_AR8:inst|ramdata~138 ; clk      ;
+; N/A                                     ; None                                                ; -1.526 ns ; sel[0] ; REG_AR8:inst|ramdata~78  ; clk      ;
+; N/A                                     ; None                                                ; -1.526 ns ; sel[0] ; REG_AR8:inst|ramdata~77  ; clk      ;
+; N/A                                     ; None                                                ; -1.526 ns ; sel[0] ; REG_AR8:inst|ramdata~76  ; clk      ;
+; N/A                                     ; None                                                ; -1.526 ns ; sel[0] ; REG_AR8:inst|ramdata~74  ; clk      ;
+; N/A                                     ; None                                                ; -1.526 ns ; sel[0] ; REG_AR8:inst|ramdata~73  ; clk      ;
+; N/A                                     ; None                                                ; -1.533 ns ; sel[0] ; REG_AR8:inst|ramdata~141 ; clk      ;
+; N/A                                     ; None                                                ; -1.533 ns ; sel[0] ; REG_AR8:inst|ramdata~140 ; clk      ;
+; N/A                                     ; None                                                ; -1.533 ns ; sel[0] ; REG_AR8:inst|ramdata~139 ; clk      ;
+; N/A                                     ; None                                                ; -1.533 ns ; sel[0] ; REG_AR8:inst|ramdata~137 ; clk      ;
+; N/A                                     ; None                                                ; -1.533 ns ; sel[0] ; REG_AR8:inst|ramdata~136 ; clk      ;
+; N/A                                     ; None                                                ; -1.533 ns ; sel[0] ; REG_AR8:inst|ramdata~135 ; clk      ;
+; N/A                                     ; None                                                ; -1.533 ns ; sel[0] ; REG_AR8:inst|ramdata~134 ; clk      ;
+; N/A                                     ; None                                                ; -1.533 ns ; sel[0] ; REG_AR8:inst|ramdata~132 ; clk      ;
+; N/A                                     ; None                                                ; -1.586 ns ; sel[1] ; REG_AR8:inst|ramdata~51  ; clk      ;
+; N/A                                     ; None                                                ; -1.586 ns ; sel[1] ; REG_AR8:inst|ramdata~50  ; clk      ;
+; N/A                                     ; None                                                ; -1.586 ns ; sel[1] ; REG_AR8:inst|ramdata~49  ; clk      ;
+; N/A                                     ; None                                                ; -1.586 ns ; sel[1] ; REG_AR8:inst|ramdata~48  ; clk      ;
+; N/A                                     ; None                                                ; -1.586 ns ; sel[1] ; REG_AR8:inst|ramdata~47  ; clk      ;
+; N/A                                     ; None                                                ; -1.586 ns ; sel[1] ; REG_AR8:inst|ramdata~46  ; clk      ;
+; N/A                                     ; None                                                ; -1.586 ns ; sel[1] ; REG_AR8:inst|ramdata~45  ; clk      ;
+; N/A                                     ; None                                                ; -1.586 ns ; sel[1] ; REG_AR8:inst|ramdata~43  ; clk      ;
+; N/A                                     ; None                                                ; -1.590 ns ; sel[1] ; REG_AR8:inst|ramdata~44  ; clk      ;
+; N/A                                     ; None                                                ; -1.590 ns ; sel[1] ; REG_AR8:inst|ramdata~42  ; clk      ;
+; N/A                                     ; None                                                ; -1.590 ns ; sel[1] ; REG_AR8:inst|ramdata~41  ; clk      ;
+; N/A                                     ; None                                                ; -1.590 ns ; sel[1] ; REG_AR8:inst|ramdata~40  ; clk      ;
+; N/A                                     ; None                                                ; -1.590 ns ; sel[1] ; REG_AR8:inst|ramdata~39  ; clk      ;
+; N/A                                     ; None                                                ; -1.590 ns ; sel[1] ; REG_AR8:inst|ramdata~38  ; clk      ;
+; N/A                                     ; None                                                ; -1.590 ns ; sel[1] ; REG_AR8:inst|ramdata~37  ; clk      ;
+; N/A                                     ; None                                                ; -1.590 ns ; sel[1] ; REG_AR8:inst|ramdata~36  ; clk      ;
+; N/A                                     ; None                                                ; -1.600 ns ; sel[1] ; REG_AR8:inst|ramdata~28  ; clk      ;
+; N/A                                     ; None                                                ; -1.600 ns ; sel[1] ; REG_AR8:inst|ramdata~26  ; clk      ;
+; N/A                                     ; None                                                ; -1.600 ns ; sel[1] ; REG_AR8:inst|ramdata~25  ; clk      ;
+; N/A                                     ; None                                                ; -1.600 ns ; sel[1] ; REG_AR8:inst|ramdata~24  ; clk      ;
+; N/A                                     ; None                                                ; -1.600 ns ; sel[1] ; REG_AR8:inst|ramdata~23  ; clk      ;
+; N/A                                     ; None                                                ; -1.600 ns ; sel[1] ; REG_AR8:inst|ramdata~22  ; clk      ;
+; N/A                                     ; None                                                ; -1.600 ns ; sel[1] ; REG_AR8:inst|ramdata~21  ; clk      ;
+; N/A                                     ; None                                                ; -1.600 ns ; sel[1] ; REG_AR8:inst|ramdata~20  ; clk      ;
+; N/A                                     ; None                                                ; -1.602 ns ; sel[1] ; REG_AR8:inst|ramdata~67  ; clk      ;
+; N/A                                     ; None                                                ; -1.602 ns ; sel[1] ; REG_AR8:inst|ramdata~66  ; clk      ;
+; N/A                                     ; None                                                ; -1.602 ns ; sel[1] ; REG_AR8:inst|ramdata~65  ; clk      ;
+; N/A                                     ; None                                                ; -1.602 ns ; sel[1] ; REG_AR8:inst|ramdata~64  ; clk      ;
+; N/A                                     ; None                                                ; -1.602 ns ; sel[1] ; REG_AR8:inst|ramdata~59  ; clk      ;
+; N/A                                     ; None                                                ; -1.612 ns ; sel[1] ; REG_AR8:inst|ramdata~101 ; clk      ;
+; N/A                                     ; None                                                ; -1.616 ns ; sel[1] ; REG_AR8:inst|ramdata~119 ; clk      ;
+; N/A                                     ; None                                                ; -1.616 ns ; sel[1] ; REG_AR8:inst|ramdata~118 ; clk      ;
+; N/A                                     ; None                                                ; -1.616 ns ; sel[1] ; REG_AR8:inst|ramdata~117 ; clk      ;
+; N/A                                     ; None                                                ; -1.616 ns ; sel[1] ; REG_AR8:inst|ramdata~116 ; clk      ;
+; N/A                                     ; None                                                ; -1.631 ns ; sel[1] ; REG_AR8:inst|ramdata~87  ; clk      ;
+; N/A                                     ; None                                                ; -1.631 ns ; sel[1] ; REG_AR8:inst|ramdata~86  ; clk      ;
+; N/A                                     ; None                                                ; -1.631 ns ; sel[1] ; REG_AR8:inst|ramdata~85  ; clk      ;
+; N/A                                     ; None                                                ; -1.631 ns ; sel[1] ; REG_AR8:inst|ramdata~84  ; clk      ;
+; N/A                                     ; None                                                ; -1.640 ns ; sel[1] ; REG_AR8:inst|ramdata~83  ; clk      ;
+; N/A                                     ; None                                                ; -1.640 ns ; sel[1] ; REG_AR8:inst|ramdata~82  ; clk      ;
+; N/A                                     ; None                                                ; -1.640 ns ; sel[1] ; REG_AR8:inst|ramdata~81  ; clk      ;
+; N/A                                     ; None                                                ; -1.640 ns ; sel[1] ; REG_AR8:inst|ramdata~80  ; clk      ;
+; N/A                                     ; None                                                ; -1.640 ns ; sel[1] ; REG_AR8:inst|ramdata~79  ; clk      ;
+; N/A                                     ; None                                                ; -1.640 ns ; sel[1] ; REG_AR8:inst|ramdata~75  ; clk      ;
+; N/A                                     ; None                                                ; -1.685 ns ; sel[0] ; REG_AR8:inst|ramdata~28  ; clk      ;
+; N/A                                     ; None                                                ; -1.685 ns ; sel[0] ; REG_AR8:inst|ramdata~26  ; clk      ;
+; N/A                                     ; None                                                ; -1.685 ns ; sel[0] ; REG_AR8:inst|ramdata~25  ; clk      ;
+; N/A                                     ; None                                                ; -1.685 ns ; sel[0] ; REG_AR8:inst|ramdata~24  ; clk      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;        ;                          ;          ;
++-----------------------------------------+-----------------------------------------------------+-----------+--------+--------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Sat Feb 05 21:53:00 2022
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off REG8withlpm -c REG8withlpm --timing_analysis_only
+Info: Parallel compilation is enabled and will use 8 of the 8 processors detected
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: No valid register-to-register data paths exist for clock "clk"
+Info: tsu for register "REG_AR8:inst|ramdata~95" (data pin = "sel[2]", clock pin = "clk") is 5.735 ns
+    Info: + Longest pin to register delay is 8.414 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_D17; Fanout = 24; PIN Node = 'sel[2]'
+        Info: 2: + IC(5.584 ns) + CELL(0.150 ns) = 6.574 ns; Loc. = LCCOMB_X43_Y24_N28; Fanout = 16; COMB Node = 'REG_AR8:inst|ramdata~230'
+        Info: 3: + IC(1.180 ns) + CELL(0.660 ns) = 8.414 ns; Loc. = LCFF_X43_Y27_N19; Fanout = 1; REG Node = 'REG_AR8:inst|ramdata~95'
+        Info: Total cell delay = 1.650 ns ( 19.61 % )
+        Info: Total interconnect delay = 6.764 ns ( 80.39 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 2.643 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 128; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(0.989 ns) + CELL(0.537 ns) = 2.643 ns; Loc. = LCFF_X43_Y27_N19; Fanout = 1; REG Node = 'REG_AR8:inst|ramdata~95'
+        Info: Total cell delay = 1.536 ns ( 58.12 % )
+        Info: Total interconnect delay = 1.107 ns ( 41.88 % )
+Info: tco from clock "clk" to destination pin "output[13]" through register "REG_AR8:inst|ramdata~97" is 10.945 ns
+    Info: + Longest clock path from clock "clk" to source register is 2.667 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 128; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.013 ns) + CELL(0.537 ns) = 2.667 ns; Loc. = LCFF_X43_Y24_N19; Fanout = 1; REG Node = 'REG_AR8:inst|ramdata~97'
+        Info: Total cell delay = 1.536 ns ( 57.59 % )
+        Info: Total interconnect delay = 1.131 ns ( 42.41 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 8.028 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X43_Y24_N19; Fanout = 1; REG Node = 'REG_AR8:inst|ramdata~97'
+        Info: 2: + IC(0.300 ns) + CELL(0.150 ns) = 0.450 ns; Loc. = LCCOMB_X43_Y24_N0; Fanout = 1; COMB Node = 'REG_AR8:inst|ramdata~158'
+        Info: 3: + IC(0.723 ns) + CELL(0.416 ns) = 1.589 ns; Loc. = LCCOMB_X43_Y26_N24; Fanout = 1; COMB Node = 'REG_AR8:inst|ramdata~159'
+        Info: 4: + IC(0.950 ns) + CELL(0.271 ns) = 2.810 ns; Loc. = LCCOMB_X42_Y25_N24; Fanout = 1; COMB Node = 'REG_AR8:inst|ramdata~162'
+        Info: 5: + IC(2.450 ns) + CELL(2.768 ns) = 8.028 ns; Loc. = PIN_W15; Fanout = 0; PIN Node = 'output[13]'
+        Info: Total cell delay = 3.605 ns ( 44.91 % )
+        Info: Total interconnect delay = 4.423 ns ( 55.09 % )
+Info: Longest tpd from source pin "sel[2]" to destination pin "output[4]" is 12.023 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_D17; Fanout = 24; PIN Node = 'sel[2]'
+    Info: 2: + IC(5.564 ns) + CELL(0.275 ns) = 6.679 ns; Loc. = LCCOMB_X44_Y24_N26; Fanout = 1; COMB Node = 'REG_AR8:inst|ramdata~207'
+    Info: 3: + IC(2.556 ns) + CELL(2.788 ns) = 12.023 ns; Loc. = PIN_AE16; Fanout = 0; PIN Node = 'output[4]'
+    Info: Total cell delay = 3.903 ns ( 32.46 % )
+    Info: Total interconnect delay = 8.120 ns ( 67.54 % )
+Info: th for register "REG_AR8:inst|ramdata~99" (data pin = "sel[1]", clock pin = "clk") is -0.897 ns
+    Info: + Longest clock path from clock "clk" to destination register is 2.667 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 128; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.013 ns) + CELL(0.537 ns) = 2.667 ns; Loc. = LCFF_X43_Y24_N27; Fanout = 1; REG Node = 'REG_AR8:inst|ramdata~99'
+        Info: Total cell delay = 1.536 ns ( 57.59 % )
+        Info: Total interconnect delay = 1.131 ns ( 42.41 % )
+    Info: + Micro hold delay of destination is 0.266 ns
+    Info: - Shortest pin to register delay is 3.830 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.979 ns) = 0.979 ns; Loc. = PIN_D13; Fanout = 56; PIN Node = 'sel[1]'
+        Info: 2: + IC(1.677 ns) + CELL(0.275 ns) = 2.931 ns; Loc. = LCCOMB_X43_Y24_N28; Fanout = 16; COMB Node = 'REG_AR8:inst|ramdata~230'
+        Info: 3: + IC(0.239 ns) + CELL(0.660 ns) = 3.830 ns; Loc. = LCFF_X43_Y24_N27; Fanout = 1; REG Node = 'REG_AR8:inst|ramdata~99'
+        Info: Total cell delay = 1.914 ns ( 49.97 % )
+        Info: Total interconnect delay = 1.916 ns ( 50.03 % )
+Info: Quartus II 64-Bit Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4366 megabytes
+    Info: Processing ended: Sat Feb 05 21:53:00 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

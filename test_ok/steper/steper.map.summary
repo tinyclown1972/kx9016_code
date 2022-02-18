@@ -1,0 +1,15 @@
+Analysis & Synthesis Status : Successful - Sat Feb 05 22:55:01 2022
+Quartus II 64-Bit Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : steper
+Top-level Entity Name : steper
+Family : Stratix II
+Logic utilization : N/A
+    Combinational ALUTs : 2
+    Dedicated logic registers : 3
+Total registers : 3
+Total pins : 4
+Total virtual pins : 0
+Total block memory bits : 0
+DSP block 9-bit elements : 0
+Total PLLs : 0
+Total DLLs : 0

@@ -1,0 +1,613 @@
+Simulator report for REG8withlpm
+Sat Feb 05 21:53:34 2022
+Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 10.0 us      ;
+; Simulation Netlist Size     ; 264 nodes    ;
+; Simulation Coverage         ;       7.58 % ;
+; Total Number of Transitions ; 112          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C35F672C6 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;       7.58 % ;
+; Total nodes checked                                 ; 264          ;
+; Total output ports checked                          ; 264          ;
+; Total output ports with complete 1/0-value coverage ; 20           ;
+; Total output ports with no 1/0-value coverage       ; 188          ;
+; Total output ports with no 1-value coverage         ; 194          ;
+; Total output ports with no 0-value coverage         ; 238          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                  ;
++---------------------------------------------+---------------------------------------------+------------------+
+; Node Name                                   ; Output Port Name                            ; Output Port Type ;
++---------------------------------------------+---------------------------------------------+------------------+
+; |REG8withlpm|EN                             ; |REG8withlpm|EN~corein                      ; combout          ;
+; |REG8withlpm|data[15]                       ; |REG8withlpm|data[15]~corein                ; combout          ;
+; |REG8withlpm|clk                            ; |REG8withlpm|clk~corein                     ; combout          ;
+; |REG8withlpm|data[13]                       ; |REG8withlpm|data[13]~corein                ; combout          ;
+; |REG8withlpm|data[11]                       ; |REG8withlpm|data[11]~corein                ; combout          ;
+; |REG8withlpm|data[9]                        ; |REG8withlpm|data[9]~corein                 ; combout          ;
+; |REG8withlpm|data[7]                        ; |REG8withlpm|data[7]~corein                 ; combout          ;
+; |REG8withlpm|data[5]                        ; |REG8withlpm|data[5]~corein                 ; combout          ;
+; |REG8withlpm|data[4]                        ; |REG8withlpm|data[4]~corein                 ; combout          ;
+; |REG8withlpm|data[3]                        ; |REG8withlpm|data[3]~corein                 ; combout          ;
+; |REG8withlpm|data[1]                        ; |REG8withlpm|data[1]~corein                 ; combout          ;
+; |REG8withlpm|data[0]                        ; |REG8withlpm|data[0]~corein                 ; combout          ;
+; |REG8withlpm|clk~clkctrl                    ; |REG8withlpm|clk~clkctrl                    ; outclk           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~147feeder ; |REG8withlpm|REG_AR8:inst|ramdata~147feeder ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~31feeder  ; |REG8withlpm|REG_AR8:inst|ramdata~31feeder  ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~79feeder  ; |REG8withlpm|REG_AR8:inst|ramdata~79feeder  ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~29feeder  ; |REG8withlpm|REG_AR8:inst|ramdata~29feeder  ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~88feeder  ; |REG8withlpm|REG_AR8:inst|ramdata~88feeder  ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~136feeder ; |REG8withlpm|REG_AR8:inst|ramdata~136feeder ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~135feeder ; |REG8withlpm|REG_AR8:inst|ramdata~135feeder ; combout          ;
++---------------------------------------------+---------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                     ;
++---------------------------------------------+---------------------------------------------+------------------+
+; Node Name                                   ; Output Port Name                            ; Output Port Type ;
++---------------------------------------------+---------------------------------------------+------------------+
+; |REG8withlpm|REG_AR8:inst|ramdata~115       ; |REG8withlpm|REG_AR8:inst|ramdata~115       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~131       ; |REG8withlpm|REG_AR8:inst|ramdata~131       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~99        ; |REG8withlpm|REG_AR8:inst|ramdata~99        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~148       ; |REG8withlpm|REG_AR8:inst|ramdata~148       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~147       ; |REG8withlpm|REG_AR8:inst|ramdata~147       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~149       ; |REG8withlpm|REG_AR8:inst|ramdata~149       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~67        ; |REG8withlpm|REG_AR8:inst|ramdata~67        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~35        ; |REG8withlpm|REG_AR8:inst|ramdata~35        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~83        ; |REG8withlpm|REG_AR8:inst|ramdata~83        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~114       ; |REG8withlpm|REG_AR8:inst|ramdata~114       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~130       ; |REG8withlpm|REG_AR8:inst|ramdata~130       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~98        ; |REG8withlpm|REG_AR8:inst|ramdata~98        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~153       ; |REG8withlpm|REG_AR8:inst|ramdata~153       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~146       ; |REG8withlpm|REG_AR8:inst|ramdata~146       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~154       ; |REG8withlpm|REG_AR8:inst|ramdata~154       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~66        ; |REG8withlpm|REG_AR8:inst|ramdata~66        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~50        ; |REG8withlpm|REG_AR8:inst|ramdata~50        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~34        ; |REG8withlpm|REG_AR8:inst|ramdata~34        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~155       ; |REG8withlpm|REG_AR8:inst|ramdata~155       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~82        ; |REG8withlpm|REG_AR8:inst|ramdata~82        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~156       ; |REG8withlpm|REG_AR8:inst|ramdata~156       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~157       ; |REG8withlpm|REG_AR8:inst|ramdata~157       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~113       ; |REG8withlpm|REG_AR8:inst|ramdata~113       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~129       ; |REG8withlpm|REG_AR8:inst|ramdata~129       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~97        ; |REG8withlpm|REG_AR8:inst|ramdata~97        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~158       ; |REG8withlpm|REG_AR8:inst|ramdata~158       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~145       ; |REG8withlpm|REG_AR8:inst|ramdata~145       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~159       ; |REG8withlpm|REG_AR8:inst|ramdata~159       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~65        ; |REG8withlpm|REG_AR8:inst|ramdata~65        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~33        ; |REG8withlpm|REG_AR8:inst|ramdata~33        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~81        ; |REG8withlpm|REG_AR8:inst|ramdata~81        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~112       ; |REG8withlpm|REG_AR8:inst|ramdata~112       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~128       ; |REG8withlpm|REG_AR8:inst|ramdata~128       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~96        ; |REG8withlpm|REG_AR8:inst|ramdata~96        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~163       ; |REG8withlpm|REG_AR8:inst|ramdata~163       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~144       ; |REG8withlpm|REG_AR8:inst|ramdata~144       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~164       ; |REG8withlpm|REG_AR8:inst|ramdata~164       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~64        ; |REG8withlpm|REG_AR8:inst|ramdata~64        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~48        ; |REG8withlpm|REG_AR8:inst|ramdata~48        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~32        ; |REG8withlpm|REG_AR8:inst|ramdata~32        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~165       ; |REG8withlpm|REG_AR8:inst|ramdata~165       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~80        ; |REG8withlpm|REG_AR8:inst|ramdata~80        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~166       ; |REG8withlpm|REG_AR8:inst|ramdata~166       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~167       ; |REG8withlpm|REG_AR8:inst|ramdata~167       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~111       ; |REG8withlpm|REG_AR8:inst|ramdata~111       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~127       ; |REG8withlpm|REG_AR8:inst|ramdata~127       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~95        ; |REG8withlpm|REG_AR8:inst|ramdata~95        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~168       ; |REG8withlpm|REG_AR8:inst|ramdata~168       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~143       ; |REG8withlpm|REG_AR8:inst|ramdata~143       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~169       ; |REG8withlpm|REG_AR8:inst|ramdata~169       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~63        ; |REG8withlpm|REG_AR8:inst|ramdata~63        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~31        ; |REG8withlpm|REG_AR8:inst|ramdata~31        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~79        ; |REG8withlpm|REG_AR8:inst|ramdata~79        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~110       ; |REG8withlpm|REG_AR8:inst|ramdata~110       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~126       ; |REG8withlpm|REG_AR8:inst|ramdata~126       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~94        ; |REG8withlpm|REG_AR8:inst|ramdata~94        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~173       ; |REG8withlpm|REG_AR8:inst|ramdata~173       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~142       ; |REG8withlpm|REG_AR8:inst|ramdata~142       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~174       ; |REG8withlpm|REG_AR8:inst|ramdata~174       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~62        ; |REG8withlpm|REG_AR8:inst|ramdata~62        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~46        ; |REG8withlpm|REG_AR8:inst|ramdata~46        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~30        ; |REG8withlpm|REG_AR8:inst|ramdata~30        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~175       ; |REG8withlpm|REG_AR8:inst|ramdata~175       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~78        ; |REG8withlpm|REG_AR8:inst|ramdata~78        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~176       ; |REG8withlpm|REG_AR8:inst|ramdata~176       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~177       ; |REG8withlpm|REG_AR8:inst|ramdata~177       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~109       ; |REG8withlpm|REG_AR8:inst|ramdata~109       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~125       ; |REG8withlpm|REG_AR8:inst|ramdata~125       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~93        ; |REG8withlpm|REG_AR8:inst|ramdata~93        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~178       ; |REG8withlpm|REG_AR8:inst|ramdata~178       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~141       ; |REG8withlpm|REG_AR8:inst|ramdata~141       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~179       ; |REG8withlpm|REG_AR8:inst|ramdata~179       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~61        ; |REG8withlpm|REG_AR8:inst|ramdata~61        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~29        ; |REG8withlpm|REG_AR8:inst|ramdata~29        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~77        ; |REG8withlpm|REG_AR8:inst|ramdata~77        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~108       ; |REG8withlpm|REG_AR8:inst|ramdata~108       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~124       ; |REG8withlpm|REG_AR8:inst|ramdata~124       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~92        ; |REG8withlpm|REG_AR8:inst|ramdata~92        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~183       ; |REG8withlpm|REG_AR8:inst|ramdata~183       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~140       ; |REG8withlpm|REG_AR8:inst|ramdata~140       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~184       ; |REG8withlpm|REG_AR8:inst|ramdata~184       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~60        ; |REG8withlpm|REG_AR8:inst|ramdata~60        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~44        ; |REG8withlpm|REG_AR8:inst|ramdata~44        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~28        ; |REG8withlpm|REG_AR8:inst|ramdata~28        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~185       ; |REG8withlpm|REG_AR8:inst|ramdata~185       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~76        ; |REG8withlpm|REG_AR8:inst|ramdata~76        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~186       ; |REG8withlpm|REG_AR8:inst|ramdata~186       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~187       ; |REG8withlpm|REG_AR8:inst|ramdata~187       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~107       ; |REG8withlpm|REG_AR8:inst|ramdata~107       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~123       ; |REG8withlpm|REG_AR8:inst|ramdata~123       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~91        ; |REG8withlpm|REG_AR8:inst|ramdata~91        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~188       ; |REG8withlpm|REG_AR8:inst|ramdata~188       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~139       ; |REG8withlpm|REG_AR8:inst|ramdata~139       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~189       ; |REG8withlpm|REG_AR8:inst|ramdata~189       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~59        ; |REG8withlpm|REG_AR8:inst|ramdata~59        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~27        ; |REG8withlpm|REG_AR8:inst|ramdata~27        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~75        ; |REG8withlpm|REG_AR8:inst|ramdata~75        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~106       ; |REG8withlpm|REG_AR8:inst|ramdata~106       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~122       ; |REG8withlpm|REG_AR8:inst|ramdata~122       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~90        ; |REG8withlpm|REG_AR8:inst|ramdata~90        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~193       ; |REG8withlpm|REG_AR8:inst|ramdata~193       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~138       ; |REG8withlpm|REG_AR8:inst|ramdata~138       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~194       ; |REG8withlpm|REG_AR8:inst|ramdata~194       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~58        ; |REG8withlpm|REG_AR8:inst|ramdata~58        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~42        ; |REG8withlpm|REG_AR8:inst|ramdata~42        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~26        ; |REG8withlpm|REG_AR8:inst|ramdata~26        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~195       ; |REG8withlpm|REG_AR8:inst|ramdata~195       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~74        ; |REG8withlpm|REG_AR8:inst|ramdata~74        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~196       ; |REG8withlpm|REG_AR8:inst|ramdata~196       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~197       ; |REG8withlpm|REG_AR8:inst|ramdata~197       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~105       ; |REG8withlpm|REG_AR8:inst|ramdata~105       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~121       ; |REG8withlpm|REG_AR8:inst|ramdata~121       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~89        ; |REG8withlpm|REG_AR8:inst|ramdata~89        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~198       ; |REG8withlpm|REG_AR8:inst|ramdata~198       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~137       ; |REG8withlpm|REG_AR8:inst|ramdata~137       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~199       ; |REG8withlpm|REG_AR8:inst|ramdata~199       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~57        ; |REG8withlpm|REG_AR8:inst|ramdata~57        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~25        ; |REG8withlpm|REG_AR8:inst|ramdata~25        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~73        ; |REG8withlpm|REG_AR8:inst|ramdata~73        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~104       ; |REG8withlpm|REG_AR8:inst|ramdata~104       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~120       ; |REG8withlpm|REG_AR8:inst|ramdata~120       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~88        ; |REG8withlpm|REG_AR8:inst|ramdata~88        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~203       ; |REG8withlpm|REG_AR8:inst|ramdata~203       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~136       ; |REG8withlpm|REG_AR8:inst|ramdata~136       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~204       ; |REG8withlpm|REG_AR8:inst|ramdata~204       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~56        ; |REG8withlpm|REG_AR8:inst|ramdata~56        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~24        ; |REG8withlpm|REG_AR8:inst|ramdata~24        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~72        ; |REG8withlpm|REG_AR8:inst|ramdata~72        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~103       ; |REG8withlpm|REG_AR8:inst|ramdata~103       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~119       ; |REG8withlpm|REG_AR8:inst|ramdata~119       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~87        ; |REG8withlpm|REG_AR8:inst|ramdata~87        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~208       ; |REG8withlpm|REG_AR8:inst|ramdata~208       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~135       ; |REG8withlpm|REG_AR8:inst|ramdata~135       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~209       ; |REG8withlpm|REG_AR8:inst|ramdata~209       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~55        ; |REG8withlpm|REG_AR8:inst|ramdata~55        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~23        ; |REG8withlpm|REG_AR8:inst|ramdata~23        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~71        ; |REG8withlpm|REG_AR8:inst|ramdata~71        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~102       ; |REG8withlpm|REG_AR8:inst|ramdata~102       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~118       ; |REG8withlpm|REG_AR8:inst|ramdata~118       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~86        ; |REG8withlpm|REG_AR8:inst|ramdata~86        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~213       ; |REG8withlpm|REG_AR8:inst|ramdata~213       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~134       ; |REG8withlpm|REG_AR8:inst|ramdata~134       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~214       ; |REG8withlpm|REG_AR8:inst|ramdata~214       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~54        ; |REG8withlpm|REG_AR8:inst|ramdata~54        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~38        ; |REG8withlpm|REG_AR8:inst|ramdata~38        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~22        ; |REG8withlpm|REG_AR8:inst|ramdata~22        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~215       ; |REG8withlpm|REG_AR8:inst|ramdata~215       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~70        ; |REG8withlpm|REG_AR8:inst|ramdata~70        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~216       ; |REG8withlpm|REG_AR8:inst|ramdata~216       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~217       ; |REG8withlpm|REG_AR8:inst|ramdata~217       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~101       ; |REG8withlpm|REG_AR8:inst|ramdata~101       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~117       ; |REG8withlpm|REG_AR8:inst|ramdata~117       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~85        ; |REG8withlpm|REG_AR8:inst|ramdata~85        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~218       ; |REG8withlpm|REG_AR8:inst|ramdata~218       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~133       ; |REG8withlpm|REG_AR8:inst|ramdata~133       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~219       ; |REG8withlpm|REG_AR8:inst|ramdata~219       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~53        ; |REG8withlpm|REG_AR8:inst|ramdata~53        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~21        ; |REG8withlpm|REG_AR8:inst|ramdata~21        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~69        ; |REG8withlpm|REG_AR8:inst|ramdata~69        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~100       ; |REG8withlpm|REG_AR8:inst|ramdata~100       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~116       ; |REG8withlpm|REG_AR8:inst|ramdata~116       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~84        ; |REG8withlpm|REG_AR8:inst|ramdata~84        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~223       ; |REG8withlpm|REG_AR8:inst|ramdata~223       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~132       ; |REG8withlpm|REG_AR8:inst|ramdata~132       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~224       ; |REG8withlpm|REG_AR8:inst|ramdata~224       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~52        ; |REG8withlpm|REG_AR8:inst|ramdata~52        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~20        ; |REG8withlpm|REG_AR8:inst|ramdata~20        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~68        ; |REG8withlpm|REG_AR8:inst|ramdata~68        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~228       ; |REG8withlpm|REG_AR8:inst|ramdata~228       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~229       ; |REG8withlpm|REG_AR8:inst|ramdata~229       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~230       ; |REG8withlpm|REG_AR8:inst|ramdata~230       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~231       ; |REG8withlpm|REG_AR8:inst|ramdata~231       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~232       ; |REG8withlpm|REG_AR8:inst|ramdata~232       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~233       ; |REG8withlpm|REG_AR8:inst|ramdata~233       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~234       ; |REG8withlpm|REG_AR8:inst|ramdata~234       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~235       ; |REG8withlpm|REG_AR8:inst|ramdata~235       ; combout          ;
+; |REG8withlpm|output[14]                     ; |REG8withlpm|output[14]                     ; padio            ;
+; |REG8withlpm|output[12]                     ; |REG8withlpm|output[12]                     ; padio            ;
+; |REG8withlpm|output[10]                     ; |REG8withlpm|output[10]                     ; padio            ;
+; |REG8withlpm|output[8]                      ; |REG8withlpm|output[8]                      ; padio            ;
+; |REG8withlpm|output[6]                      ; |REG8withlpm|output[6]                      ; padio            ;
+; |REG8withlpm|output[2]                      ; |REG8withlpm|output[2]                      ; padio            ;
+; |REG8withlpm|sel[0]                         ; |REG8withlpm|sel[0]~corein                  ; combout          ;
+; |REG8withlpm|sel[1]                         ; |REG8withlpm|sel[1]~corein                  ; combout          ;
+; |REG8withlpm|sel[2]                         ; |REG8withlpm|sel[2]~corein                  ; combout          ;
+; |REG8withlpm|data[14]                       ; |REG8withlpm|data[14]~corein                ; combout          ;
+; |REG8withlpm|data[12]                       ; |REG8withlpm|data[12]~corein                ; combout          ;
+; |REG8withlpm|data[10]                       ; |REG8withlpm|data[10]~corein                ; combout          ;
+; |REG8withlpm|data[8]                        ; |REG8withlpm|data[8]~corein                 ; combout          ;
+; |REG8withlpm|data[6]                        ; |REG8withlpm|data[6]~corein                 ; combout          ;
+; |REG8withlpm|data[2]                        ; |REG8withlpm|data[2]~corein                 ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~146feeder ; |REG8withlpm|REG_AR8:inst|ramdata~146feeder ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~144feeder ; |REG8withlpm|REG_AR8:inst|ramdata~144feeder ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~92feeder  ; |REG8withlpm|REG_AR8:inst|ramdata~92feeder  ; combout          ;
++---------------------------------------------+---------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                     ;
++---------------------------------------------+---------------------------------------------+------------------+
+; Node Name                                   ; Output Port Name                            ; Output Port Type ;
++---------------------------------------------+---------------------------------------------+------------------+
+; |REG8withlpm|REG_AR8:inst|ramdata~115       ; |REG8withlpm|REG_AR8:inst|ramdata~115       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~131       ; |REG8withlpm|REG_AR8:inst|ramdata~131       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~99        ; |REG8withlpm|REG_AR8:inst|ramdata~99        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~148       ; |REG8withlpm|REG_AR8:inst|ramdata~148       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~147       ; |REG8withlpm|REG_AR8:inst|ramdata~147       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~149       ; |REG8withlpm|REG_AR8:inst|ramdata~149       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~67        ; |REG8withlpm|REG_AR8:inst|ramdata~67        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~51        ; |REG8withlpm|REG_AR8:inst|ramdata~51        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~35        ; |REG8withlpm|REG_AR8:inst|ramdata~35        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~150       ; |REG8withlpm|REG_AR8:inst|ramdata~150       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~83        ; |REG8withlpm|REG_AR8:inst|ramdata~83        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~151       ; |REG8withlpm|REG_AR8:inst|ramdata~151       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~152       ; |REG8withlpm|REG_AR8:inst|ramdata~152       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~114       ; |REG8withlpm|REG_AR8:inst|ramdata~114       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~130       ; |REG8withlpm|REG_AR8:inst|ramdata~130       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~98        ; |REG8withlpm|REG_AR8:inst|ramdata~98        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~153       ; |REG8withlpm|REG_AR8:inst|ramdata~153       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~146       ; |REG8withlpm|REG_AR8:inst|ramdata~146       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~154       ; |REG8withlpm|REG_AR8:inst|ramdata~154       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~66        ; |REG8withlpm|REG_AR8:inst|ramdata~66        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~50        ; |REG8withlpm|REG_AR8:inst|ramdata~50        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~34        ; |REG8withlpm|REG_AR8:inst|ramdata~34        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~155       ; |REG8withlpm|REG_AR8:inst|ramdata~155       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~82        ; |REG8withlpm|REG_AR8:inst|ramdata~82        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~156       ; |REG8withlpm|REG_AR8:inst|ramdata~156       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~157       ; |REG8withlpm|REG_AR8:inst|ramdata~157       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~113       ; |REG8withlpm|REG_AR8:inst|ramdata~113       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~129       ; |REG8withlpm|REG_AR8:inst|ramdata~129       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~97        ; |REG8withlpm|REG_AR8:inst|ramdata~97        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~158       ; |REG8withlpm|REG_AR8:inst|ramdata~158       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~145       ; |REG8withlpm|REG_AR8:inst|ramdata~145       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~159       ; |REG8withlpm|REG_AR8:inst|ramdata~159       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~65        ; |REG8withlpm|REG_AR8:inst|ramdata~65        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~49        ; |REG8withlpm|REG_AR8:inst|ramdata~49        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~33        ; |REG8withlpm|REG_AR8:inst|ramdata~33        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~160       ; |REG8withlpm|REG_AR8:inst|ramdata~160       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~81        ; |REG8withlpm|REG_AR8:inst|ramdata~81        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~161       ; |REG8withlpm|REG_AR8:inst|ramdata~161       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~162       ; |REG8withlpm|REG_AR8:inst|ramdata~162       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~112       ; |REG8withlpm|REG_AR8:inst|ramdata~112       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~128       ; |REG8withlpm|REG_AR8:inst|ramdata~128       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~96        ; |REG8withlpm|REG_AR8:inst|ramdata~96        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~163       ; |REG8withlpm|REG_AR8:inst|ramdata~163       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~144       ; |REG8withlpm|REG_AR8:inst|ramdata~144       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~164       ; |REG8withlpm|REG_AR8:inst|ramdata~164       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~64        ; |REG8withlpm|REG_AR8:inst|ramdata~64        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~48        ; |REG8withlpm|REG_AR8:inst|ramdata~48        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~32        ; |REG8withlpm|REG_AR8:inst|ramdata~32        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~165       ; |REG8withlpm|REG_AR8:inst|ramdata~165       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~80        ; |REG8withlpm|REG_AR8:inst|ramdata~80        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~166       ; |REG8withlpm|REG_AR8:inst|ramdata~166       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~167       ; |REG8withlpm|REG_AR8:inst|ramdata~167       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~111       ; |REG8withlpm|REG_AR8:inst|ramdata~111       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~127       ; |REG8withlpm|REG_AR8:inst|ramdata~127       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~95        ; |REG8withlpm|REG_AR8:inst|ramdata~95        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~168       ; |REG8withlpm|REG_AR8:inst|ramdata~168       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~143       ; |REG8withlpm|REG_AR8:inst|ramdata~143       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~169       ; |REG8withlpm|REG_AR8:inst|ramdata~169       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~63        ; |REG8withlpm|REG_AR8:inst|ramdata~63        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~47        ; |REG8withlpm|REG_AR8:inst|ramdata~47        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~31        ; |REG8withlpm|REG_AR8:inst|ramdata~31        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~170       ; |REG8withlpm|REG_AR8:inst|ramdata~170       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~79        ; |REG8withlpm|REG_AR8:inst|ramdata~79        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~171       ; |REG8withlpm|REG_AR8:inst|ramdata~171       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~172       ; |REG8withlpm|REG_AR8:inst|ramdata~172       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~110       ; |REG8withlpm|REG_AR8:inst|ramdata~110       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~126       ; |REG8withlpm|REG_AR8:inst|ramdata~126       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~94        ; |REG8withlpm|REG_AR8:inst|ramdata~94        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~173       ; |REG8withlpm|REG_AR8:inst|ramdata~173       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~142       ; |REG8withlpm|REG_AR8:inst|ramdata~142       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~174       ; |REG8withlpm|REG_AR8:inst|ramdata~174       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~62        ; |REG8withlpm|REG_AR8:inst|ramdata~62        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~46        ; |REG8withlpm|REG_AR8:inst|ramdata~46        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~30        ; |REG8withlpm|REG_AR8:inst|ramdata~30        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~175       ; |REG8withlpm|REG_AR8:inst|ramdata~175       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~78        ; |REG8withlpm|REG_AR8:inst|ramdata~78        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~176       ; |REG8withlpm|REG_AR8:inst|ramdata~176       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~177       ; |REG8withlpm|REG_AR8:inst|ramdata~177       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~109       ; |REG8withlpm|REG_AR8:inst|ramdata~109       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~125       ; |REG8withlpm|REG_AR8:inst|ramdata~125       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~93        ; |REG8withlpm|REG_AR8:inst|ramdata~93        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~178       ; |REG8withlpm|REG_AR8:inst|ramdata~178       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~141       ; |REG8withlpm|REG_AR8:inst|ramdata~141       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~179       ; |REG8withlpm|REG_AR8:inst|ramdata~179       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~61        ; |REG8withlpm|REG_AR8:inst|ramdata~61        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~45        ; |REG8withlpm|REG_AR8:inst|ramdata~45        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~29        ; |REG8withlpm|REG_AR8:inst|ramdata~29        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~180       ; |REG8withlpm|REG_AR8:inst|ramdata~180       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~77        ; |REG8withlpm|REG_AR8:inst|ramdata~77        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~181       ; |REG8withlpm|REG_AR8:inst|ramdata~181       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~182       ; |REG8withlpm|REG_AR8:inst|ramdata~182       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~108       ; |REG8withlpm|REG_AR8:inst|ramdata~108       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~124       ; |REG8withlpm|REG_AR8:inst|ramdata~124       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~92        ; |REG8withlpm|REG_AR8:inst|ramdata~92        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~183       ; |REG8withlpm|REG_AR8:inst|ramdata~183       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~140       ; |REG8withlpm|REG_AR8:inst|ramdata~140       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~184       ; |REG8withlpm|REG_AR8:inst|ramdata~184       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~60        ; |REG8withlpm|REG_AR8:inst|ramdata~60        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~44        ; |REG8withlpm|REG_AR8:inst|ramdata~44        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~28        ; |REG8withlpm|REG_AR8:inst|ramdata~28        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~185       ; |REG8withlpm|REG_AR8:inst|ramdata~185       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~76        ; |REG8withlpm|REG_AR8:inst|ramdata~76        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~186       ; |REG8withlpm|REG_AR8:inst|ramdata~186       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~187       ; |REG8withlpm|REG_AR8:inst|ramdata~187       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~107       ; |REG8withlpm|REG_AR8:inst|ramdata~107       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~123       ; |REG8withlpm|REG_AR8:inst|ramdata~123       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~91        ; |REG8withlpm|REG_AR8:inst|ramdata~91        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~188       ; |REG8withlpm|REG_AR8:inst|ramdata~188       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~139       ; |REG8withlpm|REG_AR8:inst|ramdata~139       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~189       ; |REG8withlpm|REG_AR8:inst|ramdata~189       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~59        ; |REG8withlpm|REG_AR8:inst|ramdata~59        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~43        ; |REG8withlpm|REG_AR8:inst|ramdata~43        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~27        ; |REG8withlpm|REG_AR8:inst|ramdata~27        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~190       ; |REG8withlpm|REG_AR8:inst|ramdata~190       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~75        ; |REG8withlpm|REG_AR8:inst|ramdata~75        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~191       ; |REG8withlpm|REG_AR8:inst|ramdata~191       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~192       ; |REG8withlpm|REG_AR8:inst|ramdata~192       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~106       ; |REG8withlpm|REG_AR8:inst|ramdata~106       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~122       ; |REG8withlpm|REG_AR8:inst|ramdata~122       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~90        ; |REG8withlpm|REG_AR8:inst|ramdata~90        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~193       ; |REG8withlpm|REG_AR8:inst|ramdata~193       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~138       ; |REG8withlpm|REG_AR8:inst|ramdata~138       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~194       ; |REG8withlpm|REG_AR8:inst|ramdata~194       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~58        ; |REG8withlpm|REG_AR8:inst|ramdata~58        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~42        ; |REG8withlpm|REG_AR8:inst|ramdata~42        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~26        ; |REG8withlpm|REG_AR8:inst|ramdata~26        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~195       ; |REG8withlpm|REG_AR8:inst|ramdata~195       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~74        ; |REG8withlpm|REG_AR8:inst|ramdata~74        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~196       ; |REG8withlpm|REG_AR8:inst|ramdata~196       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~197       ; |REG8withlpm|REG_AR8:inst|ramdata~197       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~105       ; |REG8withlpm|REG_AR8:inst|ramdata~105       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~121       ; |REG8withlpm|REG_AR8:inst|ramdata~121       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~89        ; |REG8withlpm|REG_AR8:inst|ramdata~89        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~198       ; |REG8withlpm|REG_AR8:inst|ramdata~198       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~137       ; |REG8withlpm|REG_AR8:inst|ramdata~137       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~199       ; |REG8withlpm|REG_AR8:inst|ramdata~199       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~57        ; |REG8withlpm|REG_AR8:inst|ramdata~57        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~41        ; |REG8withlpm|REG_AR8:inst|ramdata~41        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~25        ; |REG8withlpm|REG_AR8:inst|ramdata~25        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~200       ; |REG8withlpm|REG_AR8:inst|ramdata~200       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~73        ; |REG8withlpm|REG_AR8:inst|ramdata~73        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~201       ; |REG8withlpm|REG_AR8:inst|ramdata~201       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~202       ; |REG8withlpm|REG_AR8:inst|ramdata~202       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~104       ; |REG8withlpm|REG_AR8:inst|ramdata~104       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~120       ; |REG8withlpm|REG_AR8:inst|ramdata~120       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~88        ; |REG8withlpm|REG_AR8:inst|ramdata~88        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~203       ; |REG8withlpm|REG_AR8:inst|ramdata~203       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~136       ; |REG8withlpm|REG_AR8:inst|ramdata~136       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~204       ; |REG8withlpm|REG_AR8:inst|ramdata~204       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~56        ; |REG8withlpm|REG_AR8:inst|ramdata~56        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~40        ; |REG8withlpm|REG_AR8:inst|ramdata~40        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~24        ; |REG8withlpm|REG_AR8:inst|ramdata~24        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~205       ; |REG8withlpm|REG_AR8:inst|ramdata~205       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~72        ; |REG8withlpm|REG_AR8:inst|ramdata~72        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~206       ; |REG8withlpm|REG_AR8:inst|ramdata~206       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~207       ; |REG8withlpm|REG_AR8:inst|ramdata~207       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~103       ; |REG8withlpm|REG_AR8:inst|ramdata~103       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~119       ; |REG8withlpm|REG_AR8:inst|ramdata~119       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~87        ; |REG8withlpm|REG_AR8:inst|ramdata~87        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~208       ; |REG8withlpm|REG_AR8:inst|ramdata~208       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~135       ; |REG8withlpm|REG_AR8:inst|ramdata~135       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~209       ; |REG8withlpm|REG_AR8:inst|ramdata~209       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~55        ; |REG8withlpm|REG_AR8:inst|ramdata~55        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~39        ; |REG8withlpm|REG_AR8:inst|ramdata~39        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~23        ; |REG8withlpm|REG_AR8:inst|ramdata~23        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~210       ; |REG8withlpm|REG_AR8:inst|ramdata~210       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~71        ; |REG8withlpm|REG_AR8:inst|ramdata~71        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~211       ; |REG8withlpm|REG_AR8:inst|ramdata~211       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~212       ; |REG8withlpm|REG_AR8:inst|ramdata~212       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~102       ; |REG8withlpm|REG_AR8:inst|ramdata~102       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~118       ; |REG8withlpm|REG_AR8:inst|ramdata~118       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~86        ; |REG8withlpm|REG_AR8:inst|ramdata~86        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~213       ; |REG8withlpm|REG_AR8:inst|ramdata~213       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~134       ; |REG8withlpm|REG_AR8:inst|ramdata~134       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~214       ; |REG8withlpm|REG_AR8:inst|ramdata~214       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~54        ; |REG8withlpm|REG_AR8:inst|ramdata~54        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~38        ; |REG8withlpm|REG_AR8:inst|ramdata~38        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~22        ; |REG8withlpm|REG_AR8:inst|ramdata~22        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~215       ; |REG8withlpm|REG_AR8:inst|ramdata~215       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~70        ; |REG8withlpm|REG_AR8:inst|ramdata~70        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~216       ; |REG8withlpm|REG_AR8:inst|ramdata~216       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~217       ; |REG8withlpm|REG_AR8:inst|ramdata~217       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~101       ; |REG8withlpm|REG_AR8:inst|ramdata~101       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~117       ; |REG8withlpm|REG_AR8:inst|ramdata~117       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~85        ; |REG8withlpm|REG_AR8:inst|ramdata~85        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~218       ; |REG8withlpm|REG_AR8:inst|ramdata~218       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~133       ; |REG8withlpm|REG_AR8:inst|ramdata~133       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~219       ; |REG8withlpm|REG_AR8:inst|ramdata~219       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~53        ; |REG8withlpm|REG_AR8:inst|ramdata~53        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~37        ; |REG8withlpm|REG_AR8:inst|ramdata~37        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~21        ; |REG8withlpm|REG_AR8:inst|ramdata~21        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~220       ; |REG8withlpm|REG_AR8:inst|ramdata~220       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~69        ; |REG8withlpm|REG_AR8:inst|ramdata~69        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~221       ; |REG8withlpm|REG_AR8:inst|ramdata~221       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~222       ; |REG8withlpm|REG_AR8:inst|ramdata~222       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~100       ; |REG8withlpm|REG_AR8:inst|ramdata~100       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~116       ; |REG8withlpm|REG_AR8:inst|ramdata~116       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~84        ; |REG8withlpm|REG_AR8:inst|ramdata~84        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~223       ; |REG8withlpm|REG_AR8:inst|ramdata~223       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~132       ; |REG8withlpm|REG_AR8:inst|ramdata~132       ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~224       ; |REG8withlpm|REG_AR8:inst|ramdata~224       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~52        ; |REG8withlpm|REG_AR8:inst|ramdata~52        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~36        ; |REG8withlpm|REG_AR8:inst|ramdata~36        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~20        ; |REG8withlpm|REG_AR8:inst|ramdata~20        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~225       ; |REG8withlpm|REG_AR8:inst|ramdata~225       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~68        ; |REG8withlpm|REG_AR8:inst|ramdata~68        ; regout           ;
+; |REG8withlpm|REG_AR8:inst|ramdata~226       ; |REG8withlpm|REG_AR8:inst|ramdata~226       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~227       ; |REG8withlpm|REG_AR8:inst|ramdata~227       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~228       ; |REG8withlpm|REG_AR8:inst|ramdata~228       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~229       ; |REG8withlpm|REG_AR8:inst|ramdata~229       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~230       ; |REG8withlpm|REG_AR8:inst|ramdata~230       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~231       ; |REG8withlpm|REG_AR8:inst|ramdata~231       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~232       ; |REG8withlpm|REG_AR8:inst|ramdata~232       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~233       ; |REG8withlpm|REG_AR8:inst|ramdata~233       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~234       ; |REG8withlpm|REG_AR8:inst|ramdata~234       ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~235       ; |REG8withlpm|REG_AR8:inst|ramdata~235       ; combout          ;
+; |REG8withlpm|output[15]                     ; |REG8withlpm|output[15]                     ; padio            ;
+; |REG8withlpm|output[13]                     ; |REG8withlpm|output[13]                     ; padio            ;
+; |REG8withlpm|output[11]                     ; |REG8withlpm|output[11]                     ; padio            ;
+; |REG8withlpm|output[9]                      ; |REG8withlpm|output[9]                      ; padio            ;
+; |REG8withlpm|output[7]                      ; |REG8withlpm|output[7]                      ; padio            ;
+; |REG8withlpm|output[5]                      ; |REG8withlpm|output[5]                      ; padio            ;
+; |REG8withlpm|output[4]                      ; |REG8withlpm|output[4]                      ; padio            ;
+; |REG8withlpm|output[3]                      ; |REG8withlpm|output[3]                      ; padio            ;
+; |REG8withlpm|output[1]                      ; |REG8withlpm|output[1]                      ; padio            ;
+; |REG8withlpm|output[0]                      ; |REG8withlpm|output[0]                      ; padio            ;
+; |REG8withlpm|sel[0]                         ; |REG8withlpm|sel[0]~corein                  ; combout          ;
+; |REG8withlpm|sel[1]                         ; |REG8withlpm|sel[1]~corein                  ; combout          ;
+; |REG8withlpm|sel[2]                         ; |REG8withlpm|sel[2]~corein                  ; combout          ;
+; |REG8withlpm|data[14]                       ; |REG8withlpm|data[14]~corein                ; combout          ;
+; |REG8withlpm|data[12]                       ; |REG8withlpm|data[12]~corein                ; combout          ;
+; |REG8withlpm|data[10]                       ; |REG8withlpm|data[10]~corein                ; combout          ;
+; |REG8withlpm|data[8]                        ; |REG8withlpm|data[8]~corein                 ; combout          ;
+; |REG8withlpm|data[6]                        ; |REG8withlpm|data[6]~corein                 ; combout          ;
+; |REG8withlpm|data[2]                        ; |REG8withlpm|data[2]~corein                 ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~146feeder ; |REG8withlpm|REG_AR8:inst|ramdata~146feeder ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~144feeder ; |REG8withlpm|REG_AR8:inst|ramdata~144feeder ; combout          ;
+; |REG8withlpm|REG_AR8:inst|ramdata~92feeder  ; |REG8withlpm|REG_AR8:inst|ramdata~92feeder  ; combout          ;
++---------------------------------------------+---------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Sat Feb 05 21:53:34 2022
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off REG8withlpm -c REG8withlpm
+Info: Using vector source file "D:/Documents/Thesis/test_ok/REG8withlpm/REG8withlpm.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is       7.58 %
+Info: Number of transitions in simulation is 112
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4318 megabytes
+    Info: Processing ended: Sat Feb 05 21:53:34 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

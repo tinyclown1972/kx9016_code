@@ -1,0 +1,949 @@
+Classic Timing Analyzer report for CONTRLA
+Thu Feb 17 15:26:24 2022
+Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clock'
+  7. Clock Hold: 'clock'
+  8. tsu
+  9. tco
+ 10. tpd
+ 11. th
+ 12. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                   ;
++------------------------------+--------------+-------------------------------------+----------------------------------+-----------------------+---------------------+------------+----------+--------------+
+; Type                         ; Slack        ; Required Time                       ; Actual Time                      ; From                  ; To                  ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+--------------+-------------------------------------+----------------------------------+-----------------------+---------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A          ; None                                ; 5.073 ns                         ; instrReg[13]          ; current_state.incPC ; --         ; clock    ; 0            ;
+; Worst-case tco               ; N/A          ; None                                ; 13.084 ns                        ; current_state.execute ; aluSel[2]           ; clock      ; --       ; 0            ;
+; Worst-case tpd               ; N/A          ; None                                ; 15.145 ns                        ; instrReg[13]          ; aluSel[2]           ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A          ; None                                ; -2.979 ns                        ; instrReg[15]          ; current_state.rotr1 ; --         ; clock    ; 0            ;
+; Clock Setup: 'clock'         ; 99996.942 ns ; 0.01 MHz ( period = 100000.000 ns ) ; 327.01 MHz ( period = 3.058 ns ) ; current_state.or4     ; current_state.incPC ; clock      ; clock    ; 0            ;
+; Clock Hold: 'clock'          ; 0.521 ns     ; 0.01 MHz ( period = 100000.000 ns ) ; N/A                              ; current_state.jmp3    ; current_state.jmp4  ; clock      ; clock    ; 0            ;
+; Total number of failed paths ;              ;                                     ;                                  ;                       ;                     ;            ;          ; 0            ;
++------------------------------+--------------+-------------------------------------+----------------------------------+-----------------------+---------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                               ;
++------------------------------------------------------------------------------------------------------+--------------------+------+-------+-------------+
+; Option                                                                                               ; Setting            ; From ; To    ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+-------+-------------+
+; Device Name                                                                                          ; EP2C35F672C6       ;      ;       ;             ;
+; Timing Models                                                                                        ; Final              ;      ;       ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;       ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;       ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;       ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;       ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;       ;             ;
+; fmax Requirement                                                                                     ; 1 kHz              ;      ;       ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;       ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;       ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;       ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;       ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;       ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;       ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;       ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;       ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;       ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;       ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;       ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;       ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;       ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;       ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;       ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;       ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;       ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;       ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;       ;             ;
+; Clock Settings                                                                                       ; t_clk              ;      ; clock ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+-------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clock           ; t_clk              ; User Pin ; 0.01 MHz         ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-8 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clock'                                                                                                                                                                                                     ;
++--------------+-----------------------------------------------+-----------------------+-----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack        ; Actual fmax (period)                          ; From                  ; To                    ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++--------------+-----------------------------------------------+-----------------------+-----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; 99996.942 ns ; 327.01 MHz ( period = 3.058 ns )              ; current_state.or4     ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.788 ns              ; 2.846 ns                ;
+; 99996.982 ns ; 331.35 MHz ( period = 3.018 ns )              ; current_state.and4    ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.788 ns              ; 2.806 ns                ;
+; 99997.213 ns ; 358.81 MHz ( period = 2.787 ns )              ; current_state.add4    ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.788 ns              ; 2.575 ns                ;
+; 99997.369 ns ; 380.08 MHz ( period = 2.631 ns )              ; current_state.rotr2   ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 2.417 ns                ;
+; 99997.405 ns ; 385.36 MHz ( period = 2.595 ns )              ; current_state.rotl2   ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 2.381 ns                ;
+; 99997.493 ns ; 398.88 MHz ( period = 2.507 ns )              ; current_state.inc4    ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 2.293 ns                ;
+; 99997.627 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 2.160 ns                ;
+; 99997.634 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.dec4    ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 2.152 ns                ;
+; 99997.681 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.shftr2  ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 2.105 ns                ;
+; 99997.766 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.not4    ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 2.020 ns                ;
+; 99997.795 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.xor4    ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.991 ns                ;
+; 99997.809 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.shftr1  ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 1.978 ns                ;
+; 99997.809 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.shftl1  ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 1.978 ns                ;
+; 99997.841 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.loadI2  ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 1.946 ns                ;
+; 99997.892 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.inc2    ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.894 ns                ;
+; 99997.895 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.jmpeq1  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.891 ns                ;
+; 99997.895 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.not2    ; clock      ; clock    ; 100000.000 ns               ; 99999.784 ns              ; 1.889 ns                ;
+; 99997.895 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.sub2    ; clock      ; clock    ; 100000.000 ns               ; 99999.784 ns              ; 1.889 ns                ;
+; 99997.897 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.or2     ; clock      ; clock    ; 100000.000 ns               ; 99999.784 ns              ; 1.887 ns                ;
+; 99997.898 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.dec2    ; clock      ; clock    ; 100000.000 ns               ; 99999.784 ns              ; 1.886 ns                ;
+; 99997.901 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.and2    ; clock      ; clock    ; 100000.000 ns               ; 99999.784 ns              ; 1.883 ns                ;
+; 99997.902 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.xor2    ; clock      ; clock    ; 100000.000 ns               ; 99999.784 ns              ; 1.882 ns                ;
+; 99997.903 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.move2   ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.883 ns                ;
+; 99997.906 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.add2    ; clock      ; clock    ; 100000.000 ns               ; 99999.784 ns              ; 1.878 ns                ;
+; 99997.944 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.store2  ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 1.843 ns                ;
+; 99997.946 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.move1   ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 1.841 ns                ;
+; 99997.948 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.load2   ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 1.839 ns                ;
+; 99997.991 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.shftl1  ; current_state.shftl2  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.795 ns                ;
+; 99998.040 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.shftl2  ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.746 ns                ;
+; 99998.054 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.jmp1    ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.732 ns                ;
+; 99998.081 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.rotl1   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.705 ns                ;
+; 99998.087 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.rotr1   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.699 ns                ;
+; 99998.137 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpeq5  ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.649 ns                ;
+; 99998.357 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.dec2    ; current_state.dec3    ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 1.430 ns                ;
+; 99998.366 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmplt5  ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.420 ns                ;
+; 99998.392 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.inc3    ; current_state.inc4    ; clock      ; clock    ; 100000.000 ns               ; 99999.789 ns              ; 1.397 ns                ;
+; 99998.402 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.sub3    ; current_state.sub4    ; clock      ; clock    ; 100000.000 ns               ; 99999.789 ns              ; 1.387 ns                ;
+; 99998.442 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.sub4    ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.344 ns                ;
+; 99998.478 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.loadI6  ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.308 ns                ;
+; 99998.615 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.reset3  ; current_state.execute ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.171 ns                ;
+; 99998.635 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.xor3    ; current_state.xor4    ; clock      ; clock    ; 100000.000 ns               ; 99999.789 ns              ; 1.154 ns                ;
+; 99998.654 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpeq2  ; current_state.jmpeq3  ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 1.133 ns                ;
+; 99998.655 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.not3    ; current_state.not4    ; clock      ; clock    ; 100000.000 ns               ; 99999.788 ns              ; 1.133 ns                ;
+; 99998.663 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpeq6  ; current_state.jmpeq7  ; clock      ; clock    ; 100000.000 ns               ; 99999.785 ns              ; 1.122 ns                ;
+; 99998.675 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmplt6  ; current_state.jmplt7  ; clock      ; clock    ; 100000.000 ns               ; 99999.785 ns              ; 1.110 ns                ;
+; 99998.681 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.rotl1   ; current_state.rotl2   ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 1.106 ns                ;
+; 99998.681 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpeq4  ; current_state.jmpeq5  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.105 ns                ;
+; 99998.681 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.load2   ; current_state.load3   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.105 ns                ;
+; 99998.693 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmplt2  ; current_state.jmplt3  ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 1.094 ns                ;
+; 99998.695 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.incPC   ; current_state.incPc2  ; clock      ; clock    ; 100000.000 ns               ; 99999.785 ns              ; 1.090 ns                ;
+; 99998.707 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.add2    ; current_state.add3    ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.079 ns                ;
+; 99998.708 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.and2    ; current_state.and3    ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.078 ns                ;
+; 99998.711 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.loadI5  ; current_state.loadI6  ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 1.076 ns                ;
+; 99998.744 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmplt7  ; current_state.loadPc1 ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.042 ns                ;
+; 99998.768 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.inc2    ; current_state.inc3    ; clock      ; clock    ; 100000.000 ns               ; 99999.784 ns              ; 1.016 ns                ;
+; 99998.785 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.jmpgt1  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.001 ns                ;
+; 99998.785 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpgt5  ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 1.001 ns                ;
+; 99998.793 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmp4    ; current_state.loadPc1 ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.993 ns                ;
+; 99998.795 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.move1   ; current_state.move2   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.991 ns                ;
+; 99998.819 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpgt6  ; current_state.jmpgt7  ; clock      ; clock    ; 100000.000 ns               ; 99999.785 ns              ; 0.966 ns                ;
+; 99998.823 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.rotr1   ; current_state.rotr2   ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 0.964 ns                ;
+; 99998.836 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpgt2  ; current_state.jmpgt3  ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 0.951 ns                ;
+; 99998.837 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.dec3    ; current_state.dec4    ; clock      ; clock    ; 100000.000 ns               ; 99999.788 ns              ; 0.951 ns                ;
+; 99998.841 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.loadI3  ; current_state.loadI4  ; clock      ; clock    ; 100000.000 ns               ; 99999.785 ns              ; 0.944 ns                ;
+; 99998.843 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.load3   ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.943 ns                ;
+; 99998.850 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.loadPc2 ; current_state.execute ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.936 ns                ;
+; 99998.905 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmp2    ; current_state.jmp3    ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.881 ns                ;
+; 99998.907 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpeq5  ; current_state.jmpeq6  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.879 ns                ;
+; 99998.907 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.store2  ; current_state.store3  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.879 ns                ;
+; 99998.910 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.loadI2  ; current_state.loadI3  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.876 ns                ;
+; 99998.910 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.loadPc1 ; current_state.loadPc2 ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.876 ns                ;
+; 99998.929 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.store3  ; current_state.incPC   ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.857 ns                ;
+; 99998.955 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.incPc2  ; current_state.incPc3  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.831 ns                ;
+; 99998.976 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.incPc3  ; current_state.execute ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.810 ns                ;
+; 99999.055 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.or3     ; current_state.or4     ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 0.732 ns                ;
+; 99999.057 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.shftr1  ; current_state.shftr2  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.729 ns                ;
+; 99999.060 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.add3    ; current_state.add4    ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 0.727 ns                ;
+; 99999.061 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.execute ; current_state.jmplt1  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.725 ns                ;
+; 99999.064 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.not2    ; current_state.not3    ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 0.723 ns                ;
+; 99999.066 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.and3    ; current_state.and4    ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 0.721 ns                ;
+; 99999.067 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.reset2  ; current_state.reset3  ; clock      ; clock    ; 100000.000 ns               ; 99999.787 ns              ; 0.720 ns                ;
+; 99999.088 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmplt3  ; current_state.jmplt4  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.698 ns                ;
+; 99999.090 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpgt3  ; current_state.jmpgt4  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.696 ns                ;
+; 99999.097 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.or2     ; current_state.or3     ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.689 ns                ;
+; 99999.100 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmplt1  ; current_state.jmplt2  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.686 ns                ;
+; 99999.100 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpgt4  ; current_state.jmpgt5  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.686 ns                ;
+; 99999.102 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.xor2    ; current_state.xor3    ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.684 ns                ;
+; 99999.104 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.sub2    ; current_state.sub3    ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.682 ns                ;
+; 99999.104 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpeq3  ; current_state.jmpeq4  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.682 ns                ;
+; 99999.107 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.loadI4  ; current_state.loadI5  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.679 ns                ;
+; 99999.153 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpeq7  ; current_state.loadPc1 ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.633 ns                ;
+; 99999.217 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpgt5  ; current_state.jmpgt6  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.569 ns                ;
+; 99999.221 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmplt4  ; current_state.jmplt5  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.565 ns                ;
+; 99999.230 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmplt5  ; current_state.jmplt6  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.556 ns                ;
+; 99999.230 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpgt1  ; current_state.jmpgt2  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.556 ns                ;
+; 99999.234 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpeq1  ; current_state.jmpeq2  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.552 ns                ;
+; 99999.235 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmp1    ; current_state.jmp2    ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.551 ns                ;
+; 99999.236 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.reset1  ; current_state.reset2  ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.550 ns                ;
+; 99999.247 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmpgt7  ; current_state.loadPc1 ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.539 ns                ;
+; 99999.249 ns ; Restricted to 420.17 MHz ( period = 2.38 ns ) ; current_state.jmp3    ; current_state.jmp4    ; clock      ; clock    ; 100000.000 ns               ; 99999.786 ns              ; 0.537 ns                ;
++--------------+-----------------------------------------------+-----------------------+-----------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'clock'                                                                                                                                                        ;
++---------------+-----------------------+-----------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack ; From                  ; To                    ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++---------------+-----------------------+-----------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; 0.521 ns      ; current_state.jmp3    ; current_state.jmp4    ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.537 ns                 ;
+; 0.523 ns      ; current_state.jmpgt7  ; current_state.loadPc1 ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.539 ns                 ;
+; 0.534 ns      ; current_state.reset1  ; current_state.reset2  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.550 ns                 ;
+; 0.535 ns      ; current_state.jmp1    ; current_state.jmp2    ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.551 ns                 ;
+; 0.536 ns      ; current_state.jmpeq1  ; current_state.jmpeq2  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.552 ns                 ;
+; 0.540 ns      ; current_state.jmplt5  ; current_state.jmplt6  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.556 ns                 ;
+; 0.540 ns      ; current_state.jmpgt1  ; current_state.jmpgt2  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.556 ns                 ;
+; 0.549 ns      ; current_state.jmplt4  ; current_state.jmplt5  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.565 ns                 ;
+; 0.553 ns      ; current_state.jmpgt5  ; current_state.jmpgt6  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.569 ns                 ;
+; 0.617 ns      ; current_state.jmpeq7  ; current_state.loadPc1 ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.633 ns                 ;
+; 0.663 ns      ; current_state.loadI4  ; current_state.loadI5  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.679 ns                 ;
+; 0.666 ns      ; current_state.sub2    ; current_state.sub3    ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.682 ns                 ;
+; 0.666 ns      ; current_state.jmpeq3  ; current_state.jmpeq4  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.682 ns                 ;
+; 0.668 ns      ; current_state.xor2    ; current_state.xor3    ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.684 ns                 ;
+; 0.670 ns      ; current_state.jmplt1  ; current_state.jmplt2  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.686 ns                 ;
+; 0.670 ns      ; current_state.jmpgt4  ; current_state.jmpgt5  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.686 ns                 ;
+; 0.673 ns      ; current_state.or2     ; current_state.or3     ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.689 ns                 ;
+; 0.680 ns      ; current_state.jmpgt3  ; current_state.jmpgt4  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.696 ns                 ;
+; 0.682 ns      ; current_state.jmplt3  ; current_state.jmplt4  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.698 ns                 ;
+; 0.703 ns      ; current_state.reset2  ; current_state.reset3  ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 0.720 ns                 ;
+; 0.704 ns      ; current_state.and3    ; current_state.and4    ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 0.721 ns                 ;
+; 0.706 ns      ; current_state.not2    ; current_state.not3    ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 0.723 ns                 ;
+; 0.709 ns      ; current_state.execute ; current_state.jmplt1  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.725 ns                 ;
+; 0.710 ns      ; current_state.add3    ; current_state.add4    ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 0.727 ns                 ;
+; 0.713 ns      ; current_state.shftr1  ; current_state.shftr2  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.729 ns                 ;
+; 0.715 ns      ; current_state.or3     ; current_state.or4     ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 0.732 ns                 ;
+; 0.794 ns      ; current_state.incPc3  ; current_state.execute ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.810 ns                 ;
+; 0.815 ns      ; current_state.incPc2  ; current_state.incPc3  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.831 ns                 ;
+; 0.841 ns      ; current_state.store3  ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.857 ns                 ;
+; 0.860 ns      ; current_state.loadI2  ; current_state.loadI3  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.876 ns                 ;
+; 0.860 ns      ; current_state.loadPc1 ; current_state.loadPc2 ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.876 ns                 ;
+; 0.863 ns      ; current_state.jmpeq5  ; current_state.jmpeq6  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.879 ns                 ;
+; 0.863 ns      ; current_state.store2  ; current_state.store3  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.879 ns                 ;
+; 0.865 ns      ; current_state.jmp2    ; current_state.jmp3    ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.881 ns                 ;
+; 0.920 ns      ; current_state.loadPc2 ; current_state.execute ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.936 ns                 ;
+; 0.927 ns      ; current_state.load3   ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.943 ns                 ;
+; 0.929 ns      ; current_state.loadI3  ; current_state.loadI4  ; clock      ; clock    ; 0.000 ns                   ; 0.015 ns                   ; 0.944 ns                 ;
+; 0.933 ns      ; current_state.dec3    ; current_state.dec4    ; clock      ; clock    ; 0.000 ns                   ; 0.018 ns                   ; 0.951 ns                 ;
+; 0.934 ns      ; current_state.jmpgt2  ; current_state.jmpgt3  ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 0.951 ns                 ;
+; 0.947 ns      ; current_state.rotr1   ; current_state.rotr2   ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 0.964 ns                 ;
+; 0.951 ns      ; current_state.jmpgt6  ; current_state.jmpgt7  ; clock      ; clock    ; 0.000 ns                   ; 0.015 ns                   ; 0.966 ns                 ;
+; 0.975 ns      ; current_state.move1   ; current_state.move2   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.991 ns                 ;
+; 0.977 ns      ; current_state.jmp4    ; current_state.loadPc1 ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 0.993 ns                 ;
+; 0.985 ns      ; current_state.execute ; current_state.jmpgt1  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.001 ns                 ;
+; 0.985 ns      ; current_state.jmpgt5  ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.001 ns                 ;
+; 1.002 ns      ; current_state.inc2    ; current_state.inc3    ; clock      ; clock    ; 0.000 ns                   ; 0.014 ns                   ; 1.016 ns                 ;
+; 1.026 ns      ; current_state.jmplt7  ; current_state.loadPc1 ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.042 ns                 ;
+; 1.059 ns      ; current_state.loadI5  ; current_state.loadI6  ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 1.076 ns                 ;
+; 1.062 ns      ; current_state.and2    ; current_state.and3    ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.078 ns                 ;
+; 1.063 ns      ; current_state.add2    ; current_state.add3    ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.079 ns                 ;
+; 1.075 ns      ; current_state.incPC   ; current_state.incPc2  ; clock      ; clock    ; 0.000 ns                   ; 0.015 ns                   ; 1.090 ns                 ;
+; 1.077 ns      ; current_state.jmplt2  ; current_state.jmplt3  ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 1.094 ns                 ;
+; 1.089 ns      ; current_state.rotl1   ; current_state.rotl2   ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 1.106 ns                 ;
+; 1.089 ns      ; current_state.jmpeq4  ; current_state.jmpeq5  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.105 ns                 ;
+; 1.089 ns      ; current_state.load2   ; current_state.load3   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.105 ns                 ;
+; 1.095 ns      ; current_state.jmplt6  ; current_state.jmplt7  ; clock      ; clock    ; 0.000 ns                   ; 0.015 ns                   ; 1.110 ns                 ;
+; 1.107 ns      ; current_state.jmpeq6  ; current_state.jmpeq7  ; clock      ; clock    ; 0.000 ns                   ; 0.015 ns                   ; 1.122 ns                 ;
+; 1.115 ns      ; current_state.not3    ; current_state.not4    ; clock      ; clock    ; 0.000 ns                   ; 0.018 ns                   ; 1.133 ns                 ;
+; 1.116 ns      ; current_state.jmpeq2  ; current_state.jmpeq3  ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 1.133 ns                 ;
+; 1.135 ns      ; current_state.xor3    ; current_state.xor4    ; clock      ; clock    ; 0.000 ns                   ; 0.019 ns                   ; 1.154 ns                 ;
+; 1.155 ns      ; current_state.reset3  ; current_state.execute ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.171 ns                 ;
+; 1.292 ns      ; current_state.loadI6  ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.308 ns                 ;
+; 1.328 ns      ; current_state.sub4    ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.344 ns                 ;
+; 1.368 ns      ; current_state.sub3    ; current_state.sub4    ; clock      ; clock    ; 0.000 ns                   ; 0.019 ns                   ; 1.387 ns                 ;
+; 1.378 ns      ; current_state.inc3    ; current_state.inc4    ; clock      ; clock    ; 0.000 ns                   ; 0.019 ns                   ; 1.397 ns                 ;
+; 1.404 ns      ; current_state.jmplt5  ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.420 ns                 ;
+; 1.413 ns      ; current_state.dec2    ; current_state.dec3    ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 1.430 ns                 ;
+; 1.633 ns      ; current_state.jmpeq5  ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.649 ns                 ;
+; 1.683 ns      ; current_state.execute ; current_state.rotr1   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.699 ns                 ;
+; 1.689 ns      ; current_state.execute ; current_state.rotl1   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.705 ns                 ;
+; 1.716 ns      ; current_state.execute ; current_state.jmp1    ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.732 ns                 ;
+; 1.730 ns      ; current_state.shftl2  ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.746 ns                 ;
+; 1.779 ns      ; current_state.shftl1  ; current_state.shftl2  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.795 ns                 ;
+; 1.822 ns      ; current_state.execute ; current_state.load2   ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 1.839 ns                 ;
+; 1.824 ns      ; current_state.execute ; current_state.move1   ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 1.841 ns                 ;
+; 1.826 ns      ; current_state.execute ; current_state.store2  ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 1.843 ns                 ;
+; 1.864 ns      ; current_state.execute ; current_state.add2    ; clock      ; clock    ; 0.000 ns                   ; 0.014 ns                   ; 1.878 ns                 ;
+; 1.867 ns      ; current_state.move2   ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.883 ns                 ;
+; 1.868 ns      ; current_state.execute ; current_state.xor2    ; clock      ; clock    ; 0.000 ns                   ; 0.014 ns                   ; 1.882 ns                 ;
+; 1.869 ns      ; current_state.execute ; current_state.and2    ; clock      ; clock    ; 0.000 ns                   ; 0.014 ns                   ; 1.883 ns                 ;
+; 1.872 ns      ; current_state.execute ; current_state.dec2    ; clock      ; clock    ; 0.000 ns                   ; 0.014 ns                   ; 1.886 ns                 ;
+; 1.873 ns      ; current_state.execute ; current_state.or2     ; clock      ; clock    ; 0.000 ns                   ; 0.014 ns                   ; 1.887 ns                 ;
+; 1.875 ns      ; current_state.execute ; current_state.jmpeq1  ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.891 ns                 ;
+; 1.875 ns      ; current_state.execute ; current_state.not2    ; clock      ; clock    ; 0.000 ns                   ; 0.014 ns                   ; 1.889 ns                 ;
+; 1.875 ns      ; current_state.execute ; current_state.sub2    ; clock      ; clock    ; 0.000 ns                   ; 0.014 ns                   ; 1.889 ns                 ;
+; 1.878 ns      ; current_state.execute ; current_state.inc2    ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.894 ns                 ;
+; 1.929 ns      ; current_state.execute ; current_state.loadI2  ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 1.946 ns                 ;
+; 1.961 ns      ; current_state.execute ; current_state.shftr1  ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 1.978 ns                 ;
+; 1.961 ns      ; current_state.execute ; current_state.shftl1  ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 1.978 ns                 ;
+; 1.975 ns      ; current_state.xor4    ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 1.991 ns                 ;
+; 2.004 ns      ; current_state.not4    ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 2.020 ns                 ;
+; 2.089 ns      ; current_state.shftr2  ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 2.105 ns                 ;
+; 2.136 ns      ; current_state.dec4    ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 2.152 ns                 ;
+; 2.143 ns      ; current_state.execute ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.017 ns                   ; 2.160 ns                 ;
+; 2.277 ns      ; current_state.inc4    ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 2.293 ns                 ;
+; 2.365 ns      ; current_state.rotl2   ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 2.381 ns                 ;
+; 2.401 ns      ; current_state.rotr2   ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.016 ns                   ; 2.417 ns                 ;
+; 2.557 ns      ; current_state.add4    ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.018 ns                   ; 2.575 ns                 ;
+; 2.788 ns      ; current_state.and4    ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.018 ns                   ; 2.806 ns                 ;
+; 2.828 ns      ; current_state.or4     ; current_state.incPC   ; clock      ; clock    ; 0.000 ns                   ; 0.018 ns                   ; 2.846 ns                 ;
++---------------+-----------------------+-----------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++------------------------------------------------------------------------------------+
+; tsu                                                                                ;
++-------+--------------+------------+--------------+----------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From         ; To                   ; To Clock ;
++-------+--------------+------------+--------------+----------------------+----------+
+; N/A   ; None         ; 5.073 ns   ; instrReg[13] ; current_state.incPC  ; clock    ;
+; N/A   ; None         ; 5.066 ns   ; instrReg[12] ; current_state.incPC  ; clock    ;
+; N/A   ; None         ; 5.020 ns   ; instrReg[14] ; current_state.incPC  ; clock    ;
+; N/A   ; None         ; 4.933 ns   ; instrReg[11] ; current_state.incPC  ; clock    ;
+; N/A   ; None         ; 4.662 ns   ; instrReg[14] ; current_state.and2   ; clock    ;
+; N/A   ; None         ; 4.661 ns   ; instrReg[14] ; current_state.xor2   ; clock    ;
+; N/A   ; None         ; 4.657 ns   ; instrReg[14] ; current_state.add2   ; clock    ;
+; N/A   ; None         ; 4.654 ns   ; instrReg[14] ; current_state.sub2   ; clock    ;
+; N/A   ; None         ; 4.654 ns   ; instrReg[14] ; current_state.not2   ; clock    ;
+; N/A   ; None         ; 4.652 ns   ; instrReg[14] ; current_state.or2    ; clock    ;
+; N/A   ; None         ; 4.651 ns   ; instrReg[14] ; current_state.dec2   ; clock    ;
+; N/A   ; None         ; 4.580 ns   ; instrReg[15] ; current_state.shftl1 ; clock    ;
+; N/A   ; None         ; 4.580 ns   ; instrReg[15] ; current_state.shftr1 ; clock    ;
+; N/A   ; None         ; 4.572 ns   ; instrReg[15] ; current_state.sub2   ; clock    ;
+; N/A   ; None         ; 4.572 ns   ; instrReg[15] ; current_state.not2   ; clock    ;
+; N/A   ; None         ; 4.570 ns   ; instrReg[15] ; current_state.or2    ; clock    ;
+; N/A   ; None         ; 4.569 ns   ; instrReg[15] ; current_state.dec2   ; clock    ;
+; N/A   ; None         ; 4.558 ns   ; instrReg[15] ; current_state.and2   ; clock    ;
+; N/A   ; None         ; 4.557 ns   ; instrReg[15] ; current_state.xor2   ; clock    ;
+; N/A   ; None         ; 4.553 ns   ; instrReg[15] ; current_state.add2   ; clock    ;
+; N/A   ; None         ; 4.441 ns   ; instrReg[15] ; current_state.incPC  ; clock    ;
+; N/A   ; None         ; 4.352 ns   ; instrReg[13] ; current_state.jmplt1 ; clock    ;
+; N/A   ; None         ; 4.348 ns   ; instrReg[12] ; current_state.jmplt1 ; clock    ;
+; N/A   ; None         ; 4.308 ns   ; instrReg[11] ; current_state.sub2   ; clock    ;
+; N/A   ; None         ; 4.308 ns   ; instrReg[11] ; current_state.not2   ; clock    ;
+; N/A   ; None         ; 4.306 ns   ; instrReg[11] ; current_state.or2    ; clock    ;
+; N/A   ; None         ; 4.305 ns   ; instrReg[11] ; current_state.dec2   ; clock    ;
+; N/A   ; None         ; 4.292 ns   ; instrReg[11] ; current_state.and2   ; clock    ;
+; N/A   ; None         ; 4.291 ns   ; instrReg[11] ; current_state.xor2   ; clock    ;
+; N/A   ; None         ; 4.289 ns   ; instrReg[14] ; current_state.jmplt1 ; clock    ;
+; N/A   ; None         ; 4.287 ns   ; instrReg[11] ; current_state.add2   ; clock    ;
+; N/A   ; None         ; 4.220 ns   ; instrReg[13] ; current_state.loadI2 ; clock    ;
+; N/A   ; None         ; 4.214 ns   ; instrReg[11] ; current_state.jmplt1 ; clock    ;
+; N/A   ; None         ; 4.170 ns   ; instrReg[14] ; current_state.shftl1 ; clock    ;
+; N/A   ; None         ; 4.170 ns   ; instrReg[14] ; current_state.shftr1 ; clock    ;
+; N/A   ; None         ; 4.138 ns   ; instrReg[12] ; current_state.inc2   ; clock    ;
+; N/A   ; None         ; 4.135 ns   ; instrReg[12] ; current_state.jmpeq1 ; clock    ;
+; N/A   ; None         ; 4.092 ns   ; instrReg[12] ; current_state.loadI2 ; clock    ;
+; N/A   ; None         ; 4.086 ns   ; instrReg[13] ; current_state.jmpgt1 ; clock    ;
+; N/A   ; None         ; 4.083 ns   ; instrReg[12] ; current_state.jmpgt1 ; clock    ;
+; N/A   ; None         ; 4.072 ns   ; instrReg[14] ; current_state.inc2   ; clock    ;
+; N/A   ; None         ; 4.069 ns   ; instrReg[14] ; current_state.jmpeq1 ; clock    ;
+; N/A   ; None         ; 4.007 ns   ; instrReg[13] ; current_state.jmp1   ; clock    ;
+; N/A   ; None         ; 3.993 ns   ; instrReg[15] ; current_state.store2 ; clock    ;
+; N/A   ; None         ; 3.991 ns   ; instrReg[15] ; current_state.move1  ; clock    ;
+; N/A   ; None         ; 3.991 ns   ; instrReg[15] ; current_state.jmpgt1 ; clock    ;
+; N/A   ; None         ; 3.989 ns   ; instrReg[15] ; current_state.load2  ; clock    ;
+; N/A   ; None         ; 3.980 ns   ; instrReg[13] ; current_state.rotl1  ; clock    ;
+; N/A   ; None         ; 3.974 ns   ; instrReg[13] ; current_state.rotr1  ; clock    ;
+; N/A   ; None         ; 3.969 ns   ; instrReg[13] ; current_state.inc2   ; clock    ;
+; N/A   ; None         ; 3.966 ns   ; instrReg[13] ; current_state.jmpeq1 ; clock    ;
+; N/A   ; None         ; 3.949 ns   ; instrReg[11] ; current_state.jmpgt1 ; clock    ;
+; N/A   ; None         ; 3.917 ns   ; instrReg[13] ; current_state.store2 ; clock    ;
+; N/A   ; None         ; 3.915 ns   ; instrReg[13] ; current_state.move1  ; clock    ;
+; N/A   ; None         ; 3.913 ns   ; instrReg[13] ; current_state.load2  ; clock    ;
+; N/A   ; None         ; 3.879 ns   ; instrReg[12] ; current_state.jmp1   ; clock    ;
+; N/A   ; None         ; 3.852 ns   ; instrReg[12] ; current_state.rotl1  ; clock    ;
+; N/A   ; None         ; 3.846 ns   ; instrReg[12] ; current_state.rotr1  ; clock    ;
+; N/A   ; None         ; 3.790 ns   ; compout      ; current_state.incPC  ; clock    ;
+; N/A   ; None         ; 3.773 ns   ; instrReg[13] ; current_state.shftl1 ; clock    ;
+; N/A   ; None         ; 3.773 ns   ; instrReg[13] ; current_state.shftr1 ; clock    ;
+; N/A   ; None         ; 3.750 ns   ; instrReg[14] ; current_state.loadI2 ; clock    ;
+; N/A   ; None         ; 3.666 ns   ; instrReg[12] ; current_state.shftl1 ; clock    ;
+; N/A   ; None         ; 3.666 ns   ; instrReg[12] ; current_state.shftr1 ; clock    ;
+; N/A   ; None         ; 3.588 ns   ; instrReg[11] ; current_state.load2  ; clock    ;
+; N/A   ; None         ; 3.586 ns   ; instrReg[11] ; current_state.move1  ; clock    ;
+; N/A   ; None         ; 3.553 ns   ; instrReg[11] ; current_state.jmp1   ; clock    ;
+; N/A   ; None         ; 3.546 ns   ; instrReg[12] ; current_state.move1  ; clock    ;
+; N/A   ; None         ; 3.541 ns   ; instrReg[11] ; current_state.store2 ; clock    ;
+; N/A   ; None         ; 3.531 ns   ; instrReg[12] ; current_state.store2 ; clock    ;
+; N/A   ; None         ; 3.524 ns   ; instrReg[11] ; current_state.inc2   ; clock    ;
+; N/A   ; None         ; 3.517 ns   ; instrReg[11] ; current_state.jmpeq1 ; clock    ;
+; N/A   ; None         ; 3.507 ns   ; instrReg[12] ; current_state.sub2   ; clock    ;
+; N/A   ; None         ; 3.505 ns   ; instrReg[14] ; current_state.rotl1  ; clock    ;
+; N/A   ; None         ; 3.504 ns   ; instrReg[12] ; current_state.load2  ; clock    ;
+; N/A   ; None         ; 3.500 ns   ; instrReg[14] ; current_state.rotr1  ; clock    ;
+; N/A   ; None         ; 3.500 ns   ; instrReg[12] ; current_state.or2    ; clock    ;
+; N/A   ; None         ; 3.496 ns   ; instrReg[14] ; current_state.store2 ; clock    ;
+; N/A   ; None         ; 3.493 ns   ; instrReg[12] ; current_state.xor2   ; clock    ;
+; N/A   ; None         ; 3.491 ns   ; instrReg[14] ; current_state.move1  ; clock    ;
+; N/A   ; None         ; 3.488 ns   ; instrReg[14] ; current_state.load2  ; clock    ;
+; N/A   ; None         ; 3.486 ns   ; instrReg[12] ; current_state.add2   ; clock    ;
+; N/A   ; None         ; 3.485 ns   ; instrReg[12] ; current_state.not2   ; clock    ;
+; N/A   ; None         ; 3.482 ns   ; instrReg[12] ; current_state.dec2   ; clock    ;
+; N/A   ; None         ; 3.473 ns   ; instrReg[12] ; current_state.and2   ; clock    ;
+; N/A   ; None         ; 3.469 ns   ; compout      ; current_state.jmpeq6 ; clock    ;
+; N/A   ; None         ; 3.456 ns   ; instrReg[15] ; current_state.loadI2 ; clock    ;
+; N/A   ; None         ; 3.446 ns   ; compout      ; current_state.jmplt6 ; clock    ;
+; N/A   ; None         ; 3.443 ns   ; compout      ; current_state.jmpgt6 ; clock    ;
+; N/A   ; None         ; 3.416 ns   ; instrReg[11] ; current_state.loadI2 ; clock    ;
+; N/A   ; None         ; 3.409 ns   ; instrReg[11] ; current_state.shftl1 ; clock    ;
+; N/A   ; None         ; 3.404 ns   ; instrReg[11] ; current_state.shftr1 ; clock    ;
+; N/A   ; None         ; 3.395 ns   ; instrReg[13] ; current_state.and2   ; clock    ;
+; N/A   ; None         ; 3.392 ns   ; instrReg[13] ; current_state.xor2   ; clock    ;
+; N/A   ; None         ; 3.392 ns   ; instrReg[13] ; current_state.not2   ; clock    ;
+; N/A   ; None         ; 3.392 ns   ; instrReg[13] ; current_state.add2   ; clock    ;
+; N/A   ; None         ; 3.391 ns   ; instrReg[13] ; current_state.sub2   ; clock    ;
+; N/A   ; None         ; 3.391 ns   ; instrReg[13] ; current_state.dec2   ; clock    ;
+; N/A   ; None         ; 3.390 ns   ; instrReg[13] ; current_state.or2    ; clock    ;
+; N/A   ; None         ; 3.382 ns   ; instrReg[11] ; current_state.rotl1  ; clock    ;
+; N/A   ; None         ; 3.381 ns   ; instrReg[11] ; current_state.rotr1  ; clock    ;
+; N/A   ; None         ; 3.356 ns   ; instrReg[14] ; current_state.jmpgt1 ; clock    ;
+; N/A   ; None         ; 3.353 ns   ; instrReg[14] ; current_state.jmp1   ; clock    ;
+; N/A   ; None         ; 3.340 ns   ; instrReg[15] ; current_state.jmpeq1 ; clock    ;
+; N/A   ; None         ; 3.340 ns   ; instrReg[15] ; current_state.jmplt1 ; clock    ;
+; N/A   ; None         ; 3.337 ns   ; instrReg[15] ; current_state.inc2   ; clock    ;
+; N/A   ; None         ; 3.210 ns   ; instrReg[15] ; current_state.rotl1  ; clock    ;
+; N/A   ; None         ; 3.209 ns   ; instrReg[15] ; current_state.rotr1  ; clock    ;
++-------+--------------+------------+--------------+----------------------+----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                                                          ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------------------+------------+------------+
+; Slack                                   ; Required tco                                        ; Actual tco ; From                  ; To         ; From Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------------------+------------+------------+
+; N/A                                     ; None                                                ; 13.084 ns  ; current_state.execute ; aluSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 12.205 ns  ; current_state.incPC   ; aluSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 12.075 ns  ; current_state.loadI2  ; aluSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 11.939 ns  ; current_state.jmpeq1  ; aluSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 11.890 ns  ; current_state.jmplt1  ; aluSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 11.362 ns  ; current_state.rotr1   ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 11.339 ns  ; current_state.inc2    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 11.320 ns  ; current_state.shftr1  ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 11.319 ns  ; current_state.load3   ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 11.199 ns  ; current_state.jmpgt1  ; aluSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 11.171 ns  ; current_state.rotr1   ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 11.148 ns  ; current_state.inc2    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 11.129 ns  ; current_state.shftr1  ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 11.128 ns  ; current_state.load3   ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.993 ns  ; current_state.rotl1   ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.960 ns  ; current_state.jmp1    ; aluSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 10.874 ns  ; current_state.rotr2   ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.838 ns  ; current_state.rotl2   ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.802 ns  ; current_state.rotl1   ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.800 ns  ; current_state.xor3    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.780 ns  ; current_state.shftl1  ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.753 ns  ; current_state.add2    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.752 ns  ; current_state.execute ; aluSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.703 ns  ; current_state.inc2    ; aluSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 10.683 ns  ; current_state.rotr2   ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.647 ns  ; current_state.rotl2   ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.638 ns  ; current_state.dec2    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.609 ns  ; current_state.dec4    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.609 ns  ; current_state.xor3    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.591 ns  ; current_state.sub3    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.589 ns  ; current_state.shftl1  ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.561 ns  ; current_state.add2    ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 10.561 ns  ; current_state.add2    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.558 ns  ; current_state.inc4    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.530 ns  ; current_state.and2    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.489 ns  ; current_state.or3     ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.477 ns  ; current_state.not4    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.447 ns  ; current_state.dec2    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.437 ns  ; current_state.add3    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.418 ns  ; current_state.dec4    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.405 ns  ; current_state.add2    ; regRd      ; clock      ;
+; N/A                                     ; None                                                ; 10.400 ns  ; current_state.sub3    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.370 ns  ; current_state.shftr2  ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.370 ns  ; current_state.jmpgt3  ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.367 ns  ; current_state.inc4    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.343 ns  ; current_state.not2    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.340 ns  ; current_state.execute ; aluSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.338 ns  ; current_state.and2    ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 10.338 ns  ; current_state.and2    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.309 ns  ; current_state.jmplt3  ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.298 ns  ; current_state.or3     ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.286 ns  ; current_state.not4    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.270 ns  ; current_state.xor2    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.246 ns  ; current_state.add3    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.227 ns  ; current_state.sub2    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.190 ns  ; current_state.or2     ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.185 ns  ; current_state.and3    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.184 ns  ; current_state.store2  ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.182 ns  ; current_state.and2    ; regRd      ; clock      ;
+; N/A                                     ; None                                                ; 10.179 ns  ; current_state.shftr2  ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.178 ns  ; current_state.jmpgt3  ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 10.178 ns  ; current_state.jmpgt3  ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.152 ns  ; current_state.not2    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.148 ns  ; current_state.move2   ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.124 ns  ; current_state.reset2  ; outRegRd   ; clock      ;
+; N/A                                     ; None                                                ; 10.117 ns  ; current_state.jmplt3  ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 10.117 ns  ; current_state.jmplt3  ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.078 ns  ; current_state.xor2    ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 10.078 ns  ; current_state.xor2    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.035 ns  ; current_state.sub2    ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 10.035 ns  ; current_state.sub2    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 10.022 ns  ; current_state.jmpgt3  ; regRd      ; clock      ;
+; N/A                                     ; None                                                ; 10.011 ns  ; current_state.shftl2  ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 10.001 ns  ; current_state.incPC   ; aluSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.998 ns   ; current_state.or2     ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.998 ns   ; current_state.or2     ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.994 ns   ; current_state.and3    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.993 ns   ; current_state.store2  ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.961 ns   ; current_state.jmplt3  ; regRd      ; clock      ;
+; N/A                                     ; None                                                ; 9.957 ns   ; current_state.move2   ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.955 ns   ; current_state.jmpeq3  ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 9.950 ns   ; current_state.loadI4  ; outRegRd   ; clock      ;
+; N/A                                     ; None                                                ; 9.922 ns   ; current_state.xor2    ; regRd      ; clock      ;
+; N/A                                     ; None                                                ; 9.919 ns   ; current_state.rotr1   ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.896 ns   ; current_state.inc2    ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.879 ns   ; current_state.sub2    ; regRd      ; clock      ;
+; N/A                                     ; None                                                ; 9.877 ns   ; current_state.shftr1  ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.876 ns   ; current_state.load3   ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.873 ns   ; current_state.incPC   ; aluSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 9.871 ns   ; current_state.loadI2  ; aluSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.845 ns   ; current_state.reset2  ; progCntrWr ; clock      ;
+; N/A                                     ; None                                                ; 9.842 ns   ; current_state.or2     ; regRd      ; clock      ;
+; N/A                                     ; None                                                ; 9.820 ns   ; current_state.shftl2  ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.785 ns   ; current_state.jmpgt4  ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 9.763 ns   ; current_state.jmpeq3  ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.763 ns   ; current_state.jmpeq3  ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.756 ns   ; current_state.jmpgt5  ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 9.743 ns   ; current_state.loadI2  ; aluSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 9.735 ns   ; current_state.jmpeq1  ; aluSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.722 ns   ; current_state.or4     ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 9.686 ns   ; current_state.jmplt1  ; aluSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.682 ns   ; current_state.and4    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 9.671 ns   ; current_state.loadI4  ; progCntrWr ; clock      ;
+; N/A                                     ; None                                                ; 9.645 ns   ; current_state.add3    ; aluSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.610 ns   ; current_state.loadI6  ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 9.607 ns   ; current_state.jmpeq3  ; regRd      ; clock      ;
+; N/A                                     ; None                                                ; 9.607 ns   ; current_state.jmpeq1  ; aluSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 9.601 ns   ; current_state.reset2  ; addrRegWr  ; clock      ;
+; N/A                                     ; None                                                ; 9.594 ns   ; current_state.jmpgt4  ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.573 ns   ; current_state.jmplt4  ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 9.565 ns   ; current_state.jmpgt5  ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.558 ns   ; current_state.jmplt1  ; aluSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 9.550 ns   ; current_state.rotl1   ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.540 ns   ; current_state.or4     ; outRegRd   ; clock      ;
+; N/A                                     ; None                                                ; 9.533 ns   ; current_state.or4     ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.524 ns   ; current_state.execute ; progCntrRd ; clock      ;
+; N/A                                     ; None                                                ; 9.518 ns   ; current_state.jmpeq2  ; outRegRd   ; clock      ;
+; N/A                                     ; None                                                ; 9.516 ns   ; current_state.jmplt5  ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 9.500 ns   ; current_state.and4    ; outRegRd   ; clock      ;
+; N/A                                     ; None                                                ; 9.493 ns   ; current_state.and4    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.486 ns   ; current_state.jmplt7  ; vma        ; clock      ;
+; N/A                                     ; None                                                ; 9.467 ns   ; current_state.load3   ; vma        ; clock      ;
+; N/A                                     ; None                                                ; 9.451 ns   ; current_state.add4    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 9.437 ns   ; current_state.jmp4    ; vma        ; clock      ;
+; N/A                                     ; None                                                ; 9.431 ns   ; current_state.rotr2   ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.427 ns   ; current_state.loadI4  ; addrRegWr  ; clock      ;
+; N/A                                     ; None                                                ; 9.419 ns   ; current_state.loadI6  ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.414 ns   ; current_state.jmpeq4  ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 9.395 ns   ; current_state.rotl2   ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.382 ns   ; current_state.jmplt4  ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.369 ns   ; current_state.sub3    ; aluSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.367 ns   ; current_state.jmpeq5  ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 9.364 ns   ; current_state.incPc2  ; outRegRd   ; clock      ;
+; N/A                                     ; None                                                ; 9.357 ns   ; current_state.xor3    ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.337 ns   ; current_state.shftl1  ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.325 ns   ; current_state.jmplt5  ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.306 ns   ; current_state.rotr1   ; regRd      ; clock      ;
+; N/A                                     ; None                                                ; 9.304 ns   ; current_state.rotr1   ; outRegWr   ; clock      ;
+; N/A                                     ; None                                                ; 9.283 ns   ; current_state.inc2    ; regRd      ; clock      ;
+; N/A                                     ; None                                                ; 9.281 ns   ; current_state.inc2    ; outRegWr   ; clock      ;
+; N/A                                     ; None                                                ; 9.269 ns   ; current_state.add4    ; outRegRd   ; clock      ;
+; N/A                                     ; None                                                ; 9.264 ns   ; current_state.shftr1  ; regRd      ; clock      ;
+; N/A                                     ; None                                                ; 9.262 ns   ; current_state.add4    ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.262 ns   ; current_state.shftr1  ; outRegWr   ; clock      ;
+; N/A                                     ; None                                                ; 9.239 ns   ; current_state.jmpeq2  ; progCntrWr ; clock      ;
+; N/A                                     ; None                                                ; 9.223 ns   ; current_state.jmpeq4  ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.218 ns   ; current_state.xor3    ; aluSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.195 ns   ; current_state.dec2    ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.176 ns   ; current_state.jmpeq5  ; regSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 9.166 ns   ; current_state.dec4    ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.148 ns   ; current_state.sub3    ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.123 ns   ; current_state.incPC   ; outRegWr   ; clock      ;
+; N/A                                     ; None                                                ; 9.115 ns   ; current_state.inc4    ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.113 ns   ; current_state.rotr2   ; outRegRd   ; clock      ;
+; N/A                                     ; None                                                ; 9.085 ns   ; current_state.incPc2  ; progCntrWr ; clock      ;
+; N/A                                     ; None                                                ; 9.079 ns   ; current_state.or4     ; regWr      ; clock      ;
+; N/A                                     ; None                                                ; 9.077 ns   ; current_state.jmpeq7  ; vma        ; clock      ;
+; N/A                                     ; None                                                ; 9.077 ns   ; current_state.rotl2   ; outRegRd   ; clock      ;
+; N/A                                     ; None                                                ; 9.046 ns   ; current_state.or3     ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 9.039 ns   ; current_state.and4    ; regWr      ; clock      ;
+; N/A                                     ; None                                                ; 9.034 ns   ; current_state.not4    ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 8.995 ns   ; current_state.jmpgt1  ; aluSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 8.995 ns   ; current_state.jmpeq2  ; addrRegWr  ; clock      ;
+; N/A                                     ; None                                                ; 8.994 ns   ; current_state.add3    ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 8.993 ns   ; current_state.loadI2  ; outRegWr   ; clock      ;
+; N/A                                     ; None                                                ; 8.989 ns   ; current_state.inc4    ; outRegRd   ; clock      ;
+; N/A                                     ; None                                                ; 8.983 ns   ; current_state.jmpgt7  ; vma        ; clock      ;
+; N/A                                     ; None                                                ; 8.982 ns   ; current_state.inc3    ; outRegRd   ; clock      ;
+; N/A                                     ; None                                                ; 8.946 ns   ; current_state.incPC   ; progCntrRd ; clock      ;
+; N/A                                     ; None                                                ; 8.939 ns   ; current_state.reset3  ; vma        ; clock      ;
+; N/A                                     ; None                                                ; 8.937 ns   ; current_state.rotl1   ; regRd      ; clock      ;
+; N/A                                     ; None                                                ; 8.935 ns   ; current_state.rotl1   ; outRegWr   ; clock      ;
+; N/A                                     ; None                                                ; 8.927 ns   ; current_state.shftr2  ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 8.927 ns   ; current_state.reset1  ; aluSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 8.900 ns   ; current_state.not2    ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 8.869 ns   ; current_state.xor4    ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 8.867 ns   ; current_state.jmpgt1  ; aluSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 8.863 ns   ; current_state.jmplt6  ; vma        ; clock      ;
+; N/A                                     ; None                                                ; 8.857 ns   ; current_state.jmpeq1  ; outRegWr   ; clock      ;
+; N/A                                     ; None                                                ; 8.848 ns   ; current_state.dec4    ; outRegRd   ; clock      ;
+; N/A                                     ; None                                                ; 8.841 ns   ; current_state.incPc2  ; addrRegWr  ; clock      ;
+; N/A                                     ; None                                                ; 8.816 ns   ; current_state.loadI2  ; progCntrRd ; clock      ;
+; N/A                                     ; None                                                ; 8.808 ns   ; current_state.add4    ; regWr      ; clock      ;
+; N/A                                     ; None                                                ; 8.808 ns   ; current_state.jmplt1  ; outRegWr   ; clock      ;
+; N/A                                     ; None                                                ; 8.801 ns   ; current_state.shftr2  ; outRegRd   ; clock      ;
+; N/A                                     ; None                                                ; 8.800 ns   ; current_state.and3    ; aluSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 8.800 ns   ; current_state.not3    ; outRegRd   ; clock      ;
+; N/A                                     ; None                                                ; 8.792 ns   ; current_state.jmpeq6  ; vma        ; clock      ;
+; N/A                                     ; None                                                ; 8.756 ns   ; current_state.jmp1    ; aluSel[0]  ; clock      ;
+; N/A                                     ; None                                                ; 8.744 ns   ; current_state.xor3    ; regRd      ; clock      ;
+; N/A                                     ; None                                                ; 8.742 ns   ; current_state.and3    ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 8.742 ns   ; current_state.xor3    ; outRegWr   ; clock      ;
+; N/A                                     ; None                                                ; 8.741 ns   ; current_state.store2  ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 8.724 ns   ; current_state.shftl1  ; regRd      ; clock      ;
+; N/A                                     ; None                                                ; 8.724 ns   ; current_state.load2   ; regSel[1]  ; clock      ;
+; N/A                                     ; None                                                ; 8.722 ns   ; current_state.shftl1  ; outRegWr   ; clock      ;
+; N/A                                     ; None                                                ; 8.716 ns   ; current_state.not4    ; outRegRd   ; clock      ;
+; N/A                                     ; None                                                ; 8.705 ns   ; current_state.move2   ; regSel[2]  ; clock      ;
+; N/A                                     ; None                                                ; 8.704 ns   ; current_state.loadPc2 ; vma        ; clock      ;
+; N/A                                     ; None                                                ; 8.687 ns   ; current_state.xor4    ; outRegRd   ; clock      ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;                       ;            ;            ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------------------+------------+------------+
+
+
++-------------------------------------------------------------------------+
+; tpd                                                                     ;
++-------+-------------------+-----------------+--------------+------------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From         ; To         ;
++-------+-------------------+-----------------+--------------+------------+
+; N/A   ; None              ; 15.145 ns       ; instrReg[13] ; aluSel[2]  ;
+; N/A   ; None              ; 15.017 ns       ; instrReg[12] ; aluSel[2]  ;
+; N/A   ; None              ; 14.675 ns       ; instrReg[14] ; aluSel[2]  ;
+; N/A   ; None              ; 14.381 ns       ; instrReg[15] ; aluSel[2]  ;
+; N/A   ; None              ; 14.341 ns       ; instrReg[11] ; aluSel[2]  ;
+; N/A   ; None              ; 12.813 ns       ; instrReg[13] ; aluSel[1]  ;
+; N/A   ; None              ; 12.685 ns       ; instrReg[12] ; aluSel[1]  ;
+; N/A   ; None              ; 12.401 ns       ; instrReg[13] ; aluSel[0]  ;
+; N/A   ; None              ; 12.343 ns       ; instrReg[14] ; aluSel[1]  ;
+; N/A   ; None              ; 12.273 ns       ; instrReg[12] ; aluSel[0]  ;
+; N/A   ; None              ; 12.049 ns       ; instrReg[15] ; aluSel[1]  ;
+; N/A   ; None              ; 12.009 ns       ; instrReg[11] ; aluSel[1]  ;
+; N/A   ; None              ; 11.931 ns       ; instrReg[14] ; aluSel[0]  ;
+; N/A   ; None              ; 11.637 ns       ; instrReg[15] ; aluSel[0]  ;
+; N/A   ; None              ; 11.597 ns       ; instrReg[11] ; aluSel[0]  ;
+; N/A   ; None              ; 11.585 ns       ; instrReg[13] ; progCntrRd ;
+; N/A   ; None              ; 11.457 ns       ; instrReg[12] ; progCntrRd ;
+; N/A   ; None              ; 11.115 ns       ; instrReg[14] ; progCntrRd ;
+; N/A   ; None              ; 10.821 ns       ; instrReg[15] ; progCntrRd ;
+; N/A   ; None              ; 10.781 ns       ; instrReg[11] ; progCntrRd ;
+; N/A   ; None              ; 10.384 ns       ; instrReg[0]  ; regSel[0]  ;
+; N/A   ; None              ; 10.299 ns       ; instrReg[1]  ; regSel[1]  ;
+; N/A   ; None              ; 9.885 ns        ; instrReg[5]  ; regSel[2]  ;
+; N/A   ; None              ; 9.841 ns        ; instrReg[3]  ; regSel[0]  ;
+; N/A   ; None              ; 9.781 ns        ; instrReg[4]  ; regSel[1]  ;
+; N/A   ; None              ; 9.299 ns        ; instrReg[2]  ; regSel[2]  ;
++-------+-------------------+-----------------+--------------+------------+
+
+
++------------------------------------------------------------------------------------------+
+; th                                                                                       ;
++---------------+-------------+-----------+--------------+----------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From         ; To                   ; To Clock ;
++---------------+-------------+-----------+--------------+----------------------+----------+
+; N/A           ; None        ; -2.979 ns ; instrReg[15] ; current_state.rotr1  ; clock    ;
+; N/A           ; None        ; -2.980 ns ; instrReg[15] ; current_state.rotl1  ; clock    ;
+; N/A           ; None        ; -3.107 ns ; instrReg[15] ; current_state.inc2   ; clock    ;
+; N/A           ; None        ; -3.110 ns ; instrReg[15] ; current_state.jmpeq1 ; clock    ;
+; N/A           ; None        ; -3.110 ns ; instrReg[15] ; current_state.jmplt1 ; clock    ;
+; N/A           ; None        ; -3.123 ns ; instrReg[14] ; current_state.jmp1   ; clock    ;
+; N/A           ; None        ; -3.126 ns ; instrReg[14] ; current_state.jmpgt1 ; clock    ;
+; N/A           ; None        ; -3.151 ns ; instrReg[11] ; current_state.rotr1  ; clock    ;
+; N/A           ; None        ; -3.152 ns ; instrReg[11] ; current_state.rotl1  ; clock    ;
+; N/A           ; None        ; -3.160 ns ; instrReg[13] ; current_state.or2    ; clock    ;
+; N/A           ; None        ; -3.161 ns ; instrReg[13] ; current_state.sub2   ; clock    ;
+; N/A           ; None        ; -3.161 ns ; instrReg[13] ; current_state.dec2   ; clock    ;
+; N/A           ; None        ; -3.162 ns ; instrReg[13] ; current_state.xor2   ; clock    ;
+; N/A           ; None        ; -3.162 ns ; instrReg[13] ; current_state.not2   ; clock    ;
+; N/A           ; None        ; -3.162 ns ; instrReg[13] ; current_state.add2   ; clock    ;
+; N/A           ; None        ; -3.165 ns ; instrReg[13] ; current_state.and2   ; clock    ;
+; N/A           ; None        ; -3.174 ns ; instrReg[11] ; current_state.shftr1 ; clock    ;
+; N/A           ; None        ; -3.179 ns ; instrReg[11] ; current_state.shftl1 ; clock    ;
+; N/A           ; None        ; -3.186 ns ; instrReg[11] ; current_state.loadI2 ; clock    ;
+; N/A           ; None        ; -3.213 ns ; compout      ; current_state.jmpgt6 ; clock    ;
+; N/A           ; None        ; -3.216 ns ; compout      ; current_state.jmplt6 ; clock    ;
+; N/A           ; None        ; -3.226 ns ; instrReg[15] ; current_state.loadI2 ; clock    ;
+; N/A           ; None        ; -3.239 ns ; compout      ; current_state.jmpeq6 ; clock    ;
+; N/A           ; None        ; -3.243 ns ; instrReg[12] ; current_state.and2   ; clock    ;
+; N/A           ; None        ; -3.252 ns ; instrReg[12] ; current_state.dec2   ; clock    ;
+; N/A           ; None        ; -3.255 ns ; instrReg[12] ; current_state.not2   ; clock    ;
+; N/A           ; None        ; -3.256 ns ; instrReg[12] ; current_state.add2   ; clock    ;
+; N/A           ; None        ; -3.258 ns ; instrReg[14] ; current_state.load2  ; clock    ;
+; N/A           ; None        ; -3.261 ns ; instrReg[14] ; current_state.move1  ; clock    ;
+; N/A           ; None        ; -3.263 ns ; instrReg[12] ; current_state.xor2   ; clock    ;
+; N/A           ; None        ; -3.266 ns ; instrReg[14] ; current_state.store2 ; clock    ;
+; N/A           ; None        ; -3.270 ns ; instrReg[14] ; current_state.rotr1  ; clock    ;
+; N/A           ; None        ; -3.270 ns ; instrReg[12] ; current_state.or2    ; clock    ;
+; N/A           ; None        ; -3.274 ns ; instrReg[12] ; current_state.load2  ; clock    ;
+; N/A           ; None        ; -3.275 ns ; instrReg[14] ; current_state.rotl1  ; clock    ;
+; N/A           ; None        ; -3.277 ns ; instrReg[12] ; current_state.sub2   ; clock    ;
+; N/A           ; None        ; -3.287 ns ; instrReg[11] ; current_state.jmpeq1 ; clock    ;
+; N/A           ; None        ; -3.294 ns ; instrReg[11] ; current_state.inc2   ; clock    ;
+; N/A           ; None        ; -3.301 ns ; instrReg[12] ; current_state.store2 ; clock    ;
+; N/A           ; None        ; -3.311 ns ; instrReg[11] ; current_state.store2 ; clock    ;
+; N/A           ; None        ; -3.316 ns ; instrReg[12] ; current_state.move1  ; clock    ;
+; N/A           ; None        ; -3.323 ns ; instrReg[11] ; current_state.jmp1   ; clock    ;
+; N/A           ; None        ; -3.356 ns ; instrReg[11] ; current_state.move1  ; clock    ;
+; N/A           ; None        ; -3.358 ns ; instrReg[11] ; current_state.load2  ; clock    ;
+; N/A           ; None        ; -3.436 ns ; instrReg[12] ; current_state.shftl1 ; clock    ;
+; N/A           ; None        ; -3.436 ns ; instrReg[12] ; current_state.shftr1 ; clock    ;
+; N/A           ; None        ; -3.520 ns ; instrReg[14] ; current_state.loadI2 ; clock    ;
+; N/A           ; None        ; -3.543 ns ; instrReg[13] ; current_state.shftl1 ; clock    ;
+; N/A           ; None        ; -3.543 ns ; instrReg[13] ; current_state.shftr1 ; clock    ;
+; N/A           ; None        ; -3.560 ns ; compout      ; current_state.incPC  ; clock    ;
+; N/A           ; None        ; -3.616 ns ; instrReg[12] ; current_state.rotr1  ; clock    ;
+; N/A           ; None        ; -3.622 ns ; instrReg[12] ; current_state.rotl1  ; clock    ;
+; N/A           ; None        ; -3.649 ns ; instrReg[12] ; current_state.jmp1   ; clock    ;
+; N/A           ; None        ; -3.683 ns ; instrReg[13] ; current_state.load2  ; clock    ;
+; N/A           ; None        ; -3.685 ns ; instrReg[13] ; current_state.move1  ; clock    ;
+; N/A           ; None        ; -3.687 ns ; instrReg[13] ; current_state.store2 ; clock    ;
+; N/A           ; None        ; -3.719 ns ; instrReg[11] ; current_state.jmpgt1 ; clock    ;
+; N/A           ; None        ; -3.736 ns ; instrReg[13] ; current_state.jmpeq1 ; clock    ;
+; N/A           ; None        ; -3.739 ns ; instrReg[13] ; current_state.inc2   ; clock    ;
+; N/A           ; None        ; -3.744 ns ; instrReg[13] ; current_state.rotr1  ; clock    ;
+; N/A           ; None        ; -3.750 ns ; instrReg[13] ; current_state.rotl1  ; clock    ;
+; N/A           ; None        ; -3.759 ns ; instrReg[15] ; current_state.load2  ; clock    ;
+; N/A           ; None        ; -3.761 ns ; instrReg[15] ; current_state.move1  ; clock    ;
+; N/A           ; None        ; -3.761 ns ; instrReg[15] ; current_state.jmpgt1 ; clock    ;
+; N/A           ; None        ; -3.763 ns ; instrReg[15] ; current_state.store2 ; clock    ;
+; N/A           ; None        ; -3.777 ns ; instrReg[13] ; current_state.jmp1   ; clock    ;
+; N/A           ; None        ; -3.839 ns ; instrReg[14] ; current_state.jmpeq1 ; clock    ;
+; N/A           ; None        ; -3.842 ns ; instrReg[14] ; current_state.inc2   ; clock    ;
+; N/A           ; None        ; -3.853 ns ; instrReg[12] ; current_state.jmpgt1 ; clock    ;
+; N/A           ; None        ; -3.856 ns ; instrReg[13] ; current_state.jmpgt1 ; clock    ;
+; N/A           ; None        ; -3.862 ns ; instrReg[12] ; current_state.loadI2 ; clock    ;
+; N/A           ; None        ; -3.905 ns ; instrReg[12] ; current_state.jmpeq1 ; clock    ;
+; N/A           ; None        ; -3.908 ns ; instrReg[12] ; current_state.inc2   ; clock    ;
+; N/A           ; None        ; -3.940 ns ; instrReg[14] ; current_state.shftl1 ; clock    ;
+; N/A           ; None        ; -3.940 ns ; instrReg[14] ; current_state.shftr1 ; clock    ;
+; N/A           ; None        ; -3.984 ns ; instrReg[11] ; current_state.jmplt1 ; clock    ;
+; N/A           ; None        ; -3.990 ns ; instrReg[13] ; current_state.loadI2 ; clock    ;
+; N/A           ; None        ; -4.057 ns ; instrReg[11] ; current_state.add2   ; clock    ;
+; N/A           ; None        ; -4.059 ns ; instrReg[14] ; current_state.jmplt1 ; clock    ;
+; N/A           ; None        ; -4.061 ns ; instrReg[11] ; current_state.xor2   ; clock    ;
+; N/A           ; None        ; -4.062 ns ; instrReg[11] ; current_state.and2   ; clock    ;
+; N/A           ; None        ; -4.075 ns ; instrReg[11] ; current_state.dec2   ; clock    ;
+; N/A           ; None        ; -4.076 ns ; instrReg[11] ; current_state.or2    ; clock    ;
+; N/A           ; None        ; -4.078 ns ; instrReg[11] ; current_state.sub2   ; clock    ;
+; N/A           ; None        ; -4.078 ns ; instrReg[11] ; current_state.not2   ; clock    ;
+; N/A           ; None        ; -4.118 ns ; instrReg[12] ; current_state.jmplt1 ; clock    ;
+; N/A           ; None        ; -4.122 ns ; instrReg[13] ; current_state.jmplt1 ; clock    ;
+; N/A           ; None        ; -4.211 ns ; instrReg[15] ; current_state.incPC  ; clock    ;
+; N/A           ; None        ; -4.323 ns ; instrReg[15] ; current_state.add2   ; clock    ;
+; N/A           ; None        ; -4.327 ns ; instrReg[15] ; current_state.xor2   ; clock    ;
+; N/A           ; None        ; -4.328 ns ; instrReg[15] ; current_state.and2   ; clock    ;
+; N/A           ; None        ; -4.339 ns ; instrReg[15] ; current_state.dec2   ; clock    ;
+; N/A           ; None        ; -4.340 ns ; instrReg[15] ; current_state.or2    ; clock    ;
+; N/A           ; None        ; -4.342 ns ; instrReg[15] ; current_state.sub2   ; clock    ;
+; N/A           ; None        ; -4.342 ns ; instrReg[15] ; current_state.not2   ; clock    ;
+; N/A           ; None        ; -4.350 ns ; instrReg[15] ; current_state.shftl1 ; clock    ;
+; N/A           ; None        ; -4.350 ns ; instrReg[15] ; current_state.shftr1 ; clock    ;
+; N/A           ; None        ; -4.421 ns ; instrReg[14] ; current_state.dec2   ; clock    ;
+; N/A           ; None        ; -4.422 ns ; instrReg[14] ; current_state.or2    ; clock    ;
+; N/A           ; None        ; -4.424 ns ; instrReg[14] ; current_state.sub2   ; clock    ;
+; N/A           ; None        ; -4.424 ns ; instrReg[14] ; current_state.not2   ; clock    ;
+; N/A           ; None        ; -4.427 ns ; instrReg[14] ; current_state.add2   ; clock    ;
+; N/A           ; None        ; -4.428 ns ; instrReg[11] ; current_state.incPC  ; clock    ;
+; N/A           ; None        ; -4.431 ns ; instrReg[14] ; current_state.xor2   ; clock    ;
+; N/A           ; None        ; -4.432 ns ; instrReg[14] ; current_state.and2   ; clock    ;
+; N/A           ; None        ; -4.499 ns ; instrReg[14] ; current_state.incPC  ; clock    ;
+; N/A           ; None        ; -4.561 ns ; instrReg[12] ; current_state.incPC  ; clock    ;
+; N/A           ; None        ; -4.566 ns ; instrReg[13] ; current_state.incPC  ; clock    ;
++---------------+-------------+-----------+--------------+----------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Thu Feb 17 15:26:24 2022
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off CONTRLA -c CONTRLA --timing_analysis_only
+Info: Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info: Slack time is 99.997 us for clock "clock" between source register "current_state.or4" and destination register "current_state.incPC"
+    Info: Fmax is 327.01 MHz (period= 3.058 ns)
+    Info: + Largest register to register requirement is 99999.788 ns
+        Info: + Setup relationship between source and destination is 100000.000 ns
+            Info: + Latch edge is 100000.000 ns
+                Info: Clock period of Destination clock "clock" is 100000.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Destination register is 1
+            Info: - Launch edge is 0.000 ns
+                Info: Clock period of Source clock "clock" is 100000.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Source register is 1
+        Info: + Largest clock skew is 0.002 ns
+            Info: + Shortest clock path from clock "clock" to destination register is 2.684 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clock'
+                Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 77; COMB Node = 'clock~clkctrl'
+                Info: 3: + IC(1.030 ns) + CELL(0.537 ns) = 2.684 ns; Loc. = LCFF_X48_Y34_N17; Fanout = 2; REG Node = 'current_state.incPC'
+                Info: Total cell delay = 1.536 ns ( 57.23 % )
+                Info: Total interconnect delay = 1.148 ns ( 42.77 % )
+            Info: - Longest clock path from clock "clock" to source register is 2.682 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clock'
+                Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 77; COMB Node = 'clock~clkctrl'
+                Info: 3: + IC(1.028 ns) + CELL(0.537 ns) = 2.682 ns; Loc. = LCFF_X48_Y33_N7; Fanout = 1; REG Node = 'current_state.or4'
+                Info: Total cell delay = 1.536 ns ( 57.27 % )
+                Info: Total interconnect delay = 1.146 ns ( 42.73 % )
+        Info: - Micro clock to output delay of source is 0.250 ns
+        Info: - Micro setup delay of destination is -0.036 ns
+    Info: - Longest register to register delay is 2.846 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X48_Y33_N7; Fanout = 1; REG Node = 'current_state.or4'
+        Info: 2: + IC(0.780 ns) + CELL(0.398 ns) = 1.178 ns; Loc. = LCCOMB_X48_Y34_N28; Fanout = 3; COMB Node = 'Selector7~0'
+        Info: 3: + IC(0.259 ns) + CELL(0.388 ns) = 1.825 ns; Loc. = LCCOMB_X48_Y34_N22; Fanout = 2; COMB Node = 'WideOr11~5'
+        Info: 4: + IC(0.251 ns) + CELL(0.150 ns) = 2.226 ns; Loc. = LCCOMB_X48_Y34_N8; Fanout = 2; COMB Node = 'WideOr25~0'
+        Info: 5: + IC(0.265 ns) + CELL(0.271 ns) = 2.762 ns; Loc. = LCCOMB_X48_Y34_N16; Fanout = 1; COMB Node = 'Selector3~2'
+        Info: 6: + IC(0.000 ns) + CELL(0.084 ns) = 2.846 ns; Loc. = LCFF_X48_Y34_N17; Fanout = 2; REG Node = 'current_state.incPC'
+        Info: Total cell delay = 1.291 ns ( 45.36 % )
+        Info: Total interconnect delay = 1.555 ns ( 54.64 % )
+Info: Minimum slack time is 521 ps for clock "clock" between source register "current_state.jmp3" and destination register "current_state.jmp4"
+    Info: + Shortest register to register delay is 0.537 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X45_Y34_N23; Fanout = 2; REG Node = 'current_state.jmp3'
+        Info: 2: + IC(0.304 ns) + CELL(0.149 ns) = 0.453 ns; Loc. = LCCOMB_X45_Y34_N6; Fanout = 1; COMB Node = 'current_state.jmp4~feeder'
+        Info: 3: + IC(0.000 ns) + CELL(0.084 ns) = 0.537 ns; Loc. = LCFF_X45_Y34_N7; Fanout = 1; REG Node = 'current_state.jmp4'
+        Info: Total cell delay = 0.233 ns ( 43.39 % )
+        Info: Total interconnect delay = 0.304 ns ( 56.61 % )
+    Info: - Smallest register to register requirement is 0.016 ns
+        Info: + Hold relationship between source and destination is 0.000 ns
+            Info: + Latch edge is 0.000 ns
+                Info: Clock period of Destination clock "clock" is 100000.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Destination register is 1
+                Info: Multicycle Hold factor for Destination register is 1
+            Info: - Launch edge is 0.000 ns
+                Info: Clock period of Source clock "clock" is 100000.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Source register is 1
+                Info: Multicycle Hold factor for Source register is 1
+        Info: + Smallest clock skew is 0.000 ns
+            Info: + Longest clock path from clock "clock" to destination register is 2.683 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clock'
+                Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 77; COMB Node = 'clock~clkctrl'
+                Info: 3: + IC(1.029 ns) + CELL(0.537 ns) = 2.683 ns; Loc. = LCFF_X45_Y34_N7; Fanout = 1; REG Node = 'current_state.jmp4'
+                Info: Total cell delay = 1.536 ns ( 57.25 % )
+                Info: Total interconnect delay = 1.147 ns ( 42.75 % )
+            Info: - Shortest clock path from clock "clock" to source register is 2.683 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clock'
+                Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 77; COMB Node = 'clock~clkctrl'
+                Info: 3: + IC(1.029 ns) + CELL(0.537 ns) = 2.683 ns; Loc. = LCFF_X45_Y34_N23; Fanout = 2; REG Node = 'current_state.jmp3'
+                Info: Total cell delay = 1.536 ns ( 57.25 % )
+                Info: Total interconnect delay = 1.147 ns ( 42.75 % )
+        Info: - Micro clock to output delay of source is 0.250 ns
+        Info: + Micro hold delay of destination is 0.266 ns
+Info: tsu for register "current_state.incPC" (data pin = "instrReg[13]", clock pin = "clock") is 5.073 ns
+    Info: + Longest pin to register delay is 7.793 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_D17; Fanout = 15; PIN Node = 'instrReg[13]'
+        Info: 2: + IC(4.905 ns) + CELL(0.438 ns) = 6.183 ns; Loc. = LCCOMB_X47_Y34_N28; Fanout = 1; COMB Node = 'Mux2~0'
+        Info: 3: + IC(0.252 ns) + CELL(0.420 ns) = 6.855 ns; Loc. = LCCOMB_X47_Y34_N24; Fanout = 1; COMB Node = 'Selector3~1'
+        Info: 4: + IC(0.434 ns) + CELL(0.420 ns) = 7.709 ns; Loc. = LCCOMB_X48_Y34_N16; Fanout = 1; COMB Node = 'Selector3~2'
+        Info: 5: + IC(0.000 ns) + CELL(0.084 ns) = 7.793 ns; Loc. = LCFF_X48_Y34_N17; Fanout = 2; REG Node = 'current_state.incPC'
+        Info: Total cell delay = 2.202 ns ( 28.26 % )
+        Info: Total interconnect delay = 5.591 ns ( 71.74 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "clock" to destination register is 2.684 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clock'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 77; COMB Node = 'clock~clkctrl'
+        Info: 3: + IC(1.030 ns) + CELL(0.537 ns) = 2.684 ns; Loc. = LCFF_X48_Y34_N17; Fanout = 2; REG Node = 'current_state.incPC'
+        Info: Total cell delay = 1.536 ns ( 57.23 % )
+        Info: Total interconnect delay = 1.148 ns ( 42.77 % )
+Info: tco from clock "clock" to destination pin "aluSel[2]" through register "current_state.execute" is 13.084 ns
+    Info: + Longest clock path from clock "clock" to source register is 2.683 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clock'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 77; COMB Node = 'clock~clkctrl'
+        Info: 3: + IC(1.029 ns) + CELL(0.537 ns) = 2.683 ns; Loc. = LCFF_X45_Y34_N15; Fanout = 9; REG Node = 'current_state.execute'
+        Info: Total cell delay = 1.536 ns ( 57.25 % )
+        Info: Total interconnect delay = 1.147 ns ( 42.75 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 10.151 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X45_Y34_N15; Fanout = 9; REG Node = 'current_state.execute'
+        Info: 2: + IC(0.511 ns) + CELL(0.438 ns) = 0.949 ns; Loc. = LCCOMB_X46_Y34_N28; Fanout = 4; COMB Node = 'Selector4~0'
+        Info: 3: + IC(0.497 ns) + CELL(0.416 ns) = 1.862 ns; Loc. = LCCOMB_X47_Y34_N0; Fanout = 4; COMB Node = 'Selector4~1'
+        Info: 4: + IC(1.210 ns) + CELL(0.398 ns) = 3.470 ns; Loc. = LCCOMB_X47_Y33_N10; Fanout = 2; COMB Node = 'Selector0~0'
+        Info: 5: + IC(0.279 ns) + CELL(0.438 ns) = 4.187 ns; Loc. = LCCOMB_X47_Y33_N30; Fanout = 1; COMB Node = 'Selector0~1'
+        Info: 6: + IC(3.166 ns) + CELL(2.798 ns) = 10.151 ns; Loc. = PIN_AF18; Fanout = 0; PIN Node = 'aluSel[2]'
+        Info: Total cell delay = 4.488 ns ( 44.21 % )
+        Info: Total interconnect delay = 5.663 ns ( 55.79 % )
+Info: Longest tpd from source pin "instrReg[13]" to destination pin "aluSel[2]" is 15.145 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.840 ns) = 0.840 ns; Loc. = PIN_D17; Fanout = 15; PIN Node = 'instrReg[13]'
+    Info: 2: + IC(4.828 ns) + CELL(0.275 ns) = 5.943 ns; Loc. = LCCOMB_X46_Y34_N28; Fanout = 4; COMB Node = 'Selector4~0'
+    Info: 3: + IC(0.497 ns) + CELL(0.416 ns) = 6.856 ns; Loc. = LCCOMB_X47_Y34_N0; Fanout = 4; COMB Node = 'Selector4~1'
+    Info: 4: + IC(1.210 ns) + CELL(0.398 ns) = 8.464 ns; Loc. = LCCOMB_X47_Y33_N10; Fanout = 2; COMB Node = 'Selector0~0'
+    Info: 5: + IC(0.279 ns) + CELL(0.438 ns) = 9.181 ns; Loc. = LCCOMB_X47_Y33_N30; Fanout = 1; COMB Node = 'Selector0~1'
+    Info: 6: + IC(3.166 ns) + CELL(2.798 ns) = 15.145 ns; Loc. = PIN_AF18; Fanout = 0; PIN Node = 'aluSel[2]'
+    Info: Total cell delay = 5.165 ns ( 34.10 % )
+    Info: Total interconnect delay = 9.980 ns ( 65.90 % )
+Info: th for register "current_state.rotr1" (data pin = "instrReg[15]", clock pin = "clock") is -2.979 ns
+    Info: + Longest clock path from clock "clock" to destination register is 2.683 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clock'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 77; COMB Node = 'clock~clkctrl'
+        Info: 3: + IC(1.029 ns) + CELL(0.537 ns) = 2.683 ns; Loc. = LCFF_X46_Y34_N21; Fanout = 3; REG Node = 'current_state.rotr1'
+        Info: Total cell delay = 1.536 ns ( 57.25 % )
+        Info: Total interconnect delay = 1.147 ns ( 42.75 % )
+    Info: + Micro hold delay of destination is 0.266 ns
+    Info: - Shortest pin to register delay is 5.928 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.830 ns) = 0.830 ns; Loc. = PIN_F15; Fanout = 12; PIN Node = 'instrReg[15]'
+        Info: 2: + IC(4.864 ns) + CELL(0.150 ns) = 5.844 ns; Loc. = LCCOMB_X46_Y34_N20; Fanout = 1; COMB Node = 'next_state.rotr1~0'
+        Info: 3: + IC(0.000 ns) + CELL(0.084 ns) = 5.928 ns; Loc. = LCFF_X46_Y34_N21; Fanout = 3; REG Node = 'current_state.rotr1'
+        Info: Total cell delay = 1.064 ns ( 17.95 % )
+        Info: Total interconnect delay = 4.864 ns ( 82.05 % )
+Info: All timing requirements were met for slow timing model timing analysis. See Report window for more details.
+Info: Quartus II 64-Bit Classic Timing Analyzer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4368 megabytes
+    Info: Processing ended: Thu Feb 17 15:26:24 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
