@@ -1,0 +1,86 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.577 ns
+From           : altera_internal_jtag~TMSUTAP
+To             : sld_hub:auto_hub|hub_mode_reg[1]
+From Clock     : --
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.428 ns
+From           : pll20:inst|altpll:altpll_component|_clk1
+To             : t1
+From Clock     : iCLK_50
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 2.622 ns
+From           : altera_internal_jtag~TDO
+To             : altera_reserved_tdo
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.562 ns
+From           : altera_internal_jtag~TMSUTAP
+To             : sld_hub:auto_hub|sld_shadow_jsm:shadow_jsm|tms_cnt[1]
+From Clock     : --
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Setup: 'iCLK_50'
+Slack          : 15.235 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : 209.86 MHz ( period = 4.765 ns )
+From           : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|last_level_delayed
+To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[1]
+From Clock     : iCLK_50
+To Clock       : iCLK_50
+Failed Paths   : 0
+
+Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 76.31 MHz ( period = 13.104 ns )
+From           : sld_hub:auto_hub|irf_reg[1][1]
+To             : sld_hub:auto_hub|tdo
+From Clock     : altera_internal_jtag~TCKUTAP
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Hold: 'iCLK_50'
+Slack          : 0.391 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : N/A
+From           : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|trigger_out_mode_ff
+To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|trigger_out_mode_ff
+From Clock     : iCLK_50
+To Clock       : iCLK_50
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

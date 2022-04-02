@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat Mar 12 16:03:18 2022
+Quartus II 64-Bit Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : pulsegen
+Top-level Entity Name : pulsegen
+Family : Cyclone II
+Device : EP2C70F896C6
+Timing Models : Final
+Total logic elements : 18 / 68,416 ( < 1 % )
+    Total combinational functions : 18 / 68,416 ( < 1 % )
+    Dedicated logic registers : 8 / 68,416 ( < 1 % )
+Total registers : 8
+Total pins : 4 / 622 ( < 1 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,152,000 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 300 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

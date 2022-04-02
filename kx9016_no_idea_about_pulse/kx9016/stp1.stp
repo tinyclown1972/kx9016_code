@@ -1,0 +1,435 @@
+<session jtag_chain="USB-Blaster [USB-0]" jtag_device="" sof_file="" top_level_entity="kx9016">
+  <display_tree gui_logging_enabled="0">
+    <display_branch instance="auto_signaltap_0" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+  </display_tree>
+  <instance entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
+    <position_info>
+      <single attribute="active tab" value="1"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom level numerator" value="2"/>
+      <single attribute="zoom offset denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="61440"/>
+    </position_info>
+    <signal_set global_temp="1" name="signal_set: 2022/04/02 12:52:37  #0">
+      <clock name="iCLK_50" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="M4K" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="64" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="ALU[0]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[10]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[11]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[12]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[13]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[14]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[15]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[1]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[2]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[3]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[4]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[5]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[6]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[7]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[8]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[9]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[0]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[10]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[11]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[12]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[13]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[14]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[15]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[1]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[2]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[3]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[4]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[5]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[6]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[7]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[8]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[9]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[0]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[10]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[11]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[12]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[13]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[14]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[15]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[1]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[2]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[3]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[4]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[5]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[6]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[7]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[8]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[9]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[0]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[10]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[11]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[12]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[13]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[14]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[15]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[1]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[2]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[3]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[4]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[5]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[6]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[7]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[8]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[9]" tap_mode="classic" type="output pin"/>
+          <wire name="STEP" tap_mode="classic" type="output pin"/>
+          <wire name="T1" tap_mode="classic" type="output pin"/>
+          <wire name="T2" tap_mode="classic" type="output pin"/>
+          <wire name="comIn" tap_mode="classic" type="combinatorial"/>
+          <wire name="comOut" tap_mode="classic" type="combinatorial"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="ALU[0]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[10]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[11]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[12]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[13]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[14]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[15]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[1]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[2]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[3]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[4]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[5]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[6]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[7]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[8]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[9]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[0]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[10]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[11]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[12]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[13]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[14]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[15]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[1]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[2]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[3]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[4]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[5]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[6]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[7]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[8]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[9]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[0]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[10]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[11]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[12]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[13]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[14]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[15]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[1]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[2]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[3]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[4]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[5]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[6]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[7]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[8]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[9]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[0]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[10]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[11]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[12]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[13]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[14]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[15]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[1]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[2]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[3]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[4]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[5]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[6]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[7]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[8]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[9]" tap_mode="classic" type="output pin"/>
+          <wire name="STEP" tap_mode="classic" type="output pin"/>
+          <wire name="T1" tap_mode="classic" type="output pin"/>
+          <wire name="T2" tap_mode="classic" type="output pin"/>
+          <wire name="comIn" tap_mode="classic" type="combinatorial"/>
+          <wire name="comOut" tap_mode="classic" type="combinatorial"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="ALU[0]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[10]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[11]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[12]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[13]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[14]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[15]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[1]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[2]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[3]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[4]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[5]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[6]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[7]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[8]" tap_mode="classic" type="output pin"/>
+          <wire name="ALU[9]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[0]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[10]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[11]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[12]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[13]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[14]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[15]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[1]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[2]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[3]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[4]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[5]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[6]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[7]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[8]" tap_mode="classic" type="output pin"/>
+          <wire name="BUS[9]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[0]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[10]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[11]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[12]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[13]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[14]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[15]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[1]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[2]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[3]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[4]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[5]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[6]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[7]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[8]" tap_mode="classic" type="output pin"/>
+          <wire name="OUT[9]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[0]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[10]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[11]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[12]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[13]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[14]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[15]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[1]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[2]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[3]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[4]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[5]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[6]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[7]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[8]" tap_mode="classic" type="output pin"/>
+          <wire name="PC[9]" tap_mode="classic" type="output pin"/>
+          <wire name="STEP" tap_mode="classic" type="output pin"/>
+          <wire name="T1" tap_mode="classic" type="output pin"/>
+          <wire name="T2" tap_mode="classic" type="output pin"/>
+          <wire name="comIn" tap_mode="classic" type="combinatorial"/>
+          <wire name="comOut" tap_mode="classic" type="combinatorial"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <data_view>
+          <bus is_signal_inverted="no" link="all" name="ALU" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="ALU[0]"/>
+            <net is_signal_inverted="no" name="ALU[1]"/>
+            <net is_signal_inverted="no" name="ALU[2]"/>
+            <net is_signal_inverted="no" name="ALU[3]"/>
+            <net is_signal_inverted="no" name="ALU[4]"/>
+            <net is_signal_inverted="no" name="ALU[5]"/>
+            <net is_signal_inverted="no" name="ALU[6]"/>
+            <net is_signal_inverted="no" name="ALU[7]"/>
+            <net is_signal_inverted="no" name="ALU[8]"/>
+            <net is_signal_inverted="no" name="ALU[9]"/>
+            <net is_signal_inverted="no" name="ALU[10]"/>
+            <net is_signal_inverted="no" name="ALU[11]"/>
+            <net is_signal_inverted="no" name="ALU[12]"/>
+            <net is_signal_inverted="no" name="ALU[13]"/>
+            <net is_signal_inverted="no" name="ALU[14]"/>
+            <net is_signal_inverted="no" name="ALU[15]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="BUS" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="BUS[0]"/>
+            <net is_signal_inverted="no" name="BUS[1]"/>
+            <net is_signal_inverted="no" name="BUS[2]"/>
+            <net is_signal_inverted="no" name="BUS[3]"/>
+            <net is_signal_inverted="no" name="BUS[4]"/>
+            <net is_signal_inverted="no" name="BUS[5]"/>
+            <net is_signal_inverted="no" name="BUS[6]"/>
+            <net is_signal_inverted="no" name="BUS[7]"/>
+            <net is_signal_inverted="no" name="BUS[8]"/>
+            <net is_signal_inverted="no" name="BUS[9]"/>
+            <net is_signal_inverted="no" name="BUS[10]"/>
+            <net is_signal_inverted="no" name="BUS[11]"/>
+            <net is_signal_inverted="no" name="BUS[12]"/>
+            <net is_signal_inverted="no" name="BUS[13]"/>
+            <net is_signal_inverted="no" name="BUS[14]"/>
+            <net is_signal_inverted="no" name="BUS[15]"/>
+          </bus>
+          <net is_signal_inverted="no" name="comIn"/>
+          <net is_signal_inverted="no" name="comOut"/>
+          <bus is_signal_inverted="no" link="all" name="OUT" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="OUT[0]"/>
+            <net is_signal_inverted="no" name="OUT[1]"/>
+            <net is_signal_inverted="no" name="OUT[2]"/>
+            <net is_signal_inverted="no" name="OUT[3]"/>
+            <net is_signal_inverted="no" name="OUT[4]"/>
+            <net is_signal_inverted="no" name="OUT[5]"/>
+            <net is_signal_inverted="no" name="OUT[6]"/>
+            <net is_signal_inverted="no" name="OUT[7]"/>
+            <net is_signal_inverted="no" name="OUT[8]"/>
+            <net is_signal_inverted="no" name="OUT[9]"/>
+            <net is_signal_inverted="no" name="OUT[10]"/>
+            <net is_signal_inverted="no" name="OUT[11]"/>
+            <net is_signal_inverted="no" name="OUT[12]"/>
+            <net is_signal_inverted="no" name="OUT[13]"/>
+            <net is_signal_inverted="no" name="OUT[14]"/>
+            <net is_signal_inverted="no" name="OUT[15]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="PC" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="PC[0]"/>
+            <net is_signal_inverted="no" name="PC[1]"/>
+            <net is_signal_inverted="no" name="PC[2]"/>
+            <net is_signal_inverted="no" name="PC[3]"/>
+            <net is_signal_inverted="no" name="PC[4]"/>
+            <net is_signal_inverted="no" name="PC[5]"/>
+            <net is_signal_inverted="no" name="PC[6]"/>
+            <net is_signal_inverted="no" name="PC[7]"/>
+            <net is_signal_inverted="no" name="PC[8]"/>
+            <net is_signal_inverted="no" name="PC[9]"/>
+            <net is_signal_inverted="no" name="PC[10]"/>
+            <net is_signal_inverted="no" name="PC[11]"/>
+            <net is_signal_inverted="no" name="PC[12]"/>
+            <net is_signal_inverted="no" name="PC[13]"/>
+            <net is_signal_inverted="no" name="PC[14]"/>
+            <net is_signal_inverted="no" name="PC[15]"/>
+          </bus>
+          <net is_signal_inverted="no" name="STEP"/>
+          <net is_signal_inverted="no" name="T1"/>
+          <net is_signal_inverted="no" name="T2"/>
+        </data_view>
+        <setup_view>
+          <bus is_signal_inverted="no" link="all" name="ALU" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="ALU[0]"/>
+            <net is_signal_inverted="no" name="ALU[1]"/>
+            <net is_signal_inverted="no" name="ALU[2]"/>
+            <net is_signal_inverted="no" name="ALU[3]"/>
+            <net is_signal_inverted="no" name="ALU[4]"/>
+            <net is_signal_inverted="no" name="ALU[5]"/>
+            <net is_signal_inverted="no" name="ALU[6]"/>
+            <net is_signal_inverted="no" name="ALU[7]"/>
+            <net is_signal_inverted="no" name="ALU[8]"/>
+            <net is_signal_inverted="no" name="ALU[9]"/>
+            <net is_signal_inverted="no" name="ALU[10]"/>
+            <net is_signal_inverted="no" name="ALU[11]"/>
+            <net is_signal_inverted="no" name="ALU[12]"/>
+            <net is_signal_inverted="no" name="ALU[13]"/>
+            <net is_signal_inverted="no" name="ALU[14]"/>
+            <net is_signal_inverted="no" name="ALU[15]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="BUS" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="BUS[0]"/>
+            <net is_signal_inverted="no" name="BUS[1]"/>
+            <net is_signal_inverted="no" name="BUS[2]"/>
+            <net is_signal_inverted="no" name="BUS[3]"/>
+            <net is_signal_inverted="no" name="BUS[4]"/>
+            <net is_signal_inverted="no" name="BUS[5]"/>
+            <net is_signal_inverted="no" name="BUS[6]"/>
+            <net is_signal_inverted="no" name="BUS[7]"/>
+            <net is_signal_inverted="no" name="BUS[8]"/>
+            <net is_signal_inverted="no" name="BUS[9]"/>
+            <net is_signal_inverted="no" name="BUS[10]"/>
+            <net is_signal_inverted="no" name="BUS[11]"/>
+            <net is_signal_inverted="no" name="BUS[12]"/>
+            <net is_signal_inverted="no" name="BUS[13]"/>
+            <net is_signal_inverted="no" name="BUS[14]"/>
+            <net is_signal_inverted="no" name="BUS[15]"/>
+          </bus>
+          <net is_signal_inverted="no" name="comIn"/>
+          <net is_signal_inverted="no" name="comOut"/>
+          <bus is_signal_inverted="no" link="all" name="OUT" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="OUT[0]"/>
+            <net is_signal_inverted="no" name="OUT[1]"/>
+            <net is_signal_inverted="no" name="OUT[2]"/>
+            <net is_signal_inverted="no" name="OUT[3]"/>
+            <net is_signal_inverted="no" name="OUT[4]"/>
+            <net is_signal_inverted="no" name="OUT[5]"/>
+            <net is_signal_inverted="no" name="OUT[6]"/>
+            <net is_signal_inverted="no" name="OUT[7]"/>
+            <net is_signal_inverted="no" name="OUT[8]"/>
+            <net is_signal_inverted="no" name="OUT[9]"/>
+            <net is_signal_inverted="no" name="OUT[10]"/>
+            <net is_signal_inverted="no" name="OUT[11]"/>
+            <net is_signal_inverted="no" name="OUT[12]"/>
+            <net is_signal_inverted="no" name="OUT[13]"/>
+            <net is_signal_inverted="no" name="OUT[14]"/>
+            <net is_signal_inverted="no" name="OUT[15]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="PC" order="lsb_to_msb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="PC[0]"/>
+            <net is_signal_inverted="no" name="PC[1]"/>
+            <net is_signal_inverted="no" name="PC[2]"/>
+            <net is_signal_inverted="no" name="PC[3]"/>
+            <net is_signal_inverted="no" name="PC[4]"/>
+            <net is_signal_inverted="no" name="PC[5]"/>
+            <net is_signal_inverted="no" name="PC[6]"/>
+            <net is_signal_inverted="no" name="PC[7]"/>
+            <net is_signal_inverted="no" name="PC[8]"/>
+            <net is_signal_inverted="no" name="PC[9]"/>
+            <net is_signal_inverted="no" name="PC[10]"/>
+            <net is_signal_inverted="no" name="PC[11]"/>
+            <net is_signal_inverted="no" name="PC[12]"/>
+            <net is_signal_inverted="no" name="PC[13]"/>
+            <net is_signal_inverted="no" name="PC[14]"/>
+            <net is_signal_inverted="no" name="PC[15]"/>
+          </bus>
+          <net is_signal_inverted="no" name="STEP"/>
+          <net is_signal_inverted="no" name="T1"/>
+          <net is_signal_inverted="no" name="T2"/>
+        </setup_view>
+      </presentation>
+      <trigger attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2022/04/02 12:52:37  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no" trigger_in="dont_care" trigger_out="active high"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>000000000000000000000000000000000000000000000000000000000000000000000
+            <pwr_up_transitional>000000000000000000000000000000000000000000000000000000000000000000000
+            </pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+      </trigger>
+    </signal_set>
+  </instance>
+  <mnemonics/>
+  <static_plugin_mnemonics/>
+  <global_info>
+    <single attribute="active instance" value="0"/>
+    <single attribute="lock mode" value="36110"/>
+    <multi attribute="window position" size="9" value="1536,762,398,124,356,50,124,0,0"/>
+  </global_info>
+</session>

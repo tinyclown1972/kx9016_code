@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Mar 12 16:03:11 2022
+Quartus II 64-Bit Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : pulsegen
+Top-level Entity Name : pulsegen
+Family : Cyclone II
+Total logic elements : 18
+    Total combinational functions : 18
+    Dedicated logic registers : 8
+Total registers : 8
+Total pins : 4
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
