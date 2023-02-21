@@ -1,5 +1,5 @@
 Simulator report for CONTRLA
-Tue Feb 15 19:29:18 2022
+Sat Apr 09 20:34:24 2022
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 10.0 us      ;
-; Simulation Netlist Size     ; 115 nodes    ;
-; Simulation Coverage         ;      57.27 % ;
-; Total Number of Transitions ; 409          ;
+; Simulation Netlist Size     ; 230 nodes    ;
+; Simulation Coverage         ;      30.67 % ;
+; Total Number of Transitions ; 437          ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Cyclone II   ;
 ; Device                      ; EP2C35F672C6 ;
@@ -94,13 +94,13 @@ Please use Quartus II 64-Bit to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      57.27 % ;
-; Total nodes checked                                 ; 115          ;
-; Total output ports checked                          ; 110          ;
-; Total output ports with complete 1/0-value coverage ; 63           ;
-; Total output ports with no 1/0-value coverage       ; 44           ;
-; Total output ports with no 1-value coverage         ; 46           ;
-; Total output ports with no 0-value coverage         ; 45           ;
+; Total coverage as a percentage                      ;      30.67 % ;
+; Total nodes checked                                 ; 230          ;
+; Total output ports checked                          ; 225          ;
+; Total output ports with complete 1/0-value coverage ; 69           ;
+; Total output ports with no 1/0-value coverage       ; 151          ;
+; Total output ports with no 1-value coverage         ; 155          ;
+; Total output ports with no 0-value coverage         ; 152          ;
 +-----------------------------------------------------+--------------+
 
 
@@ -113,37 +113,43 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |CONTRLA|current_state.reset2        ; |CONTRLA|current_state.reset2        ; regout           ;
 ; |CONTRLA|current_state.incPc2        ; |CONTRLA|current_state.incPc2        ; regout           ;
 ; |CONTRLA|current_state.loadI4        ; |CONTRLA|current_state.loadI4        ; regout           ;
-; |CONTRLA|WideOr9~0                   ; |CONTRLA|WideOr9~0                   ; combout          ;
+; |CONTRLA|WideOr11~0                  ; |CONTRLA|WideOr11~0                  ; combout          ;
+; |CONTRLA|WideOr11~1                  ; |CONTRLA|WideOr11~1                  ; combout          ;
+; |CONTRLA|WideOr12                    ; |CONTRLA|WideOr12                    ; combout          ;
+; |CONTRLA|current_state.execute       ; |CONTRLA|current_state.execute       ; regout           ;
+; |CONTRLA|Selector4~0                 ; |CONTRLA|Selector4~0                 ; combout          ;
+; |CONTRLA|Selector4~1                 ; |CONTRLA|Selector4~1                 ; combout          ;
 ; |CONTRLA|current_state.incPC         ; |CONTRLA|current_state.incPC         ; regout           ;
 ; |CONTRLA|current_state.loadI2        ; |CONTRLA|current_state.loadI2        ; regout           ;
-; |CONTRLA|Selector4~6                 ; |CONTRLA|Selector4~6                 ; combout          ;
-; |CONTRLA|next_state.add2~0           ; |CONTRLA|next_state.add2~0           ; combout          ;
-; |CONTRLA|current_state.execute       ; |CONTRLA|current_state.execute       ; regout           ;
-; |CONTRLA|Selector4~7                 ; |CONTRLA|Selector4~7                 ; combout          ;
-; |CONTRLA|WideOr11                    ; |CONTRLA|WideOr11                    ; combout          ;
 ; |CONTRLA|WideOr6~0                   ; |CONTRLA|WideOr6~0                   ; combout          ;
+; |CONTRLA|WideOr6~1                   ; |CONTRLA|WideOr6~1                   ; combout          ;
+; |CONTRLA|Selector4~2                 ; |CONTRLA|Selector4~2                 ; combout          ;
+; |CONTRLA|WideOr13                    ; |CONTRLA|WideOr13                    ; combout          ;
 ; |CONTRLA|WideOr6                     ; |CONTRLA|WideOr6                     ; combout          ;
 ; |CONTRLA|current_state.loadI3        ; |CONTRLA|current_state.loadI3        ; regout           ;
-; |CONTRLA|WideOr9                     ; |CONTRLA|WideOr9                     ; combout          ;
+; |CONTRLA|WideOr11~2                  ; |CONTRLA|WideOr11~2                  ; combout          ;
+; |CONTRLA|WideOr11                    ; |CONTRLA|WideOr11                    ; combout          ;
+; |CONTRLA|Selector2~1                 ; |CONTRLA|Selector2~1                 ; combout          ;
 ; |CONTRLA|Selector0~0                 ; |CONTRLA|Selector0~0                 ; combout          ;
-; |CONTRLA|Selector2~0                 ; |CONTRLA|Selector2~0                 ; combout          ;
-; |CONTRLA|Selector0~2                 ; |CONTRLA|Selector0~2                 ; combout          ;
+; |CONTRLA|Selector1~0                 ; |CONTRLA|Selector1~0                 ; combout          ;
+; |CONTRLA|Selector0~1                 ; |CONTRLA|Selector0~1                 ; combout          ;
 ; |CONTRLA|current_state.reset3        ; |CONTRLA|current_state.reset3        ; regout           ;
 ; |CONTRLA|current_state.incPc3        ; |CONTRLA|current_state.incPc3        ; regout           ;
-; |CONTRLA|WideOr12~0                  ; |CONTRLA|WideOr12~0                  ; combout          ;
+; |CONTRLA|WideOr14~0                  ; |CONTRLA|WideOr14~0                  ; combout          ;
 ; |CONTRLA|current_state.loadI6        ; |CONTRLA|current_state.loadI6        ; regout           ;
-; |CONTRLA|WideOr16~2                  ; |CONTRLA|WideOr16~2                  ; combout          ;
-; |CONTRLA|WideOr19~0                  ; |CONTRLA|WideOr19~0                  ; combout          ;
+; |CONTRLA|WideOr20~0                  ; |CONTRLA|WideOr20~0                  ; combout          ;
+; |CONTRLA|WideOr20                    ; |CONTRLA|WideOr20                    ; combout          ;
+; |CONTRLA|WideOr25~0                  ; |CONTRLA|WideOr25~0                  ; combout          ;
 ; |CONTRLA|current_state.loadI5        ; |CONTRLA|current_state.loadI5        ; regout           ;
-; |CONTRLA|WideOr12                    ; |CONTRLA|WideOr12                    ; combout          ;
+; |CONTRLA|WideOr14~1                  ; |CONTRLA|WideOr14~1                  ; combout          ;
+; |CONTRLA|WideOr14~2                  ; |CONTRLA|WideOr14~2                  ; combout          ;
+; |CONTRLA|WideOr14~3                  ; |CONTRLA|WideOr14~3                  ; combout          ;
 ; |CONTRLA|Mux2~0                      ; |CONTRLA|Mux2~0                      ; combout          ;
-; |CONTRLA|Selector3~0                 ; |CONTRLA|Selector3~0                 ; combout          ;
+; |CONTRLA|Mux2~1                      ; |CONTRLA|Mux2~1                      ; combout          ;
 ; |CONTRLA|Selector3~1                 ; |CONTRLA|Selector3~1                 ; combout          ;
+; |CONTRLA|Selector3~2                 ; |CONTRLA|Selector3~2                 ; combout          ;
+; |CONTRLA|Mux7~0                      ; |CONTRLA|Mux7~0                      ; combout          ;
 ; |CONTRLA|next_state.move1~0          ; |CONTRLA|next_state.move1~0          ; combout          ;
-; |CONTRLA|next_state.add2~1           ; |CONTRLA|next_state.add2~1           ; combout          ;
-; |CONTRLA|Selector4~8                 ; |CONTRLA|Selector4~8                 ; combout          ;
-; |CONTRLA|WideOr16                    ; |CONTRLA|WideOr16                    ; combout          ;
-; |CONTRLA|Selector4~9                 ; |CONTRLA|Selector4~9                 ; combout          ;
 ; |CONTRLA|current_state.execute~0     ; |CONTRLA|current_state.execute~0     ; combout          ;
 ; |CONTRLA|progCntrWr                  ; |CONTRLA|progCntrWr                  ; padio            ;
 ; |CONTRLA|progCntrRd                  ; |CONTRLA|progCntrRd                  ; padio            ;
@@ -171,7 +177,7 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |CONTRLA|reset                       ; |CONTRLA|reset~corein                ; combout          ;
 ; |CONTRLA|clock~clkctrl               ; |CONTRLA|clock~clkctrl               ; outclk           ;
 ; |CONTRLA|reset~clkctrl               ; |CONTRLA|reset~clkctrl               ; outclk           ;
-; |CONTRLA|current_state.incPc3~feeder ; |CONTRLA|current_state.incPc3~feeder ; combout          ;
+; |CONTRLA|current_state.reset3~feeder ; |CONTRLA|current_state.reset3~feeder ; combout          ;
 ; |CONTRLA|current_state.loadI4~feeder ; |CONTRLA|current_state.loadI4~feeder ; combout          ;
 +--------------------------------------+--------------------------------------+------------------+
 
@@ -182,33 +188,127 @@ The following table displays output ports that do not toggle to 1 during simulat
 +--------------------------------------+--------------------------------------+------------------+
 ; Node Name                            ; Output Port Name                     ; Output Port Type ;
 +--------------------------------------+--------------------------------------+------------------+
-; |CONTRLA|current_state.store2        ; |CONTRLA|current_state.store2        ; regout           ;
+; |CONTRLA|current_state.jmpeq2        ; |CONTRLA|current_state.jmpeq2        ; regout           ;
+; |CONTRLA|current_state.jmplt2        ; |CONTRLA|current_state.jmplt2        ; regout           ;
+; |CONTRLA|current_state.jmpgt2        ; |CONTRLA|current_state.jmpgt2        ; regout           ;
+; |CONTRLA|current_state.jmp2          ; |CONTRLA|current_state.jmp2          ; regout           ;
+; |CONTRLA|current_state.jmpeq7        ; |CONTRLA|current_state.jmpeq7        ; regout           ;
+; |CONTRLA|current_state.jmplt7        ; |CONTRLA|current_state.jmplt7        ; regout           ;
+; |CONTRLA|current_state.jmpgt7        ; |CONTRLA|current_state.jmpgt7        ; regout           ;
+; |CONTRLA|current_state.jmp4          ; |CONTRLA|current_state.jmp4          ; regout           ;
+; |CONTRLA|WideOr10~0                  ; |CONTRLA|WideOr10~0                  ; combout          ;
+; |CONTRLA|current_state.loadPc1       ; |CONTRLA|current_state.loadPc1       ; regout           ;
+; |CONTRLA|current_state.jmpeq1        ; |CONTRLA|current_state.jmpeq1        ; regout           ;
+; |CONTRLA|current_state.jmplt1        ; |CONTRLA|current_state.jmplt1        ; regout           ;
+; |CONTRLA|current_state.jmpgt1        ; |CONTRLA|current_state.jmpgt1        ; regout           ;
+; |CONTRLA|current_state.jmp1          ; |CONTRLA|current_state.jmp1          ; regout           ;
 ; |CONTRLA|current_state.load2         ; |CONTRLA|current_state.load2         ; regout           ;
-; |CONTRLA|current_state.add3          ; |CONTRLA|current_state.add3          ; regout           ;
-; |CONTRLA|current_state.inc2          ; |CONTRLA|current_state.inc2          ; regout           ;
+; |CONTRLA|current_state.store2        ; |CONTRLA|current_state.store2        ; regout           ;
 ; |CONTRLA|current_state.move1         ; |CONTRLA|current_state.move1         ; regout           ;
+; |CONTRLA|current_state.shftl1        ; |CONTRLA|current_state.shftl1        ; regout           ;
+; |CONTRLA|current_state.rotl1         ; |CONTRLA|current_state.rotl1         ; regout           ;
+; |CONTRLA|current_state.and3          ; |CONTRLA|current_state.and3          ; regout           ;
+; |CONTRLA|current_state.not2          ; |CONTRLA|current_state.not2          ; regout           ;
+; |CONTRLA|WideOr6~2                   ; |CONTRLA|WideOr6~2                   ; combout          ;
+; |CONTRLA|current_state.inc2          ; |CONTRLA|current_state.inc2          ; regout           ;
+; |CONTRLA|current_state.add3          ; |CONTRLA|current_state.add3          ; regout           ;
+; |CONTRLA|current_state.xor3          ; |CONTRLA|current_state.xor3          ; regout           ;
+; |CONTRLA|current_state.sub3          ; |CONTRLA|current_state.sub3          ; regout           ;
+; |CONTRLA|WideOr6~3                   ; |CONTRLA|WideOr6~3                   ; combout          ;
+; |CONTRLA|current_state.shftr1        ; |CONTRLA|current_state.shftr1        ; regout           ;
+; |CONTRLA|current_state.rotr1         ; |CONTRLA|current_state.rotr1         ; regout           ;
+; |CONTRLA|current_state.dec2          ; |CONTRLA|current_state.dec2          ; regout           ;
+; |CONTRLA|current_state.or3           ; |CONTRLA|current_state.or3           ; regout           ;
+; |CONTRLA|WideOr6~4                   ; |CONTRLA|WideOr6~4                   ; combout          ;
+; |CONTRLA|WideOr6~5                   ; |CONTRLA|WideOr6~5                   ; combout          ;
+; |CONTRLA|current_state.inc3          ; |CONTRLA|current_state.inc3          ; regout           ;
+; |CONTRLA|current_state.dec3          ; |CONTRLA|current_state.dec3          ; regout           ;
+; |CONTRLA|current_state.not3          ; |CONTRLA|current_state.not3          ; regout           ;
+; |CONTRLA|current_state.add4          ; |CONTRLA|current_state.add4          ; regout           ;
+; |CONTRLA|current_state.and4          ; |CONTRLA|current_state.and4          ; regout           ;
+; |CONTRLA|current_state.or4           ; |CONTRLA|current_state.or4           ; regout           ;
+; |CONTRLA|current_state.xor4          ; |CONTRLA|current_state.xor4          ; regout           ;
+; |CONTRLA|Selector7~0                 ; |CONTRLA|Selector7~0                 ; combout          ;
 ; |CONTRLA|current_state.inc4          ; |CONTRLA|current_state.inc4          ; regout           ;
 ; |CONTRLA|current_state.move2         ; |CONTRLA|current_state.move2         ; regout           ;
-; |CONTRLA|current_state.inc3          ; |CONTRLA|current_state.inc3          ; regout           ;
-; |CONTRLA|current_state.add4          ; |CONTRLA|current_state.add4          ; regout           ;
-; |CONTRLA|WideOr9~1                   ; |CONTRLA|WideOr9~1                   ; combout          ;
-; |CONTRLA|Selector0~1                 ; |CONTRLA|Selector0~1                 ; combout          ;
+; |CONTRLA|current_state.shftl2        ; |CONTRLA|current_state.shftl2        ; regout           ;
+; |CONTRLA|current_state.shftr2        ; |CONTRLA|current_state.shftr2        ; regout           ;
+; |CONTRLA|WideOr11~3                  ; |CONTRLA|WideOr11~3                  ; combout          ;
+; |CONTRLA|current_state.rotl2         ; |CONTRLA|current_state.rotl2         ; regout           ;
+; |CONTRLA|current_state.rotr2         ; |CONTRLA|current_state.rotr2         ; regout           ;
+; |CONTRLA|current_state.dec4          ; |CONTRLA|current_state.dec4          ; regout           ;
+; |CONTRLA|current_state.not4          ; |CONTRLA|current_state.not4          ; regout           ;
+; |CONTRLA|WideOr11~4                  ; |CONTRLA|WideOr11~4                  ; combout          ;
+; |CONTRLA|current_state.sub4          ; |CONTRLA|current_state.sub4          ; regout           ;
+; |CONTRLA|WideOr11~5                  ; |CONTRLA|WideOr11~5                  ; combout          ;
+; |CONTRLA|shiftSel~0                  ; |CONTRLA|shiftSel~0                  ; combout          ;
+; |CONTRLA|shiftSel~1                  ; |CONTRLA|shiftSel~1                  ; combout          ;
+; |CONTRLA|Selector2~0                 ; |CONTRLA|Selector2~0                 ; combout          ;
+; |CONTRLA|aluSel~2                    ; |CONTRLA|aluSel~2                    ; combout          ;
+; |CONTRLA|current_state.jmpgt4        ; |CONTRLA|current_state.jmpgt4        ; regout           ;
+; |CONTRLA|current_state.jmpgt5        ; |CONTRLA|current_state.jmpgt5        ; regout           ;
+; |CONTRLA|compSel~0                   ; |CONTRLA|compSel~0                   ; combout          ;
+; |CONTRLA|current_state.jmplt4        ; |CONTRLA|current_state.jmplt4        ; regout           ;
+; |CONTRLA|current_state.jmplt5        ; |CONTRLA|current_state.jmplt5        ; regout           ;
+; |CONTRLA|compSel~1                   ; |CONTRLA|compSel~1                   ; combout          ;
 ; |CONTRLA|current_state.add2          ; |CONTRLA|current_state.add2          ; regout           ;
+; |CONTRLA|current_state.jmpeq3        ; |CONTRLA|current_state.jmpeq3        ; regout           ;
+; |CONTRLA|current_state.jmplt3        ; |CONTRLA|current_state.jmplt3        ; regout           ;
+; |CONTRLA|current_state.jmpgt3        ; |CONTRLA|current_state.jmpgt3        ; regout           ;
+; |CONTRLA|WideOr19~0                  ; |CONTRLA|WideOr19~0                  ; combout          ;
+; |CONTRLA|current_state.and2          ; |CONTRLA|current_state.and2          ; regout           ;
+; |CONTRLA|current_state.or2           ; |CONTRLA|current_state.or2           ; regout           ;
+; |CONTRLA|current_state.xor2          ; |CONTRLA|current_state.xor2          ; regout           ;
+; |CONTRLA|current_state.sub2          ; |CONTRLA|current_state.sub2          ; regout           ;
+; |CONTRLA|WideOr19~1                  ; |CONTRLA|WideOr19~1                  ; combout          ;
+; |CONTRLA|WideOr19~2                  ; |CONTRLA|WideOr19~2                  ; combout          ;
+; |CONTRLA|current_state.loadPc2       ; |CONTRLA|current_state.loadPc2       ; regout           ;
 ; |CONTRLA|current_state.load3         ; |CONTRLA|current_state.load3         ; regout           ;
-; |CONTRLA|WideOr16~3                  ; |CONTRLA|WideOr16~3                  ; combout          ;
-; |CONTRLA|current_state.store3        ; |CONTRLA|current_state.store3        ; regout           ;
-; |CONTRLA|WideOr15~0                  ; |CONTRLA|WideOr15~0                  ; combout          ;
-; |CONTRLA|Selector7~0                 ; |CONTRLA|Selector7~0                 ; combout          ;
+; |CONTRLA|current_state.jmpeq4        ; |CONTRLA|current_state.jmpeq4        ; regout           ;
+; |CONTRLA|WideOr20~1                  ; |CONTRLA|WideOr20~1                  ; combout          ;
+; |CONTRLA|current_state.jmpeq5        ; |CONTRLA|current_state.jmpeq5        ; regout           ;
+; |CONTRLA|WideOr20~2                  ; |CONTRLA|WideOr20~2                  ; combout          ;
 ; |CONTRLA|Selector7~1                 ; |CONTRLA|Selector7~1                 ; combout          ;
+; |CONTRLA|current_state.store3        ; |CONTRLA|current_state.store3        ; regout           ;
+; |CONTRLA|WideOr19~3                  ; |CONTRLA|WideOr19~3                  ; combout          ;
+; |CONTRLA|Selector7~2                 ; |CONTRLA|Selector7~2                 ; combout          ;
 ; |CONTRLA|Selector6~0                 ; |CONTRLA|Selector6~0                 ; combout          ;
 ; |CONTRLA|Selector6~1                 ; |CONTRLA|Selector6~1                 ; combout          ;
 ; |CONTRLA|Selector5~0                 ; |CONTRLA|Selector5~0                 ; combout          ;
-; |CONTRLA|next_state.store2~0         ; |CONTRLA|next_state.store2~0         ; combout          ;
+; |CONTRLA|WideOr23                    ; |CONTRLA|WideOr23                    ; combout          ;
+; |CONTRLA|current_state.jmpeq6        ; |CONTRLA|current_state.jmpeq6        ; regout           ;
+; |CONTRLA|current_state.jmplt6        ; |CONTRLA|current_state.jmplt6        ; regout           ;
+; |CONTRLA|current_state.jmpgt6        ; |CONTRLA|current_state.jmpgt6        ; regout           ;
+; |CONTRLA|current_state.jmp3          ; |CONTRLA|current_state.jmp3          ; regout           ;
+; |CONTRLA|Selector3~0                 ; |CONTRLA|Selector3~0                 ; combout          ;
+; |CONTRLA|next_state.jmpeq1~0         ; |CONTRLA|next_state.jmpeq1~0         ; combout          ;
+; |CONTRLA|next_state.jmpeq1~1         ; |CONTRLA|next_state.jmpeq1~1         ; combout          ;
+; |CONTRLA|next_state.jmplt1~2         ; |CONTRLA|next_state.jmplt1~2         ; combout          ;
+; |CONTRLA|Mux8~0                      ; |CONTRLA|Mux8~0                      ; combout          ;
+; |CONTRLA|next_state.jmpgt1~0         ; |CONTRLA|next_state.jmpgt1~0         ; combout          ;
+; |CONTRLA|next_state.jmp1~0           ; |CONTRLA|next_state.jmp1~0           ; combout          ;
 ; |CONTRLA|next_state.load2~0          ; |CONTRLA|next_state.load2~0          ; combout          ;
-; |CONTRLA|next_state.inc2~0           ; |CONTRLA|next_state.inc2~0           ; combout          ;
+; |CONTRLA|next_state.store2~0         ; |CONTRLA|next_state.store2~0         ; combout          ;
 ; |CONTRLA|next_state.move1~1          ; |CONTRLA|next_state.move1~1          ; combout          ;
-; |CONTRLA|next_state.add2~2           ; |CONTRLA|next_state.add2~2           ; combout          ;
-; |CONTRLA|WideOr18                    ; |CONTRLA|WideOr18                    ; combout          ;
+; |CONTRLA|next_state.shftl1~0         ; |CONTRLA|next_state.shftl1~0         ; combout          ;
+; |CONTRLA|next_state.shftl1~1         ; |CONTRLA|next_state.shftl1~1         ; combout          ;
+; |CONTRLA|next_state.rotl1~0          ; |CONTRLA|next_state.rotl1~0          ; combout          ;
+; |CONTRLA|next_state.sub2~0           ; |CONTRLA|next_state.sub2~0           ; combout          ;
+; |CONTRLA|next_state.not2~0           ; |CONTRLA|next_state.not2~0           ; combout          ;
+; |CONTRLA|next_state.inc2~0           ; |CONTRLA|next_state.inc2~0           ; combout          ;
+; |CONTRLA|next_state.shftr1~0         ; |CONTRLA|next_state.shftr1~0         ; combout          ;
+; |CONTRLA|next_state.rotr1~0          ; |CONTRLA|next_state.rotr1~0          ; combout          ;
+; |CONTRLA|next_state.dec2~0           ; |CONTRLA|next_state.dec2~0           ; combout          ;
+; |CONTRLA|next_state.xor2~0           ; |CONTRLA|next_state.xor2~0           ; combout          ;
+; |CONTRLA|next_state.add2~0           ; |CONTRLA|next_state.add2~0           ; combout          ;
+; |CONTRLA|next_state.and2~0           ; |CONTRLA|next_state.and2~0           ; combout          ;
+; |CONTRLA|next_state.or2~0            ; |CONTRLA|next_state.or2~0            ; combout          ;
+; |CONTRLA|next_state.xor2~1           ; |CONTRLA|next_state.xor2~1           ; combout          ;
+; |CONTRLA|next_state.sub2~1           ; |CONTRLA|next_state.sub2~1           ; combout          ;
+; |CONTRLA|next_state.jmpeq6~0         ; |CONTRLA|next_state.jmpeq6~0         ; combout          ;
+; |CONTRLA|next_state.jmplt6~0         ; |CONTRLA|next_state.jmplt6~0         ; combout          ;
+; |CONTRLA|next_state.jmpgt6~0         ; |CONTRLA|next_state.jmpgt6~0         ; combout          ;
+; |CONTRLA|next_state.jmplt1~3         ; |CONTRLA|next_state.jmplt1~3         ; combout          ;
 ; |CONTRLA|current_state.reset2~0      ; |CONTRLA|current_state.reset2~0      ; combout          ;
 ; |CONTRLA|addrRegRd                   ; |CONTRLA|addrRegRd                   ; padio            ;
 ; |CONTRLA|shiftSel[0]                 ; |CONTRLA|shiftSel[0]                 ; padio            ;
@@ -225,8 +325,23 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |CONTRLA|regSel[2]                   ; |CONTRLA|regSel[2]                   ; padio            ;
 ; |CONTRLA|regRd                       ; |CONTRLA|regRd                       ; padio            ;
 ; |CONTRLA|rw                          ; |CONTRLA|rw                          ; padio            ;
-; |CONTRLA|current_state.inc3~feeder   ; |CONTRLA|current_state.inc3~feeder   ; combout          ;
+; |CONTRLA|compout                     ; |CONTRLA|compout~corein              ; combout          ;
+; |CONTRLA|current_state.jmpgt3~feeder ; |CONTRLA|current_state.jmpgt3~feeder ; combout          ;
+; |CONTRLA|current_state.jmpeq2~feeder ; |CONTRLA|current_state.jmpeq2~feeder ; combout          ;
+; |CONTRLA|current_state.jmpgt2~feeder ; |CONTRLA|current_state.jmpgt2~feeder ; combout          ;
+; |CONTRLA|current_state.jmp2~feeder   ; |CONTRLA|current_state.jmp2~feeder   ; combout          ;
 ; |CONTRLA|current_state.move2~feeder  ; |CONTRLA|current_state.move2~feeder  ; combout          ;
+; |CONTRLA|current_state.and4~feeder   ; |CONTRLA|current_state.and4~feeder   ; combout          ;
+; |CONTRLA|current_state.not3~feeder   ; |CONTRLA|current_state.not3~feeder   ; combout          ;
+; |CONTRLA|current_state.inc3~feeder   ; |CONTRLA|current_state.inc3~feeder   ; combout          ;
+; |CONTRLA|current_state.add4~feeder   ; |CONTRLA|current_state.add4~feeder   ; combout          ;
+; |CONTRLA|current_state.shftr2~feeder ; |CONTRLA|current_state.shftr2~feeder ; combout          ;
+; |CONTRLA|current_state.rotr2~feeder  ; |CONTRLA|current_state.rotr2~feeder  ; combout          ;
+; |CONTRLA|current_state.or4~feeder    ; |CONTRLA|current_state.or4~feeder    ; combout          ;
+; |CONTRLA|current_state.dec4~feeder   ; |CONTRLA|current_state.dec4~feeder   ; combout          ;
+; |CONTRLA|current_state.jmplt5~feeder ; |CONTRLA|current_state.jmplt5~feeder ; combout          ;
+; |CONTRLA|current_state.jmpgt7~feeder ; |CONTRLA|current_state.jmpgt7~feeder ; combout          ;
+; |CONTRLA|current_state.jmp4~feeder   ; |CONTRLA|current_state.jmp4~feeder   ; combout          ;
 ; |CONTRLA|current_state.reset1~feeder ; |CONTRLA|current_state.reset1~feeder ; combout          ;
 +--------------------------------------+--------------------------------------+------------------+
 
@@ -237,34 +352,126 @@ The following table displays output ports that do not toggle to 0 during simulat
 +--------------------------------------+--------------------------------------+------------------+
 ; Node Name                            ; Output Port Name                     ; Output Port Type ;
 +--------------------------------------+--------------------------------------+------------------+
-; |CONTRLA|current_state.store2        ; |CONTRLA|current_state.store2        ; regout           ;
+; |CONTRLA|current_state.jmpeq2        ; |CONTRLA|current_state.jmpeq2        ; regout           ;
+; |CONTRLA|current_state.jmplt2        ; |CONTRLA|current_state.jmplt2        ; regout           ;
+; |CONTRLA|current_state.jmpgt2        ; |CONTRLA|current_state.jmpgt2        ; regout           ;
+; |CONTRLA|current_state.jmp2          ; |CONTRLA|current_state.jmp2          ; regout           ;
+; |CONTRLA|current_state.jmpeq7        ; |CONTRLA|current_state.jmpeq7        ; regout           ;
+; |CONTRLA|current_state.jmplt7        ; |CONTRLA|current_state.jmplt7        ; regout           ;
+; |CONTRLA|current_state.jmpgt7        ; |CONTRLA|current_state.jmpgt7        ; regout           ;
+; |CONTRLA|current_state.jmp4          ; |CONTRLA|current_state.jmp4          ; regout           ;
+; |CONTRLA|WideOr10~0                  ; |CONTRLA|WideOr10~0                  ; combout          ;
+; |CONTRLA|current_state.loadPc1       ; |CONTRLA|current_state.loadPc1       ; regout           ;
+; |CONTRLA|current_state.jmpeq1        ; |CONTRLA|current_state.jmpeq1        ; regout           ;
+; |CONTRLA|current_state.jmplt1        ; |CONTRLA|current_state.jmplt1        ; regout           ;
+; |CONTRLA|current_state.jmpgt1        ; |CONTRLA|current_state.jmpgt1        ; regout           ;
+; |CONTRLA|current_state.jmp1          ; |CONTRLA|current_state.jmp1          ; regout           ;
 ; |CONTRLA|current_state.load2         ; |CONTRLA|current_state.load2         ; regout           ;
-; |CONTRLA|current_state.add3          ; |CONTRLA|current_state.add3          ; regout           ;
-; |CONTRLA|current_state.reset1        ; |CONTRLA|current_state.reset1        ; regout           ;
-; |CONTRLA|current_state.inc2          ; |CONTRLA|current_state.inc2          ; regout           ;
+; |CONTRLA|current_state.store2        ; |CONTRLA|current_state.store2        ; regout           ;
 ; |CONTRLA|current_state.move1         ; |CONTRLA|current_state.move1         ; regout           ;
+; |CONTRLA|current_state.shftl1        ; |CONTRLA|current_state.shftl1        ; regout           ;
+; |CONTRLA|current_state.rotl1         ; |CONTRLA|current_state.rotl1         ; regout           ;
+; |CONTRLA|current_state.and3          ; |CONTRLA|current_state.and3          ; regout           ;
+; |CONTRLA|current_state.not2          ; |CONTRLA|current_state.not2          ; regout           ;
+; |CONTRLA|WideOr6~2                   ; |CONTRLA|WideOr6~2                   ; combout          ;
+; |CONTRLA|current_state.inc2          ; |CONTRLA|current_state.inc2          ; regout           ;
+; |CONTRLA|current_state.add3          ; |CONTRLA|current_state.add3          ; regout           ;
+; |CONTRLA|current_state.xor3          ; |CONTRLA|current_state.xor3          ; regout           ;
+; |CONTRLA|current_state.sub3          ; |CONTRLA|current_state.sub3          ; regout           ;
+; |CONTRLA|WideOr6~3                   ; |CONTRLA|WideOr6~3                   ; combout          ;
+; |CONTRLA|current_state.shftr1        ; |CONTRLA|current_state.shftr1        ; regout           ;
+; |CONTRLA|current_state.rotr1         ; |CONTRLA|current_state.rotr1         ; regout           ;
+; |CONTRLA|current_state.dec2          ; |CONTRLA|current_state.dec2          ; regout           ;
+; |CONTRLA|current_state.or3           ; |CONTRLA|current_state.or3           ; regout           ;
+; |CONTRLA|WideOr6~4                   ; |CONTRLA|WideOr6~4                   ; combout          ;
+; |CONTRLA|WideOr6~5                   ; |CONTRLA|WideOr6~5                   ; combout          ;
+; |CONTRLA|current_state.reset1        ; |CONTRLA|current_state.reset1        ; regout           ;
+; |CONTRLA|current_state.inc3          ; |CONTRLA|current_state.inc3          ; regout           ;
+; |CONTRLA|current_state.dec3          ; |CONTRLA|current_state.dec3          ; regout           ;
+; |CONTRLA|current_state.not3          ; |CONTRLA|current_state.not3          ; regout           ;
+; |CONTRLA|current_state.add4          ; |CONTRLA|current_state.add4          ; regout           ;
+; |CONTRLA|current_state.and4          ; |CONTRLA|current_state.and4          ; regout           ;
+; |CONTRLA|current_state.or4           ; |CONTRLA|current_state.or4           ; regout           ;
+; |CONTRLA|current_state.xor4          ; |CONTRLA|current_state.xor4          ; regout           ;
+; |CONTRLA|Selector7~0                 ; |CONTRLA|Selector7~0                 ; combout          ;
 ; |CONTRLA|current_state.inc4          ; |CONTRLA|current_state.inc4          ; regout           ;
 ; |CONTRLA|current_state.move2         ; |CONTRLA|current_state.move2         ; regout           ;
-; |CONTRLA|current_state.inc3          ; |CONTRLA|current_state.inc3          ; regout           ;
-; |CONTRLA|current_state.add4          ; |CONTRLA|current_state.add4          ; regout           ;
-; |CONTRLA|WideOr9~1                   ; |CONTRLA|WideOr9~1                   ; combout          ;
-; |CONTRLA|Selector0~1                 ; |CONTRLA|Selector0~1                 ; combout          ;
+; |CONTRLA|current_state.shftl2        ; |CONTRLA|current_state.shftl2        ; regout           ;
+; |CONTRLA|current_state.shftr2        ; |CONTRLA|current_state.shftr2        ; regout           ;
+; |CONTRLA|WideOr11~3                  ; |CONTRLA|WideOr11~3                  ; combout          ;
+; |CONTRLA|current_state.rotl2         ; |CONTRLA|current_state.rotl2         ; regout           ;
+; |CONTRLA|current_state.rotr2         ; |CONTRLA|current_state.rotr2         ; regout           ;
+; |CONTRLA|current_state.dec4          ; |CONTRLA|current_state.dec4          ; regout           ;
+; |CONTRLA|current_state.not4          ; |CONTRLA|current_state.not4          ; regout           ;
+; |CONTRLA|WideOr11~4                  ; |CONTRLA|WideOr11~4                  ; combout          ;
+; |CONTRLA|current_state.sub4          ; |CONTRLA|current_state.sub4          ; regout           ;
+; |CONTRLA|WideOr11~5                  ; |CONTRLA|WideOr11~5                  ; combout          ;
+; |CONTRLA|shiftSel~0                  ; |CONTRLA|shiftSel~0                  ; combout          ;
+; |CONTRLA|shiftSel~1                  ; |CONTRLA|shiftSel~1                  ; combout          ;
+; |CONTRLA|current_state.jmpgt4        ; |CONTRLA|current_state.jmpgt4        ; regout           ;
+; |CONTRLA|current_state.jmpgt5        ; |CONTRLA|current_state.jmpgt5        ; regout           ;
+; |CONTRLA|compSel~0                   ; |CONTRLA|compSel~0                   ; combout          ;
+; |CONTRLA|current_state.jmplt4        ; |CONTRLA|current_state.jmplt4        ; regout           ;
+; |CONTRLA|current_state.jmplt5        ; |CONTRLA|current_state.jmplt5        ; regout           ;
+; |CONTRLA|compSel~1                   ; |CONTRLA|compSel~1                   ; combout          ;
 ; |CONTRLA|current_state.add2          ; |CONTRLA|current_state.add2          ; regout           ;
+; |CONTRLA|current_state.jmpeq3        ; |CONTRLA|current_state.jmpeq3        ; regout           ;
+; |CONTRLA|current_state.jmplt3        ; |CONTRLA|current_state.jmplt3        ; regout           ;
+; |CONTRLA|current_state.jmpgt3        ; |CONTRLA|current_state.jmpgt3        ; regout           ;
+; |CONTRLA|WideOr19~0                  ; |CONTRLA|WideOr19~0                  ; combout          ;
+; |CONTRLA|current_state.and2          ; |CONTRLA|current_state.and2          ; regout           ;
+; |CONTRLA|current_state.or2           ; |CONTRLA|current_state.or2           ; regout           ;
+; |CONTRLA|current_state.xor2          ; |CONTRLA|current_state.xor2          ; regout           ;
+; |CONTRLA|current_state.sub2          ; |CONTRLA|current_state.sub2          ; regout           ;
+; |CONTRLA|WideOr19~1                  ; |CONTRLA|WideOr19~1                  ; combout          ;
+; |CONTRLA|WideOr19~2                  ; |CONTRLA|WideOr19~2                  ; combout          ;
+; |CONTRLA|current_state.loadPc2       ; |CONTRLA|current_state.loadPc2       ; regout           ;
 ; |CONTRLA|current_state.load3         ; |CONTRLA|current_state.load3         ; regout           ;
-; |CONTRLA|WideOr16~3                  ; |CONTRLA|WideOr16~3                  ; combout          ;
-; |CONTRLA|current_state.store3        ; |CONTRLA|current_state.store3        ; regout           ;
-; |CONTRLA|WideOr15~0                  ; |CONTRLA|WideOr15~0                  ; combout          ;
-; |CONTRLA|Selector7~0                 ; |CONTRLA|Selector7~0                 ; combout          ;
+; |CONTRLA|current_state.jmpeq4        ; |CONTRLA|current_state.jmpeq4        ; regout           ;
+; |CONTRLA|WideOr20~1                  ; |CONTRLA|WideOr20~1                  ; combout          ;
+; |CONTRLA|current_state.jmpeq5        ; |CONTRLA|current_state.jmpeq5        ; regout           ;
+; |CONTRLA|WideOr20~2                  ; |CONTRLA|WideOr20~2                  ; combout          ;
 ; |CONTRLA|Selector7~1                 ; |CONTRLA|Selector7~1                 ; combout          ;
+; |CONTRLA|current_state.store3        ; |CONTRLA|current_state.store3        ; regout           ;
+; |CONTRLA|WideOr19~3                  ; |CONTRLA|WideOr19~3                  ; combout          ;
+; |CONTRLA|Selector7~2                 ; |CONTRLA|Selector7~2                 ; combout          ;
 ; |CONTRLA|Selector6~0                 ; |CONTRLA|Selector6~0                 ; combout          ;
 ; |CONTRLA|Selector6~1                 ; |CONTRLA|Selector6~1                 ; combout          ;
 ; |CONTRLA|Selector5~0                 ; |CONTRLA|Selector5~0                 ; combout          ;
-; |CONTRLA|next_state.store2~0         ; |CONTRLA|next_state.store2~0         ; combout          ;
+; |CONTRLA|WideOr23                    ; |CONTRLA|WideOr23                    ; combout          ;
+; |CONTRLA|current_state.jmpeq6        ; |CONTRLA|current_state.jmpeq6        ; regout           ;
+; |CONTRLA|current_state.jmplt6        ; |CONTRLA|current_state.jmplt6        ; regout           ;
+; |CONTRLA|current_state.jmpgt6        ; |CONTRLA|current_state.jmpgt6        ; regout           ;
+; |CONTRLA|current_state.jmp3          ; |CONTRLA|current_state.jmp3          ; regout           ;
+; |CONTRLA|Selector3~0                 ; |CONTRLA|Selector3~0                 ; combout          ;
+; |CONTRLA|next_state.jmpeq1~0         ; |CONTRLA|next_state.jmpeq1~0         ; combout          ;
+; |CONTRLA|next_state.jmpeq1~1         ; |CONTRLA|next_state.jmpeq1~1         ; combout          ;
+; |CONTRLA|next_state.jmplt1~2         ; |CONTRLA|next_state.jmplt1~2         ; combout          ;
+; |CONTRLA|Mux8~0                      ; |CONTRLA|Mux8~0                      ; combout          ;
+; |CONTRLA|next_state.jmpgt1~0         ; |CONTRLA|next_state.jmpgt1~0         ; combout          ;
+; |CONTRLA|next_state.jmp1~0           ; |CONTRLA|next_state.jmp1~0           ; combout          ;
 ; |CONTRLA|next_state.load2~0          ; |CONTRLA|next_state.load2~0          ; combout          ;
-; |CONTRLA|next_state.inc2~0           ; |CONTRLA|next_state.inc2~0           ; combout          ;
+; |CONTRLA|next_state.store2~0         ; |CONTRLA|next_state.store2~0         ; combout          ;
 ; |CONTRLA|next_state.move1~1          ; |CONTRLA|next_state.move1~1          ; combout          ;
-; |CONTRLA|next_state.add2~2           ; |CONTRLA|next_state.add2~2           ; combout          ;
-; |CONTRLA|WideOr18                    ; |CONTRLA|WideOr18                    ; combout          ;
+; |CONTRLA|next_state.shftl1~0         ; |CONTRLA|next_state.shftl1~0         ; combout          ;
+; |CONTRLA|next_state.shftl1~1         ; |CONTRLA|next_state.shftl1~1         ; combout          ;
+; |CONTRLA|next_state.rotl1~0          ; |CONTRLA|next_state.rotl1~0          ; combout          ;
+; |CONTRLA|next_state.sub2~0           ; |CONTRLA|next_state.sub2~0           ; combout          ;
+; |CONTRLA|next_state.not2~0           ; |CONTRLA|next_state.not2~0           ; combout          ;
+; |CONTRLA|next_state.inc2~0           ; |CONTRLA|next_state.inc2~0           ; combout          ;
+; |CONTRLA|next_state.shftr1~0         ; |CONTRLA|next_state.shftr1~0         ; combout          ;
+; |CONTRLA|next_state.rotr1~0          ; |CONTRLA|next_state.rotr1~0          ; combout          ;
+; |CONTRLA|next_state.dec2~0           ; |CONTRLA|next_state.dec2~0           ; combout          ;
+; |CONTRLA|next_state.xor2~0           ; |CONTRLA|next_state.xor2~0           ; combout          ;
+; |CONTRLA|next_state.add2~0           ; |CONTRLA|next_state.add2~0           ; combout          ;
+; |CONTRLA|next_state.and2~0           ; |CONTRLA|next_state.and2~0           ; combout          ;
+; |CONTRLA|next_state.or2~0            ; |CONTRLA|next_state.or2~0            ; combout          ;
+; |CONTRLA|next_state.xor2~1           ; |CONTRLA|next_state.xor2~1           ; combout          ;
+; |CONTRLA|next_state.sub2~1           ; |CONTRLA|next_state.sub2~1           ; combout          ;
+; |CONTRLA|next_state.jmpeq6~0         ; |CONTRLA|next_state.jmpeq6~0         ; combout          ;
+; |CONTRLA|next_state.jmplt6~0         ; |CONTRLA|next_state.jmplt6~0         ; combout          ;
+; |CONTRLA|next_state.jmpgt6~0         ; |CONTRLA|next_state.jmpgt6~0         ; combout          ;
+; |CONTRLA|next_state.jmplt1~3         ; |CONTRLA|next_state.jmplt1~3         ; combout          ;
 ; |CONTRLA|addrRegRd                   ; |CONTRLA|addrRegRd                   ; padio            ;
 ; |CONTRLA|shiftSel[0]                 ; |CONTRLA|shiftSel[0]                 ; padio            ;
 ; |CONTRLA|shiftSel[1]                 ; |CONTRLA|shiftSel[1]                 ; padio            ;
@@ -279,8 +486,23 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |CONTRLA|regSel[2]                   ; |CONTRLA|regSel[2]                   ; padio            ;
 ; |CONTRLA|regRd                       ; |CONTRLA|regRd                       ; padio            ;
 ; |CONTRLA|rw                          ; |CONTRLA|rw                          ; padio            ;
-; |CONTRLA|current_state.inc3~feeder   ; |CONTRLA|current_state.inc3~feeder   ; combout          ;
+; |CONTRLA|compout                     ; |CONTRLA|compout~corein              ; combout          ;
+; |CONTRLA|current_state.jmpgt3~feeder ; |CONTRLA|current_state.jmpgt3~feeder ; combout          ;
+; |CONTRLA|current_state.jmpeq2~feeder ; |CONTRLA|current_state.jmpeq2~feeder ; combout          ;
+; |CONTRLA|current_state.jmpgt2~feeder ; |CONTRLA|current_state.jmpgt2~feeder ; combout          ;
+; |CONTRLA|current_state.jmp2~feeder   ; |CONTRLA|current_state.jmp2~feeder   ; combout          ;
 ; |CONTRLA|current_state.move2~feeder  ; |CONTRLA|current_state.move2~feeder  ; combout          ;
+; |CONTRLA|current_state.and4~feeder   ; |CONTRLA|current_state.and4~feeder   ; combout          ;
+; |CONTRLA|current_state.not3~feeder   ; |CONTRLA|current_state.not3~feeder   ; combout          ;
+; |CONTRLA|current_state.inc3~feeder   ; |CONTRLA|current_state.inc3~feeder   ; combout          ;
+; |CONTRLA|current_state.add4~feeder   ; |CONTRLA|current_state.add4~feeder   ; combout          ;
+; |CONTRLA|current_state.shftr2~feeder ; |CONTRLA|current_state.shftr2~feeder ; combout          ;
+; |CONTRLA|current_state.rotr2~feeder  ; |CONTRLA|current_state.rotr2~feeder  ; combout          ;
+; |CONTRLA|current_state.or4~feeder    ; |CONTRLA|current_state.or4~feeder    ; combout          ;
+; |CONTRLA|current_state.dec4~feeder   ; |CONTRLA|current_state.dec4~feeder   ; combout          ;
+; |CONTRLA|current_state.jmplt5~feeder ; |CONTRLA|current_state.jmplt5~feeder ; combout          ;
+; |CONTRLA|current_state.jmpgt7~feeder ; |CONTRLA|current_state.jmpgt7~feeder ; combout          ;
+; |CONTRLA|current_state.jmp4~feeder   ; |CONTRLA|current_state.jmp4~feeder   ; combout          ;
 ; |CONTRLA|current_state.reset1~feeder ; |CONTRLA|current_state.reset1~feeder ; combout          ;
 +--------------------------------------+--------------------------------------+------------------+
 
@@ -298,19 +520,19 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Simulator
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Tue Feb 15 19:29:18 2022
+    Info: Processing started: Sat Apr 09 20:34:23 2022
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off CONTRLA -c CONTRLA
-Info: Using vector source file "D:/Documents/Thesis/test_ok/control_test/CONTRLA.vwf"
-Warning: Can't display state machine states -- register holding state machine bit "|CONTRLA|current_state.nop" was synthesized away
+Info: Using vector source file "D:/SYNC_Cloud/Thesis/kx9016_code/test_ok/control_test/CONTRLA.vwf"
+Warning: Can't find signal in vector source file for input pin "|CONTRLA|compout"
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is      57.27 %
-Info: Number of transitions in simulation is 409
+Info: Simulation coverage is      30.67 %
+Info: Number of transitions in simulation is 437
 Info: Quartus II 64-Bit Simulator was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4317 megabytes
-    Info: Processing ended: Tue Feb 15 19:29:18 2022
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 4320 megabytes
+    Info: Processing ended: Sat Apr 09 20:34:24 2022
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 

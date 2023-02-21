@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Apr 08 17:28:29 2022
+Quartus II 64-Bit Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : COMP_V
+Top-level Entity Name : COMP_V
+Family : Cyclone II
+Total logic elements : 47
+    Total combinational functions : 47
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 36
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

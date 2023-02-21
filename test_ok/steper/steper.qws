@@ -16,5 +16,5 @@ IsActiveChildFrame=False
 ptn_Child1=StateMap
 [ProjectWorkspace.Frames.ChildFrames.Document-0.ViewFrame-0.StateMap]
 AFC_SIM_AP_NAME=steper
-AFC_PROJ_DB_PATH=D:/Documents/Thesis/test_ok/steper/db/steper.quartus_db
+AFC_PROJ_DB_PATH=D:/SYNC_Cloud/Thesis/kx9016_code/test_ok/steper/db/steper.quartus_db
 AFC_IN_REPORT=False

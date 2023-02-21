@@ -1,0 +1,116 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 12.488 ns
+From           : iSW[2]
+To             : CONTRLA:inst5|current_state.incPC
+From Clock     : --
+To Clock       : GPIO_1[0]
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 24.125 ns
+From           : REG16A_V:inst2|c_out[3]
+To             : CompOut
+From Clock     : iCLK_50
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.328 ns
+From           : iSW[1]
+To             : ALU[8]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 4.400 ns
+From           : iSW[4]
+To             : REG_AR7:inst8|ramdata~56
+From Clock     : --
+To Clock       : GPIO_1[0]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'iCLK_50'
+Slack          : 3.549 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : 60.79 MHz ( period = 16.451 ns )
+From           : REG16A_V:inst2|c_out[3]
+To             : sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|acq_data_in_reg[3]
+From Clock     : iCLK_50
+To Clock       : iCLK_50
+Failed Paths   : 0
+
+Type           : Clock Setup: 'GPIO_1[0]'
+Slack          : 3838.239 ns
+Required Time  : 0.00 MHz ( period = 250000.000 ns )
+Actual Time    : 46.39 MHz ( period = 21.558 ns )
+From           : CONTRLA:inst5|current_state.sub2
+To             : REGT_V:inst11|v1[13]
+From Clock     : GPIO_1[0]
+To Clock       : GPIO_1[0]
+Failed Paths   : 0
+
+Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
+Slack          : 246144.337 ns
+Required Time  : 0.00 MHz ( period = 250000.000 ns )
+Actual Time    : 75.24 MHz ( period = 13.290 ns )
+From           : sld_hub:auto_hub|virtual_ir_scan_reg
+To             : sld_hub:auto_hub|tdo
+From Clock     : altera_internal_jtag~TCKUTAP
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Hold: 'iCLK_50'
+Slack          : -0.305 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : N/A
+From           : REGA_V:inst13|c_out[12]
+To             : REGT_V:inst11|v1[13]
+From Clock     : iCLK_50
+To Clock       : iCLK_50
+Failed Paths   : 3
+
+Type           : Clock Hold: 'GPIO_1[0]'
+Slack          : -0.157 ns
+Required Time  : 0.00 MHz ( period = 250000.000 ns )
+Actual Time    : N/A
+From           : REG_AR7:inst8|ramdata~110
+To             : REG_AR7:inst8|ramdata~110
+From Clock     : GPIO_1[0]
+To Clock       : GPIO_1[0]
+Failed Paths   : 1
+
+Type           : Clock Hold: 'altera_internal_jtag~TCKUTAP'
+Slack          : 0.391 ns
+Required Time  : 0.00 MHz ( period = 250000.000 ns )
+Actual Time    : N/A
+From           : sld_hub:auto_hub|tdo_bypass_reg
+To             : sld_hub:auto_hub|tdo_bypass_reg
+From Clock     : altera_internal_jtag~TCKUTAP
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 4
+
+--------------------------------------------------------------------------------------
+

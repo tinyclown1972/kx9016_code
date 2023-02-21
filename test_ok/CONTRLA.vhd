@@ -7,7 +7,7 @@ ENTITY CONTRLA IS
       clock       : IN STD_LOGIC;
       reset       : IN STD_LOGIC;
       instrReg    : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-      -- compout     : IN STD_LOGIC;
+      compout     : IN STD_LOGIC;
       progCntrWr  : OUT STD_LOGIC;
       progCntrRd  : OUT STD_LOGIC;
       addrRegWr   : OUT STD_LOGIC;
@@ -24,31 +24,64 @@ ENTITY CONTRLA IS
       regRd       : OUT STD_LOGIC;
       regWr       : OUT STD_LOGIC;
       rw          : OUT STD_LOGIC;
-      vma         : OUT STD_LOGIC
+      vma         : OUT STD_LOGIC;
+      com_in      : OUT STD_LOGIC;
+      com_out     : OUT STD_LOGIC
    );
 END CONTRLA;
 
 ARCHITECTURE trans OF CONTRLA IS
-   CONSTANT shftpass    : std_logic_vector(2 downto 0) := "000";
-   CONSTANT alupass     : std_logic_vector(3 downto 0) := "0000";
-   CONSTANT zero        : std_logic_vector(3 downto 0) := "1001";
-   CONSTANT inc         : std_logic_vector(3 downto 0) := "0111";
-   CONSTANT plus        : std_logic_vector(3 downto 0) := "0101";
+
+   -- shift
+   constant shftpass  : std_logic_vector(2 downto 0 ) := "000";
+   constant sftl      : std_logic_vector(2 downto 0 ) := "001";
+   constant sftr      : std_logic_vector(2 downto 0 ) := "010";
+   constant rotl      : std_logic_vector(2 downto 0 ) := "011";
+   constant rotr      : std_logic_vector(2 downto 0 ) := "100";
+
+   -- comp
+   constant eq     : std_logic_vector(2 downto 0) := "000";
+   constant neq    : std_logic_vector(2 downto 0) := "001";
+   constant gt     : std_logic_vector(2 downto 0) := "010";
+   constant gte    : std_logic_vector(2 downto 0) := "011";
+   constant lt     : std_logic_vector(2 downto 0) := "100";
+   constant lte    : std_logic_vector(2 downto 0) := "101";
+
+   -- alu
+   constant OP_and      : std_logic_vector(3 downto 0 )  := "0001";
+   constant OP_or       : std_logic_vector(3 downto 0 )  := "0010";
+   constant OP_not      : std_logic_vector(3 downto 0 )  := "0011";
+   constant OP_xor      : std_logic_vector(3 downto 0 )  := "0100";
+   constant sub         : std_logic_vector(3 downto 0 )  := "0110";
+   constant dec         : std_logic_vector(3 downto 0 )  := "1000";
+   CONSTANT alupass     : std_logic_vector(3 downto 0)   := "0000";
+   CONSTANT zero        : std_logic_vector(3 downto 0)   := "1001";
+   CONSTANT inc         : std_logic_vector(3 downto 0)   := "0111";
+   CONSTANT plus        : std_logic_vector(3 downto 0)   := "0101";
 
 
    type state is (
       reset1 , reset2 , reset3 , execute , load2  , load3  , store2 , store3 ,
-      incPC   , incPc2 , incPc3 , loadI2 , loadI3 , loadI4 , loadI5 , loadI6 , inc2   ,
-      inc3   , inc4    , move1  , move2  , add2   , add3   , add4
-   );
+      incPC  , incPc2 , incPc3 , loadI2  , loadI3 , loadI4 , loadI5 , loadI6 ,
+      inc2   , inc3   , inc4   , move1   , move2  , add2   , add3   , add4   ,
+      jmpeq1 , jmpeq2 , jmpeq3 , jmpeq4  , jmpeq5 , jmpeq6 , jmpeq7 , jmplt1 ,
+      jmplt2 , jmplt3 , jmplt4 , jmplt5  , jmplt6 , jmplt7 , jmpgt1 , jmpgt2 ,
+      jmpgt3 , jmpgt4 , jmpgt5 , jmpgt6  , jmpgt7 , jmp1   , jmp2   , jmp3   ,
+      jmp4   , loadPc1, loadPc2, shftl1  , shftl2 , shftr1 , shftr2 , rotl1  ,
+      rotl2  , rotr1  , rotr2  , dec2    , dec3   , dec4   , and2   , and3   ,
+      and4   , or2    , or3    , or4     , xor2   , xor3   , xor4   , not2   ,
+      not3   , not4   , sub2   , sub3    , sub4   , jmplte1, jmplte2, jmplte3,
+      jmplte4, jmplte5, jmplte6, jmplte7 , in1    , in2    , in3    , out1   ,
+      out2   , out3
+      );
 
    SIGNAL current_state : state ;
    SIGNAL next_state    : state ;
 BEGIN
 -- PROCESS (current_state, instrReg, compout)
-   PROCESS (current_state, instrReg )
+   PROCESS (current_state, instrReg , compout )
    BEGIN
-      -- ÊØèÊ¨°ËΩÆËØ¢Áä∂ÊÄÅÊú∫ÈÉΩ‰ºöÂ∞ÜÊâÄÊúâÁä∂ÊÄÅÊ∏ÖÈõ∂
+      -- √ø¥Œ¬÷—Ø◊¥Ã¨ª˙∂ºª·Ω´À˘”–◊¥Ã¨«Â¡„
       compSel <= "000";
       progCntrWr <= '0';
       progCntrRd <= '0';
@@ -66,10 +99,12 @@ BEGIN
       regWr <= '0';
       rw <= '0';
       vma <= '0';
+      com_in <= '0';
+      com_out <= '0';
 
-      -- ËøõË°åÂΩìÂâçÁä∂ÊÄÅÊú∫Âà§Êñ≠Âπ∂ËøõË°åÂØπÂ∫îÂæÆÊåá‰ª§Êìç‰Ωú
+      -- Ω¯––µ±«∞◊¥Ã¨ª˙≈–∂œ≤¢Ω¯––∂‘”¶Œ¢÷∏¡Ó≤Ÿ◊˜
       CASE current_state IS
-         -- Â∞ÜÂ§ç‰ΩçÊîæÂú®ÊúÄÂâçÈù¢ÊòØÂõ†‰∏∫ÔºåÂ§ç‰ΩçÂú®Á≥ªÁªü‰∏≠Êã•ÊúâÊúÄÈ´ò‰ºòÂÖàÁ∫ß
+         -- Ω´∏¥Œª∑≈‘⁄◊Ó«∞√Ê «“ÚŒ™£¨∏¥Œª‘⁄œµÕ≥÷–”µ”–◊Ó∏ﬂ”≈œ»º∂
          WHEN reset1 =>
             aluSel <= zero;
             shiftSel <= shftpass;
@@ -86,38 +121,535 @@ BEGIN
             instrWr <= '1';
             next_state <= execute;
 
-         -- ÈöèÂç≥ËøõË°åÊâßË°åÊåá‰ª§Êìç‰ΩúÁöÑÂà§Êñ≠ÔºåÊ†πÊçÆÂΩìÂâçÊåá‰ª§ÁöÑÂëΩ‰ª§ÊâçÂèØ‰ª•Áü•ÈÅì‰∏ãÊù°Êåá‰ª§ËØ•Âπ≤Âòõ
+         -- ÀÊº¥Ω¯––÷¥––÷∏¡Ó≤Ÿ◊˜µƒ≈–∂œ£¨∏˘æ›µ±«∞÷∏¡Óµƒ√¸¡Ó≤≈ø…“‘÷™µ¿œ¬Ãı÷∏¡Ó∏√∏…¬Ô
          WHEN execute =>
             CASE instrReg(15 DOWNTO 11) IS
-               -- nopÊåá‰ª§ÔºåÁõ¥Êé•Ë∑≥ËΩ¨‰∏ã‰∏ÄÊù°Êåá‰ª§
+
+               -- nop÷∏¡Ó£¨÷±Ω”Ã¯◊™œ¬“ªÃı÷∏¡Ó
                WHEN "00000" =>
                   next_state <= incPc;
-               -- Ë£ÖËΩΩÊï∞ÊçÆÂà∞ÂØÑÂ≠òÂô®
+
+               -- ◊∞‘ÿ ˝æ›µΩºƒ¥Ê∆˜
                WHEN "00001" =>
                   next_state <= load2;
-               -- Â∞ÜÂØÑÂ≠òÂô®ÁöÑÊï∞ÂÄºÂ≠òÂÖ•Â≠òÂÇ®Âô®
+
+               -- Ω´ºƒ¥Ê∆˜µƒ ˝÷µ¥Ê»Î¥Ê¥¢∆˜
                WHEN "00010" =>
                   next_state <= store2;
-               -- Â∞ÜÁ´ãÂç≥Êï∞Ë£ÖÂÖ•ÂØÑÂ≠òÂô®
+
+               -- ‘⁄ºƒ¥Ê∆˜º‰¥´ÀÕ≤Ÿ◊˜ ˝
+               WHEN "00011" =>
+                  next_state <= move1;
+
+               -- Ω´¡¢º¥ ˝◊∞»Îºƒ¥Ê∆˜
                WHEN "00100" =>
                   progCntrRd <= '1';
                   aluSel <= inc;
                   shiftSel <= shftpass;
                   next_state <= loadI2;
-               -- Â∞ÜÊüê‰∏™ÂØÑÂ≠òÂô®Êï∞ÂÄºÂä†‰∏ÄÂêéÊîæÂõû
+
+               -- ◊™“∆µΩ¡¢º¥ ˝µÿ÷∑
+               WHEN "00101" =>
+                  next_state <= jmp1;
+
+               -- Ãıº˛◊™“∆÷∏¡Ó£¨¥Û”⁄Ã¯◊™¡¢º¥ ˝µÿ÷∑
+               WHEN "00110" =>
+                  next_state <= jmpgt1;
+
+               -- Ω´ƒ≥∏ˆºƒ¥Ê∆˜ ˝÷µº”“ª∫Û∑≈ªÿ
                WHEN "00111" =>
                   next_state <= inc2;
-               -- ‰∏§‰∏™ÂØÑÂ≠òÂô®Áõ∏Âä†ÔºåÈªòËÆ§Â≠òÂÖ•R3
+
+               -- Ω´ƒ≥∏ˆºƒ¥Ê∆˜ ˝÷µºı“ª∫Û∑≈ªÿ
+               WHEN "01000" =>
+                  next_state <= dec2;
+
+               -- ¡Ω∏ˆºƒ¥Ê∆˜œ‡”Î£¨ƒ¨»œ¥Ê»ÎR3
+               WHEN "01001" =>
+                  next_state <= and2;
+
+               -- ¡Ω∏ˆºƒ¥Ê∆˜œ‡ªÚ£¨ƒ¨»œ¥Ê»ÎR3
+               WHEN "01010" =>
+                  next_state <= or2;
+
+               -- ¡Ω∏ˆºƒ¥Ê∆˜œ‡“ÏªÚ£¨ƒ¨»œ¥Ê»ÎR3
+               WHEN "01011" =>
+                  next_state <= xor2;
+
+               -- ºƒ¥Ê∆˜»°∑¥
+               WHEN "01100" =>
+                  next_state <= not2;
+
+               -- ¡Ω∏ˆºƒ¥Ê∆˜œ‡º”£¨ƒ¨»œ¥Ê»ÎR3
                WHEN "01101" =>
                   next_state <= add2;
-               -- Âú®ÂØÑÂ≠òÂô®Èó¥‰º†ÈÄÅÊìç‰ΩúÊï∞
-               WHEN "00011" =>
-                  next_state <= move1;
-               -- ÂÖ∂ÂÆÉÊÉÖÂÜµÈÉΩÊòØnopÊåá‰ª§
+
+               -- ¡Ω∏ˆºƒ¥Ê∆˜œ‡ºı£¨ƒ¨»œ¥Ê»ÎR3
+               WHEN "01110" =>
+                  next_state <= sub2;
+
+               -- IN ÷∏¡Ó ‰»Î ˝æ›µΩºƒ¥Ê∆˜
+               WHEN "01111" =>
+                  next_state <= in1;
+
+               -- JMPLTI÷∏¡Ó£¨–°”⁄Ã¯◊™
+               WHEN "10000" =>
+                  next_state <= jmplt1;
+
+               -- OUT ÷∏¡Ó  ‰≥ˆºƒ¥Ê∆˜7 ˝÷µ
+               WHEN "10010" =>
+                  next_state <= out1;
+
+               -- JMPI÷∏¡Ó£¨¡¢º¥Ã¯◊™
+               WHEN "10101" =>
+                  next_state <= jmp1;
+
+               -- JMPEQI÷∏¡Ó£¨œ‡µ»Ã¯◊™¡¢º¥ ˝÷∏¡Ó
+               WHEN "10111" =>
+                  next_state <= jmpeq1;
+
+               -- JMPLTE÷∏¡Ó£¨–°”⁄µ»”⁄Ã¯◊™
+               WHEN "11001" =>
+                  next_state <= jmplte1;
+
+               -- SHL÷∏¡Ó£¨◊Û“∆“ªŒª
+               WHEN "11010" =>
+                  next_state <= shftl1;
+
+               -- SHR÷∏¡Ó£¨”““∆“ªŒª
+               WHEN "11011" =>
+                  next_state <= shftr1;
+
+               -- ROTR÷∏¡Ó£¨—≠ª∑”““∆“ªŒª
+               WHEN "11100" =>
+                  next_state <= rotr1;
+
+               -- ROTL÷∏¡Ó£¨—≠ª∑◊Û“∆“ªŒª
+               WHEN "11101" =>
+                  next_state <= rotl1;
+
+
                WHEN OTHERS =>
                   next_state <= incPc;
             END CASE;
 
+
+         ----------------------------------------------
+         -- IN ÷∏¡ÓΩ´ ˝æ›◊∞»Îºƒ¥Ê∆˜7
+         WHEN in1 =>
+            -- com_in <= '1';
+            -- regSel <= "110";
+            -- regWr <= '1';
+            next_state <= in2;
+         WHEN in2 =>
+            regWr <= '1';
+            com_in <= '1';
+            regSel <= "110";
+            -- regWr <= '1';
+            next_state <= in3;
+         WHEN in3 =>
+            com_in <= '1';
+            regSel <= "110";
+            regWr <= '1';
+            -- regWr <= '1';
+            next_state <= incPc;
+
+         -- OUT ÷∏¡ÓΩ´ ˝æ›∂¡≥ˆºƒ¥Ê∆˜7µΩ◊‹œﬂ≤¢œ‘ æ
+         WHEN out1 =>
+            com_out <= '1';
+            regSel <= "111";
+            regRd <= '1';
+            next_state <= out2;
+         WHEN out2 =>
+            com_out <= '1';
+            regSel <= "111";
+            regRd <= '1';
+            next_state <= out3;
+         WHEN out3 =>
+            next_state <= incPc;
+
+         ----------------------------------------------
+         --JMPEQI µ»”⁄Ã¯◊™÷∏¡Ó
+         when jmpeq1 =>
+            progcntrRd<='1';
+            alusel<=inc;
+            shiftSel<=shftpass;
+            outregWr <= '1';
+            next_state <= jmpeq2;   --∂¡≥Ã–Úºƒ¥Ê∆˜÷–µƒ÷µ£¨÷¡ALUº”1≥…À´◊÷÷∏¡Óµ⁄∂˛◊÷µƒRAMµÿ÷∑£¨Õ®π˝“∆Œª∆˜–¥»Î ‰≥ˆºƒ¥Ê∆˜
+         when jmpeq2 =>
+            outregRd <= '1';
+            progcntrWr <= '1';
+            addrregWr <= '1';
+            next_state <= jmpeq3;   --÷∏¡Óµ⁄∂˛◊÷RAMµÿ÷∑¥” ‰≥ˆºƒ¥Ê∆˜∂¡µΩ◊‹œﬂ£¨≤¢«“¥”◊‹œﬂ–¥ªÿ≥Ã–Úº∆ ˝∆˜∫Õµÿ÷∑ºƒ¥Ê∆˜
+         when jmpeq3 =>
+            regSel <= instrReg(5 downto 3);
+            regRd <= '1';
+            opRegWr <= '1';
+            next_state <= jmpeq4;   --∂¡‘¥ºƒ¥Ê∆˜÷–µƒ÷µ£¨Õ®π˝◊‹œﬂ–¥»Îπ§◊˜ºƒ¥Ê∆˜£¨ÀÕ÷¡±»Ωœ∆˜A ‰»Î∂À
+         when jmpeq4 =>
+            regSel <= instrReg(2 downto 0);
+            regRd <= '1';
+            compsel <= eq;
+            next_state <= jmpeq5;  --∂¡ƒøµƒºƒ¥Ê∆˜µƒ÷µ£¨Õ®π˝◊‹œﬂÀÕ÷¡±»Ωœ∆˜B ‰»Î∂À£¨AB ‰»Î‘À––µ»”⁄±»Ωœ
+         when jmpeq5 =>
+            regSel <= instrReg(2 downto 0);
+            regRd <= '1';
+            compsel <= eq;
+            if compout = '1' then
+               next_state <= jmpeq6;   --µ»”⁄±»Ωœ≥…¡¢£¨¥ŒÃ¨Ω¯»Îjmpeq6£¨∂¡»°◊™“∆µÿ÷∑
+            else
+               next_state <= incPc;       --µ»”⁄±»Ωœ≤ª≥…¡¢£¨¥ŒÃ¨Ω¯»ÎÀ≥–Ú÷∏¡Óπ´π≤¡˜≥ÃincPc£¨»°œ¬“ª÷∏¡Ó
+            end if;
+         when jmpeq6 =>
+            vma <= '1';
+            rw <= '0';
+            next_state <= jmpeq7; --∂¡»°RAM÷–±£¥Êµƒ◊™“∆µÿ÷∑µΩ◊‹œﬂ£®◊¢“‚“™—”≥ŸT1+RAM∂¡ ±º‰∫Û≤≈”––ß£©
+         when jmpeq7 =>
+            vma <= '1';
+            rw <= '0';
+            progcntrWr <= '1';
+            next_state <= loadPc1;  --◊™“∆µÿ÷∑–¥»Î≥Ã–Úºƒ¥Ê∆˜£®“ÚŒ™∏√ºƒ¥Ê∆˜µƒ–¥»ÎΩˆ—” ±T1£¨≤ªƒ‹‘⁄jmpeq6◊¥Ã¨Ω¯––£©
+
+         ----------------------------------------------
+         --JMPLTI µ»”⁄Ã¯◊™÷∏¡Ó
+         when jmplt1 =>
+            progcntrRd<='1';
+            alusel<=inc;
+            shiftSel<=shftpass;
+            outregWr <= '1';
+            next_state <= jmplt2;   --∂¡≥Ã–Úºƒ¥Ê∆˜÷–µƒ÷µ£¨÷¡ALUº”1≥…À´◊÷÷∏¡Óµ⁄∂˛◊÷µƒRAMµÿ÷∑£¨Õ®π˝“∆Œª∆˜–¥»Î ‰≥ˆºƒ¥Ê∆˜
+         when jmplt2 =>
+            outregRd <= '1';
+            progcntrWr <= '1';
+            addrregWr <= '1';
+            next_state <= jmplt3;   --÷∏¡Óµ⁄∂˛◊÷RAMµÿ÷∑¥” ‰≥ˆºƒ¥Ê∆˜∂¡µΩ◊‹œﬂ£¨≤¢«“¥”◊‹œﬂ–¥ªÿ≥Ã–Úº∆ ˝∆˜∫Õµÿ÷∑ºƒ¥Ê∆˜
+         when jmplt3 =>
+            regSel <= instrReg(2 downto 0);
+            regRd <= '1';
+            opRegWr <= '1';
+            next_state <= jmplt4;   --∂¡‘¥ºƒ¥Ê∆˜÷–µƒ÷µ£¨Õ®π˝◊‹œﬂ–¥»Îπ§◊˜ºƒ¥Ê∆˜£¨ÀÕ÷¡±»Ωœ∆˜A ‰»Î∂À
+         when jmplt4 =>
+            regSel <= instrReg(5 downto 3);
+            regRd <= '1';
+            compsel <= lt;
+            next_state <= jmplt5;  --∂¡ƒøµƒºƒ¥Ê∆˜µƒ÷µ£¨Õ®π˝◊‹œﬂÀÕ÷¡±»Ωœ∆˜B ‰»Î∂À£¨AB ‰»Î‘À––µ»”⁄±»Ωœ
+         when jmplt5 =>
+            regSel <= instrReg(5 downto 3);
+            regRd <= '1';
+            compsel <= lt;
+            if compout = '1' then
+               next_state <= jmplt6;   --µ»”⁄±»Ωœ≥…¡¢£¨¥ŒÃ¨Ω¯»Îjmpeq6£¨∂¡»°◊™“∆µÿ÷∑
+            else
+               next_state <= incPc;       --µ»”⁄±»Ωœ≤ª≥…¡¢£¨¥ŒÃ¨Ω¯»ÎÀ≥–Ú÷∏¡Óπ´π≤¡˜≥ÃincPc£¨»°œ¬“ª÷∏¡Ó
+            end if;
+         when jmplt6 =>
+            vma <= '1';
+            rw <= '0';
+            next_state <= jmplt7; --∂¡»°RAM÷–±£¥Êµƒ◊™“∆µÿ÷∑µΩ◊‹œﬂ£®◊¢“‚“™—”≥ŸT1+RAM∂¡ ±º‰∫Û≤≈”––ß£©
+         when jmplt7 =>
+            vma <= '1';
+            rw <= '0';
+            progcntrWr <= '1';
+            next_state <= loadPc1;  --◊™“∆µÿ÷∑–¥»Î≥Ã–Úºƒ¥Ê∆˜£®“ÚŒ™∏√ºƒ¥Ê∆˜µƒ–¥»ÎΩˆ—” ±T1£¨≤ªƒ‹‘⁄jmpeq6◊¥Ã¨Ω¯––£©
+
+         ----------------------------------------------
+         --JMPGTI µ»”⁄Ã¯◊™÷∏¡Ó
+         when jmpgt1 =>
+            progcntrRd<='1';
+            alusel<=inc;
+            shiftSel<=shftpass;
+            outregWr <= '1';
+            next_state <= jmpgt2;   --∂¡≥Ã–Úºƒ¥Ê∆˜÷–µƒ÷µ£¨÷¡ALUº”1≥…À´◊÷÷∏¡Óµ⁄∂˛◊÷µƒRAMµÿ÷∑£¨Õ®π˝“∆Œª∆˜–¥»Î ‰≥ˆºƒ¥Ê∆˜
+         when jmpgt2 =>
+            outregRd <= '1';
+            progcntrWr <= '1';
+            addrregWr <= '1';
+            next_state <= jmpgt3;   --÷∏¡Óµ⁄∂˛◊÷RAMµÿ÷∑¥” ‰≥ˆºƒ¥Ê∆˜∂¡µΩ◊‹œﬂ£¨≤¢«“¥”◊‹œﬂ–¥ªÿ≥Ã–Úº∆ ˝∆˜∫Õµÿ÷∑ºƒ¥Ê∆˜
+         when jmpgt3 =>
+            regSel <= instrReg(2 downto 0);
+            regRd <= '1';
+            opRegWr <= '1';
+            next_state <= jmpgt4;   --∂¡‘¥ºƒ¥Ê∆˜÷–µƒ÷µ£¨Õ®π˝◊‹œﬂ–¥»Îπ§◊˜ºƒ¥Ê∆˜£¨ÀÕ÷¡±»Ωœ∆˜A ‰»Î∂À
+         when jmpgt4 =>
+            regSel <= instrReg(5 downto 3);
+            regRd <= '1';
+            compsel <= gt;
+            next_state <= jmpgt5;  --∂¡ƒøµƒºƒ¥Ê∆˜µƒ÷µ£¨Õ®π˝◊‹œﬂÀÕ÷¡±»Ωœ∆˜B ‰»Î∂À£¨AB ‰»Î‘À––µ»”⁄±»Ωœ
+         when jmpgt5 =>
+            regSel <= instrReg(5 downto 3);
+            regRd <= '1';
+            compsel <= gt;
+            if compout = '1' then
+               next_state <= jmpgt6;   --µ»”⁄±»Ωœ≥…¡¢£¨¥ŒÃ¨Ω¯»Îjmpgt6£¨∂¡»°◊™“∆µÿ÷∑
+            else
+               next_state <= incPc;       --µ»”⁄±»Ωœ≤ª≥…¡¢£¨¥ŒÃ¨Ω¯»ÎÀ≥–Ú÷∏¡Óπ´π≤¡˜≥ÃincPc£¨»°œ¬“ª÷∏¡Ó
+            end if;
+         when jmpgt6 =>
+            vma <= '1';
+            rw <= '0';
+            next_state <= jmpgt7; --∂¡»°RAM÷–±£¥Êµƒ◊™“∆µÿ÷∑µΩ◊‹œﬂ£®◊¢“‚“™—”≥ŸT1+RAM∂¡ ±º‰∫Û≤≈”––ß£©
+         when jmpgt7 =>
+            vma <= '1';
+            rw <= '0';
+            progcntrWr <= '1';
+            next_state <= loadPc1;  --◊™“∆µÿ÷∑–¥»Î≥Ã–Úºƒ¥Ê∆˜£®“ÚŒ™∏√ºƒ¥Ê∆˜µƒ–¥»ÎΩˆ—” ±T1£¨≤ªƒ‹‘⁄jmpeq6◊¥Ã¨Ω¯––£©
+
+
+         ----------------------------------------------
+         --JMPLTEI µ»”⁄Ã¯◊™÷∏¡Ó
+         when jmplte1 =>
+            progcntrRd<='1';
+            alusel<=inc;
+            shiftSel<=shftpass;
+            outregWr <= '1';
+            next_state <= jmplte2;   --∂¡≥Ã–Úºƒ¥Ê∆˜÷–µƒ÷µ£¨÷¡ALUº”1≥…À´◊÷÷∏¡Óµ⁄∂˛◊÷µƒRAMµÿ÷∑£¨Õ®π˝“∆Œª∆˜–¥»Î ‰≥ˆºƒ¥Ê∆˜
+         when jmplte2 =>
+            outregRd <= '1';
+            progcntrWr <= '1';
+            addrregWr <= '1';
+            next_state <= jmplte3;   --÷∏¡Óµ⁄∂˛◊÷RAMµÿ÷∑¥” ‰≥ˆºƒ¥Ê∆˜∂¡µΩ◊‹œﬂ£¨≤¢«“¥”◊‹œﬂ–¥ªÿ≥Ã–Úº∆ ˝∆˜∫Õµÿ÷∑ºƒ¥Ê∆˜
+         when jmplte3 =>
+            regSel <= instrReg(2 downto 0);
+            regRd <= '1';
+            opRegWr <= '1';
+            next_state <= jmplte4;   --∂¡‘¥ºƒ¥Ê∆˜÷–µƒ÷µ£¨Õ®π˝◊‹œﬂ–¥»Îπ§◊˜ºƒ¥Ê∆˜£¨ÀÕ÷¡±»Ωœ∆˜A ‰»Î∂À
+         when jmplte4 =>
+            regSel <= instrReg(5 downto 3);
+            regRd <= '1';
+            compsel <= lte;
+            next_state <= jmplte5;  --∂¡ƒøµƒºƒ¥Ê∆˜µƒ÷µ£¨Õ®π˝◊‹œﬂÀÕ÷¡±»Ωœ∆˜B ‰»Î∂À£¨AB ‰»Î‘À––µ»”⁄±»Ωœ
+         when jmplte5 =>
+            regSel <= instrReg(5 downto 3);
+            regRd <= '1';
+            compsel <= lte;
+            if compout = '1' then
+               next_state <= jmplte6;   --µ»”⁄±»Ωœ≥…¡¢£¨¥ŒÃ¨Ω¯»Îjmpeq6£¨∂¡»°◊™“∆µÿ÷∑
+            else
+               next_state <= incPc;       --µ»”⁄±»Ωœ≤ª≥…¡¢£¨¥ŒÃ¨Ω¯»ÎÀ≥–Ú÷∏¡Óπ´π≤¡˜≥ÃincPc£¨»°œ¬“ª÷∏¡Ó
+            end if;
+         when jmplte6 =>
+            vma <= '1';
+            rw <= '0';
+            next_state <= jmplte7; --∂¡»°RAM÷–±£¥Êµƒ◊™“∆µÿ÷∑µΩ◊‹œﬂ£®◊¢“‚“™—”≥ŸT1+RAM∂¡ ±º‰∫Û≤≈”––ß£©
+         when jmplte7 =>
+            vma <= '1';
+            rw <= '0';
+            progcntrWr <= '1';
+            next_state <= loadPc1;  --◊™“∆µÿ÷∑–¥»Î≥Ã–Úºƒ¥Ê∆˜£®“ÚŒ™∏√ºƒ¥Ê∆˜µƒ–¥»ÎΩˆ—” ±T1£¨≤ªƒ‹‘⁄jmpeq6◊¥Ã¨Ω¯––£©
+
+         ----------------------------------------------
+         --JMPI Ã¯◊™
+         when jmp1 =>
+            progcntrRd <= '1';
+            alusel <= inc;
+            shiftsel <= shftpass;
+            outregWr <= '1';
+            next_state <= jmp2;   --∂¡≥Ã–Úºƒ¥Ê∆˜÷–µƒ÷µ£¨÷¡ALUº”1≥…À´◊÷÷∏¡Óµ⁄∂˛◊÷µƒRAMµÿ÷∑£¨Õ®π˝“∆Œª∆˜–¥»Î ‰≥ˆºƒ¥Ê∆˜
+         when jmp2 =>
+            outregRd <= '1';
+            progcntrWr<='1';
+            addrregWr<='1';
+            next_state <= jmp3;  --◊™“∆÷∏¡Óµ⁄∂˛◊÷RAMµÿ÷∑¥” ‰≥ˆºƒ¥Ê∆˜∂¡µΩ◊‹œﬂ£¨≤¢«“¥”◊‹œﬂ–¥ªÿ≥Ã–Úº∆ ˝∆˜∫Õµÿ÷∑ºƒ¥Ê∆˜
+         when jmp3 =>
+            vma<='1';
+            rw<='0';
+            next_state <= jmp4;  --∂¡»°RAM÷–±£¥Êµƒ◊™“∆µÿ÷∑µΩ◊‹œﬂ£®◊¢“‚“™—”≥ŸT1+RAM∂¡ ±º‰∫Û≤≈”––ß£©
+         when jmp4 =>
+            vma <= '1';
+            rw <= '0';
+            progcntrWr <= '1';
+            next_state <= loadPc1;  --◊™“∆µÿ÷∑–¥»Î≥Ã–Úºƒ¥Ê∆˜£®“ÚŒ™∏√ºƒ¥Ê∆˜–¥»ÎΩˆ—” ±T1£¨≤ªƒ‹‘⁄jmp3◊¥Ã¨Ω¯––£©
+
+
+         ----------------------------------------------
+         -- PCÃ¯◊™÷∏¡Ó
+         when loadPc1 =>
+            progcntrRd <= '1';
+            addrRegWr <= '1';
+            next_state <= loadPc2;		--∂¡≥ˆ≥Ã–Úºƒ¥Ê∆˜÷–µƒ≥Ã–Ú◊™“∆µÿ÷∑£¨Õ®π˝◊‹œﬂ–¥»Îµÿ÷∑ºƒ¥Ê∆˜
+         when loadPc2 =>
+            vma <= '1';
+            rw <= '0';
+            instrWr <= '1';
+            next_state <= execute;       	--∂¡¥Ê¥¢∆˜÷–◊™“∆µÿ÷∑µƒ÷∏¡Ó£¨Õ®π˝◊‹œﬂ–¥»Î÷∏¡Óºƒ¥Ê∆˜
+
+
+         ----------------------------------------------
+         --SHL Ω´ƒ≥∏ˆºƒ¥Ê∆˜÷–µƒ÷µ◊Û“∆“ªŒª∫Û∑≈ªÿ∏√ºƒ¥Ê∆˜
+         when shftl1=>
+            regSel<=instrReg(2 downto 0);
+            regRd<='1';
+            aluSel<=alupass ;
+            shiftSel<="001";
+            outregWr <= '1';
+            next_state<=shftl2;
+         when shftl2=>
+            outRegRd<='1';
+            regSel<=instrReg(2 downto 0);
+            regWr<='1';
+            next_state <= incPc;
+
+         ----------------------------------------------
+         --SHR Ω´ƒ≥∏ˆºƒ¥Ê∆˜÷–µƒ÷µ”““∆“ªŒª∫Û∑≈ªÿ∏√ºƒ¥Ê∆˜
+         when shftr1=>
+            regSel<=instrReg(2 downto 0);
+            regRd<='1';
+            aluSel<=alupass ;
+            shiftSel<="010";
+            outregWr <= '1';
+            next_state<=shftr2;
+         when shftr2=>
+            outRegRd<='1';
+            regSel<=instrReg(2 downto 0);
+            regWr<='1';
+            next_state <= incPc;
+
+         ----------------------------------------------
+         --ROTL Ω´ƒ≥∏ˆºƒ¥Ê∆˜÷–µƒ÷µ—≠ª∑◊Û“∆“ªŒª∫Û∑≈ªÿ∏√ºƒ¥Ê∆˜
+         when rotl1=>
+            regSel<=instrReg(2 downto 0);
+            regRd<='1';
+            aluSel<=alupass ;
+            shiftSel<="011";
+            outregWr <= '1';
+            next_state<=rotl2;
+         when rotl2=>
+            outRegRd<='1';
+            regSel<=instrReg(2 downto 0);
+            regWr<='1';
+            next_state <= incPc;
+
+         ----------------------------------------------
+         --ROTR Ω´ƒ≥∏ˆºƒ¥Ê∆˜÷–µƒ÷µ—≠ª∑”““∆“ªŒª∫Û∑≈ªÿ∏√ºƒ¥Ê∆˜
+         when rotr1=>
+            regSel<=instrReg(2 downto 0);
+            regRd<='1';
+            aluSel<=alupass ;
+            shiftSel<="100";
+            outregWr <= '1';
+            next_state<=rotr2;
+         when rotr2=>
+            outRegRd<='1';
+            regSel<=instrReg(2 downto 0);
+            regWr<='1';
+            next_state <= incPc;
+
+         ----------------------------------------------
+         --DEC Ω´ƒ≥∏ˆºƒ¥Ê∆˜÷–µƒ÷µºı“ª∑≈ªÿ∏√ºƒ¥Ê∆˜
+         WHEN dec2 =>
+            regSel <= instrReg(2 DOWNTO 0);
+            regRd <= '1';
+            aluSel <= dec;
+            shiftSel <= shftpass;
+            outRegWr <= '1';
+            next_state <= dec3;
+         WHEN dec3 =>
+            outRegRd <= '1';
+            next_state <= dec4;
+         WHEN dec4 =>
+            outRegRd <= '1';
+            regSel <= instrReg(2 DOWNTO 0);
+            regWr <= '1';
+            next_state <= incPc;
+
+         ----------------------------------------------
+         --NOT Ω´ƒ≥∏ˆºƒ¥Ê∆˜÷–µƒ÷µ»°∑¥∑≈ªÿ∏√ºƒ¥Ê∆˜
+         WHEN not2 =>
+            regSel <= instrReg(2 DOWNTO 0);
+            regRd <= '1';
+            aluSel <= OP_not;
+            shiftSel <= shftpass;
+            outRegWr <= '1';
+            next_state <= not3;
+         WHEN not3 =>
+            outRegRd <= '1';
+            next_state <= not4;
+         WHEN not4 =>
+            outRegRd <= '1';
+            regSel <= instrReg(2 DOWNTO 0);
+            regWr <= '1';
+            next_state <= incPc;
+
+         ----------------------------------------------
+         --AND Ω´¡Ω∏ˆºƒ¥Ê∆˜÷–µƒ÷µœ‡”Î
+         WHEN and2 =>
+            regSel <= instrReg(5 DOWNTO 3);
+            regRd <= '1';
+            next_state <= and3;
+            opRegWr <= '1';
+         WHEN and3 =>
+            regSel <= instrReg(2 DOWNTO 0);
+            regRd <= '1';
+            aluSel <= OP_and;
+            shiftSel <= shftpass;
+            outRegWr <= '1';
+            next_state <= and4;
+         WHEN and4 =>
+            regSel <= "011";
+            outRegRd <= '1';
+            regWr <= '1';
+            next_state <= incPc;
+
+         ----------------------------------------------
+         --OR Ω´¡Ω∏ˆºƒ¥Ê∆˜÷–µƒ÷µœ‡ªÚ
+         WHEN or2 =>
+            regSel <= instrReg(5 DOWNTO 3);
+            regRd <= '1';
+            next_state <= or3;
+            opRegWr <= '1';
+         WHEN or3 =>
+            regSel <= instrReg(2 DOWNTO 0);
+            regRd <= '1';
+            aluSel <= OP_or;
+            shiftSel <= shftpass;
+            outRegWr <= '1';
+            next_state <= or4;
+         WHEN or4 =>
+            regSel <= "011";
+            outRegRd <= '1';
+            regWr <= '1';
+            next_state <= incPc;
+
+         ----------------------------------------------
+         --XOR Ω´¡Ω∏ˆºƒ¥Ê∆˜÷–µƒ÷µœ‡“ÏªÚ
+         WHEN xor2 =>
+            regSel <= instrReg(5 DOWNTO 3);
+            regRd <= '1';
+            next_state <= xor3;
+            opRegWr <= '1';
+         WHEN xor3 =>
+            regSel <= instrReg(2 DOWNTO 0);
+            regRd <= '1';
+            aluSel <= OP_xor;
+            shiftSel <= shftpass;
+            outRegWr <= '1';
+            next_state <= xor4;
+         WHEN xor4 =>
+            regSel <= "011";
+            outRegRd <= '1';
+            regWr <= '1';
+            next_state <= incPc;
+
+         WHEN sub2 =>
+            regSel <= instrReg(2 DOWNTO 0);
+            regRd <= '1';
+            next_state <= sub3;
+            opRegWr <= '1';
+         WHEN sub3 =>
+            regSel <= instrReg(5 DOWNTO 3);
+            regRd <= '1';
+            aluSel <= sub;
+            shiftSel <= shftpass;
+            outRegWr <= '1';
+            next_state <= sub4;
+         WHEN sub4 =>
+            regSel <= "011";
+            outRegRd <= '1';
+            regWr <= '1';
+            next_state <= incPc;
+
+         -- “‘œ¬æ˘Œ™’˝»∑÷∏¡Ó£¨Œﬁ–Ë¡ÌÕ‚–ﬁ∏ƒ
+         --
          WHEN load2 =>
             regSel <= instrReg(5 DOWNTO 3);
             regRd <= '1';
@@ -129,6 +661,7 @@ BEGIN
             regSel <= instrReg(2 DOWNTO 0);
             regWr <= '1';
             next_state <= incPc;
+
          WHEN add2 =>
             regSel <= instrReg(5 DOWNTO 3);
             regRd <= '1';
@@ -158,6 +691,7 @@ BEGIN
             outRegRd <= '1';
             regWr <= '1';
             next_state <= incPc;
+
          WHEN store2 =>
             regSel <= instrReg(2 DOWNTO 0);
             regRd <= '1';
@@ -231,10 +765,10 @@ BEGIN
 
    PROCESS (clock, reset)
    BEGIN
-      -- Â§ç‰ΩçÊìç‰Ωú‰∏çÂèóÊó∂Â∫èÊéßÂà∂
+      -- ∏¥Œª≤Ÿ◊˜≤ª ‹ ±–Úøÿ÷∆
       IF (reset = '1') THEN
          current_state <= reset1;
-      -- Ê≠£Â∏∏ÁöÑÊåá‰ª§Êìç‰ΩúÂèóÂà∞Êó∂Â∫èÊéßÂà∂
+      -- ’˝≥£µƒ÷∏¡Ó≤Ÿ◊˜ ‹µΩ ±–Úøÿ÷∆
       ELSIF (clock'EVENT AND clock = '1') THEN
          current_state <= next_state;
       END IF;

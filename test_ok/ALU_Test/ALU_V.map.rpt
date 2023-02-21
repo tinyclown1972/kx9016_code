@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ALU_V
-Thu Mar 03 13:17:30 2022
+Fri Apr 08 16:24:46 2022
 Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -10,7 +10,12 @@ Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +41,20 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Mar 03 13:17:30 2022        ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 08 16:24:46 2022    ;
 ; Quartus II 64-Bit Version          ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name                      ; ALU_V                                    ;
 ; Top-level Entity Name              ; ALU_V                                    ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; N/A until Partition Merge                ;
-;     Total combinational functions  ; N/A until Partition Merge                ;
-;     Dedicated logic registers      ; N/A until Partition Merge                ;
-; Total registers                    ; N/A until Partition Merge                ;
-; Total pins                         ; N/A until Partition Merge                ;
-; Total virtual pins                 ; N/A until Partition Merge                ;
-; Total memory bits                  ; N/A until Partition Merge                ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                ;
-; Total PLLs                         ; N/A until Partition Merge                ;
+; Total logic elements               ; 101                                      ;
+;     Total combinational functions  ; 101                                      ;
+;     Dedicated logic registers      ; 0                                        ;
+; Total registers                    ; 0                                        ;
+; Total pins                         ; 52                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
 +------------------------------------+------------------------------------------+
 
 
@@ -149,21 +154,101 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                             ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------+
+; ALU_V.vhd                        ; yes             ; User VHDL File  ; D:/SYNC_Cloud/Thesis/kx9016_code/test_ok/ALU_Test/ALU_V.vhd ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 101    ;
+;                                             ;        ;
+; Total combinational functions               ; 101    ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 66     ;
+;     -- 3 input functions                    ; 34     ;
+;     -- <=2 input functions                  ; 1      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 85     ;
+;     -- arithmetic mode                      ; 16     ;
+;                                             ;        ;
+; Total registers                             ; 0      ;
+;     -- Dedicated logic registers            ; 0      ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 52     ;
+; Maximum fan-out node                        ; sel[0] ;
+; Maximum fan-out                             ; 51     ;
+; Total fan-out                               ; 384    ;
+; Average fan-out                             ; 2.51   ;
++---------------------------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |ALU_V                     ; 101 (101)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 52   ; 0            ; |ALU_V              ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |ALU_V|Add0                ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; No         ; |ALU_V|Mux3                ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; No         ; |ALU_V|Add0                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Thu Mar 03 13:17:29 2022
+    Info: Processing started: Fri Apr 08 16:24:44 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU_V -c ALU_V
 Info: Parallel compilation is enabled and will use 8 of the 8 processors detected
-Error (10500): VHDL syntax error at ALU_V.vhd(39) near text "7";  expecting "]", or an identifier, or a string literal, or "return" File: D:/Documents/Thesis/kx9016_code/test_ok/ALU_Test/ALU_V.vhd Line: 39
-Info: Found 0 design units, including 0 entities, in source file alu_v.vhd
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 0 warnings
-    Error: Peak virtual memory: 4440 megabytes
-    Error: Processing ended: Thu Mar 03 13:17:30 2022
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Info: Found 2 design units, including 1 entities, in source file alu_v.vhd
+    Info: Found design unit 1: ALU_V-rtl
+    Info: Found entity 1: ALU_V
+Info: Elaborating entity "ALU_V" for the top level hierarchy
+Info: Implemented 153 device resources after synthesis - the final resource count might be different
+    Info: Implemented 36 input pins
+    Info: Implemented 16 output pins
+    Info: Implemented 101 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4446 megabytes
+    Info: Processing ended: Fri Apr 08 16:24:46 2022
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

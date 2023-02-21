@@ -1,0 +1,353 @@
+Partition Merge report for kx9016
+Fri Apr 01 23:19:35 2022
+Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Connections to In-System Debugging Instance "auto_signaltap_0"
+  4. Partition Merge Netlist Types Used
+  5. Partition Merge Partition Statistics
+  6. Partition Merge Resource Usage Summary
+  7. Partition Merge RAM Summary
+  8. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Partition Merge Summary                                                       ;
++------------------------------------+------------------------------------------+
+; Partition Merge Status             ; Successful - Fri Apr 01 23:19:35 2022    ;
+; Quartus II 64-Bit Version          ; 9.1 Build 222 10/21/2009 SJ Full Version ;
+; Revision Name                      ; kx9016                                   ;
+; Top-level Entity Name              ; kx9016                                   ;
+; Family                             ; Cyclone II                               ;
+; Total logic elements               ; 2,198                                    ;
+;     Total combinational functions  ; 1,159                                    ;
+;     Dedicated logic registers      ; 1,503                                    ;
+; Total registers                    ; 1503                                     ;
+; Total pins                         ; 241                                      ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 143,360                                  ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 1                                        ;
++------------------------------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                                ;
++---------+---------------+-----------+----------------+-------------------+-------------------------------------------+--------------------------------------------------------------------------------------------------------+
+; Name    ; Type          ; Status    ; Partition Name ; Netlist Type Used ; Actual Connection                         ; Details                                                                                                ;
++---------+---------------+-----------+----------------+-------------------+-------------------------------------------+--------------------------------------------------------------------------------------------------------+
+; ALU[0]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~125                      ; N/A                                                                                                    ;
+; ALU[0]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~125                      ; N/A                                                                                                    ;
+; ALU[10] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~92                       ; N/A                                                                                                    ;
+; ALU[10] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~92                       ; N/A                                                                                                    ;
+; ALU[11] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~84                       ; N/A                                                                                                    ;
+; ALU[11] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~84                       ; N/A                                                                                                    ;
+; ALU[12] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~82                       ; N/A                                                                                                    ;
+; ALU[12] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~82                       ; N/A                                                                                                    ;
+; ALU[13] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~79                       ; N/A                                                                                                    ;
+; ALU[13] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~79                       ; N/A                                                                                                    ;
+; ALU[14] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~76                       ; N/A                                                                                                    ;
+; ALU[14] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~76                       ; N/A                                                                                                    ;
+; ALU[15] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~73                       ; N/A                                                                                                    ;
+; ALU[15] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~73                       ; N/A                                                                                                    ;
+; ALU[1]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~122                      ; N/A                                                                                                    ;
+; ALU[1]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~122                      ; N/A                                                                                                    ;
+; ALU[2]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~119                      ; N/A                                                                                                    ;
+; ALU[2]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~119                      ; N/A                                                                                                    ;
+; ALU[3]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~116                      ; N/A                                                                                                    ;
+; ALU[3]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~116                      ; N/A                                                                                                    ;
+; ALU[4]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~113                      ; N/A                                                                                                    ;
+; ALU[4]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~113                      ; N/A                                                                                                    ;
+; ALU[5]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~109                      ; N/A                                                                                                    ;
+; ALU[5]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~109                      ; N/A                                                                                                    ;
+; ALU[6]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~106                      ; N/A                                                                                                    ;
+; ALU[6]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~106                      ; N/A                                                                                                    ;
+; ALU[7]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~102                      ; N/A                                                                                                    ;
+; ALU[7]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~102                      ; N/A                                                                                                    ;
+; ALU[8]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~99                       ; N/A                                                                                                    ;
+; ALU[8]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~99                       ; N/A                                                                                                    ;
+; ALU[9]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~95                       ; N/A                                                                                                    ;
+; ALU[9]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ALU_V:inst1|Add0~95                       ; N/A                                                                                                    ;
+; BUS[0]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[0]~83                 ; N/A                                                                                                    ;
+; BUS[0]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[0]~83                 ; N/A                                                                                                    ;
+; BUS[10] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[10]~73                ; N/A                                                                                                    ;
+; BUS[10] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[10]~73                ; N/A                                                                                                    ;
+; BUS[11] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[11]~72                ; N/A                                                                                                    ;
+; BUS[11] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[11]~72                ; N/A                                                                                                    ;
+; BUS[12] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[12]~71                ; N/A                                                                                                    ;
+; BUS[12] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[12]~71                ; N/A                                                                                                    ;
+; BUS[13] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[13]~13                ; N/A                                                                                                    ;
+; BUS[13] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[13]~13                ; N/A                                                                                                    ;
+; BUS[14] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[14]~70                ; N/A                                                                                                    ;
+; BUS[14] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[14]~70                ; N/A                                                                                                    ;
+; BUS[15] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[15]~4                 ; N/A                                                                                                    ;
+; BUS[15] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[15]~4                 ; N/A                                                                                                    ;
+; BUS[1]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[1]~82                 ; N/A                                                                                                    ;
+; BUS[1]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[1]~82                 ; N/A                                                                                                    ;
+; BUS[2]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[2]~81                 ; N/A                                                                                                    ;
+; BUS[2]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[2]~81                 ; N/A                                                                                                    ;
+; BUS[3]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[3]~80                 ; N/A                                                                                                    ;
+; BUS[3]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[3]~80                 ; N/A                                                                                                    ;
+; BUS[4]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[4]~79                 ; N/A                                                                                                    ;
+; BUS[4]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[4]~79                 ; N/A                                                                                                    ;
+; BUS[5]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[5]~78                 ; N/A                                                                                                    ;
+; BUS[5]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[5]~78                 ; N/A                                                                                                    ;
+; BUS[6]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[6]~77                 ; N/A                                                                                                    ;
+; BUS[6]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[6]~77                 ; N/A                                                                                                    ;
+; BUS[7]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[7]~76                 ; N/A                                                                                                    ;
+; BUS[7]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[7]~76                 ; N/A                                                                                                    ;
+; BUS[8]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[8]~75                 ; N/A                                                                                                    ;
+; BUS[8]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[8]~75                 ; N/A                                                                                                    ;
+; BUS[9]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[9]~74                 ; N/A                                                                                                    ;
+; BUS[9]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGT_V:inst11|c_out[9]~74                 ; N/A                                                                                                    ;
+; OUT[0]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[0]                    ; N/A                                                                                                    ;
+; OUT[0]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[0]                    ; N/A                                                                                                    ;
+; OUT[10] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[10]                   ; N/A                                                                                                    ;
+; OUT[10] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[10]                   ; N/A                                                                                                    ;
+; OUT[11] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[11]                   ; N/A                                                                                                    ;
+; OUT[11] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[11]                   ; N/A                                                                                                    ;
+; OUT[12] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[12]                   ; N/A                                                                                                    ;
+; OUT[12] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[12]                   ; N/A                                                                                                    ;
+; OUT[13] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[13]                   ; N/A                                                                                                    ;
+; OUT[13] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[13]                   ; N/A                                                                                                    ;
+; OUT[14] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[14]                   ; N/A                                                                                                    ;
+; OUT[14] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[14]                   ; N/A                                                                                                    ;
+; OUT[15] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[15]                   ; N/A                                                                                                    ;
+; OUT[15] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[15]                   ; N/A                                                                                                    ;
+; OUT[1]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[1]                    ; N/A                                                                                                    ;
+; OUT[1]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[1]                    ; N/A                                                                                                    ;
+; OUT[2]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[2]                    ; N/A                                                                                                    ;
+; OUT[2]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[2]                    ; N/A                                                                                                    ;
+; OUT[3]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[3]                    ; N/A                                                                                                    ;
+; OUT[3]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[3]                    ; N/A                                                                                                    ;
+; OUT[4]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[4]                    ; N/A                                                                                                    ;
+; OUT[4]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[4]                    ; N/A                                                                                                    ;
+; OUT[5]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[5]                    ; N/A                                                                                                    ;
+; OUT[5]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[5]                    ; N/A                                                                                                    ;
+; OUT[6]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[6]                    ; N/A                                                                                                    ;
+; OUT[6]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[6]                    ; N/A                                                                                                    ;
+; OUT[7]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[7]                    ; N/A                                                                                                    ;
+; OUT[7]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[7]                    ; N/A                                                                                                    ;
+; OUT[8]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[8]                    ; N/A                                                                                                    ;
+; OUT[8]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[8]                    ; N/A                                                                                                    ;
+; OUT[9]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[9]                    ; N/A                                                                                                    ;
+; OUT[9]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REG16A_V:inst|c_out[9]                    ; N/A                                                                                                    ;
+; PC[0]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[0]                     ; N/A                                                                                                    ;
+; PC[0]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[0]                     ; N/A                                                                                                    ;
+; PC[10]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[10]                    ; N/A                                                                                                    ;
+; PC[10]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[10]                    ; N/A                                                                                                    ;
+; PC[11]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[11]                    ; N/A                                                                                                    ;
+; PC[11]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[11]                    ; N/A                                                                                                    ;
+; PC[12]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[12]                    ; N/A                                                                                                    ;
+; PC[12]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[12]                    ; N/A                                                                                                    ;
+; PC[13]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[13]                    ; N/A                                                                                                    ;
+; PC[13]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[13]                    ; N/A                                                                                                    ;
+; PC[14]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[14]                    ; N/A                                                                                                    ;
+; PC[14]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[14]                    ; N/A                                                                                                    ;
+; PC[15]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[15]                    ; N/A                                                                                                    ;
+; PC[15]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[15]                    ; N/A                                                                                                    ;
+; PC[1]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[1]                     ; N/A                                                                                                    ;
+; PC[1]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[1]                     ; N/A                                                                                                    ;
+; PC[2]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[2]                     ; N/A                                                                                                    ;
+; PC[2]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[2]                     ; N/A                                                                                                    ;
+; PC[3]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[3]                     ; N/A                                                                                                    ;
+; PC[3]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[3]                     ; N/A                                                                                                    ;
+; PC[4]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[4]                     ; N/A                                                                                                    ;
+; PC[4]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[4]                     ; N/A                                                                                                    ;
+; PC[5]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[5]                     ; N/A                                                                                                    ;
+; PC[5]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[5]                     ; N/A                                                                                                    ;
+; PC[6]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[6]                     ; N/A                                                                                                    ;
+; PC[6]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[6]                     ; N/A                                                                                                    ;
+; PC[7]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[7]                     ; N/A                                                                                                    ;
+; PC[7]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[7]                     ; N/A                                                                                                    ;
+; PC[8]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[8]                     ; N/A                                                                                                    ;
+; PC[8]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[8]                     ; N/A                                                                                                    ;
+; PC[9]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[9]                     ; N/A                                                                                                    ;
+; PC[9]   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; REGA_V:inst9|c_out[9]                     ; N/A                                                                                                    ;
+; STEP    ; pre-synthesis ; connected ; Top            ; post-synthesis    ; pllt:inst24|altpll:altpll_component|_clk1 ; N/A                                                                                                    ;
+; STEP    ; pre-synthesis ; connected ; Top            ; post-synthesis    ; pllt:inst24|altpll:altpll_component|_clk1 ; N/A                                                                                                    ;
+; T1      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; STEP2:inst25|inst                         ; N/A                                                                                                    ;
+; T1      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; STEP2:inst25|inst                         ; N/A                                                                                                    ;
+; T2      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; STEP2:inst25|inst1                        ; N/A                                                                                                    ;
+; T2      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; STEP2:inst25|inst1                        ; N/A                                                                                                    ;
+; comIn   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CONTRLA:inst5|com_in~0_wirecell           ; N/A                                                                                                    ;
+; comIn   ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CONTRLA:inst5|com_in~0_wirecell           ; N/A                                                                                                    ;
+; comOut  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CONTRLA:inst5|com_out~0_wirecell          ; N/A                                                                                                    ;
+; comOut  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CONTRLA:inst5|com_out~0_wirecell          ; N/A                                                                                                    ;
+; iCLK_28 ; post-fitting  ; missing   ; Top            ; post-synthesis    ; GND                                       ; A newer post-synthesis netlist was used.  Recompile again after fitting to succesfully tap the signal. ;
++---------+---------------+-----------+----------------+-------------------+-------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                            ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents             ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Top                            ; User-created   ; Source File       ; Post-Fit               ;                                ;
+; sld_hub:auto_hub               ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_hub:auto_hub               ;
+; sld_signaltap:auto_signaltap_0 ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_signaltap:auto_signaltap_0 ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                                   ;
++---------------------------------------------+------+------------------+--------------------------------+
+; Statistic                                   ; Top  ; sld_hub:auto_hub ; sld_signaltap:auto_signaltap_0 ;
++---------------------------------------------+------+------------------+--------------------------------+
+; Estimated Total logic elements              ; 815  ; 113              ; 1304                           ;
+;                                             ;      ;                  ;                                ;
+; Total combinational functions               ; 567  ; 103              ; 489                            ;
+; Logic element usage by number of LUT inputs ;      ;                  ;                                ;
+;     -- 4 input functions                    ; 382  ; 40               ; 241                            ;
+;     -- 3 input functions                    ; 130  ; 42               ; 164                            ;
+;     -- <=2 input functions                  ; 55   ; 21               ; 84                             ;
+;                                             ;      ;                  ;                                ;
+; Logic elements by mode                      ;      ;                  ;                                ;
+;     -- normal mode                          ; 521  ; 99               ; 435                            ;
+;     -- arithmetic mode                      ; 46   ; 4                ; 54                             ;
+;                                             ;      ;                  ;                                ;
+; Total registers                             ; 312  ; 73               ; 1118                           ;
+;     -- Dedicated logic registers            ; 312  ; 73               ; 1118                           ;
+;     -- I/O registers                        ; 0    ; 0                ; 0                              ;
+;                                             ;      ;                  ;                                ;
+; Virtual pins                                ; 0    ; 0                ; 0                              ;
+; I/O pins                                    ; 241  ; 0                ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0    ; 0                ; 0                              ;
+; Total memory bits                           ; 2048 ; 0                ; 141312                         ;
+; Total RAM block bits                        ; 0    ; 0                ; 0                              ;
+; JTAG                                        ; 1    ; 0                ; 0                              ;
+; PLL                                         ; 1    ; 0                ; 0                              ;
+;                                             ;      ;                  ;                                ;
+; Connections                                 ;      ;                  ;                                ;
+;     -- Input Connections                    ; 1    ; 111              ; 1571                           ;
+;     -- Registered Input Connections         ; 0    ; 82               ; 1281                           ;
+;     -- Output Connections                   ; 1500 ; 182              ; 1                              ;
+;     -- Registered Output Connections        ; 68   ; 181              ; 0                              ;
+;                                             ;      ;                  ;                                ;
+; Internal Connections                        ;      ;                  ;                                ;
+;     -- Total Connections                    ; 4845 ; 747              ; 6641                           ;
+;     -- Registered Connections               ; 1179 ; 574              ; 5083                           ;
+;                                             ;      ;                  ;                                ;
+; External Connections                        ;      ;                  ;                                ;
+;     -- Top                                  ; 0    ; 103              ; 1398                           ;
+;     -- sld_hub:auto_hub                     ; 103  ; 16               ; 174                            ;
+;     -- sld_signaltap:auto_signaltap_0       ; 1398 ; 174              ; 0                              ;
+;                                             ;      ;                  ;                                ;
+; Partition Interface                         ;      ;                  ;                                ;
+;     -- Input Ports                          ; 22   ; 18               ; 195                            ;
+;     -- Output Ports                         ; 225  ; 36               ; 148                            ;
+;     -- Bidir Ports                          ; 0    ; 0                ; 0                              ;
+;                                             ;      ;                  ;                                ;
+; Registered Ports                            ;      ;                  ;                                ;
+;     -- Registered Input Ports               ; 0    ; 4                ; 143                            ;
+;     -- Registered Output Ports              ; 0    ; 26               ; 1                              ;
+;                                             ;      ;                  ;                                ;
+; Port Connectivity                           ;      ;                  ;                                ;
+;     -- Input Ports driven by GND            ; 0    ; 1                ; 1                              ;
+;     -- Output Ports driven by GND           ; 0    ; 0                ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0    ; 0                ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0    ; 0                ; 0                              ;
+;     -- Input Ports with no Source           ; 0    ; 0                ; 35                             ;
+;     -- Output Ports with no Source          ; 0    ; 0                ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0    ; 1                ; 40                             ;
+;     -- Output Ports with no Fanout          ; 0    ; 14               ; 139                            ;
++---------------------------------------------+------+------------------+--------------------------------+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++------------------------------------------------------------------+
+; Partition Merge Resource Usage Summary                           ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimated Total logic elements              ; 2,198              ;
+;                                             ;                    ;
+; Total combinational functions               ; 1159               ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 663                ;
+;     -- 3 input functions                    ; 336                ;
+;     -- <=2 input functions                  ; 160                ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 1055               ;
+;     -- arithmetic mode                      ; 104                ;
+;                                             ;                    ;
+; Total registers                             ; 1503               ;
+;     -- Dedicated logic registers            ; 1503               ;
+;     -- I/O registers                        ; 0                  ;
+;                                             ;                    ;
+; I/O pins                                    ; 241                ;
+; Total memory bits                           ; 143360             ;
+; Total PLLs                                  ; 1                  ;
+; Maximum fan-out node                        ; ~QIC_CREATED_GND~I ;
+; Maximum fan-out                             ; 766                ;
+; Total fan-out                               ; 10479              ;
+; Average fan-out                             ; 3.50               ;
++---------------------------------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge RAM Summary                                                                                                                                                                                                                                                                                                                                              ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+--------------------------------------------------------------------------------+
+; Name                                                                                                                                                                                       ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                                                                            ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+--------------------------------------------------------------------------------+
+; RAMK:inst7|altsyncram:altsyncram_component|altsyncram_kgi1:auto_generated|ALTSYNCRAM                                                                                                       ; AUTO ; Single Port    ; 128          ; 16           ; --           ; --           ; 2048   ; ../../../../../Documents/Thesis/kx9016_code/kx9016_no_idea_about_pulse/sum.mif ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_rss3:auto_generated|altsyncram_ahq1:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port ; 2048         ; 69           ; 2048         ; 69           ; 141312 ; None                                                                           ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+--------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Partition Merge
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Fri Apr 01 23:19:33 2022
+Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off kx9016 -c kx9016 --merge=on
+Warning: Previously generated Fitter netlist for partition "Top" is older than current Synthesis netlist -- using the current Synthesis netlist instead to ensure that the latest source changes are included
+    Info: Forcing the Quartus II software to use the previously generated Fitter netlist is allowed by setting the Netlist Type to Post-Fit (Strict)
+Info: Using synthesis netlist for partition "Top"
+Info: Using synthesis netlist for partition "sld_hub:auto_hub"
+Info: Using synthesis netlist for partition "sld_signaltap:auto_signaltap_0"
+Critical Warning: Partially connected in-system debug instance "auto_signaltap_0" to 138 of its 139 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 1 missing sources or connections.
+Info: Resolved and merged 3 partition(s)
+Warning: Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "STEP_IN"
+Info: Implemented 2598 device resources after synthesis - the final resource count might be different
+    Info: Implemented 22 input pins
+    Info: Implemented 223 output pins
+    Info: Implemented 2266 logic cells
+    Info: Implemented 85 RAM segments
+    Info: Implemented 1 PLLs
+Info: Quartus II 64-Bit Partition Merge was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4449 megabytes
+    Info: Processing ended: Fri Apr 01 23:19:35 2022
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

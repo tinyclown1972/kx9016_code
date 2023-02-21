@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri May 27 14:56:03 2022
+Quartus II 64-Bit Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : kx9016
+Top-level Entity Name : kx9016
+Family : Cyclone II
+Total logic elements : 2,203
+    Total combinational functions : 1,210
+    Dedicated logic registers : 1,456
+Total registers : 1456
+Total pins : 245
+Total virtual pins : 0
+Total memory bits : 6,464
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

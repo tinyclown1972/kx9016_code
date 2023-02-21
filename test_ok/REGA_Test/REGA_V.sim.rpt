@@ -1,0 +1,232 @@
+Simulator report for REGA_V
+Thu Apr 07 23:43:17 2022
+Quartus II 64-Bit Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 600.0 ns     ;
+; Simulation Netlist Size     ; 63 nodes     ;
+; Simulation Coverage         ;      69.84 % ;
+; Total Number of Transitions ; 149          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C70F896C6 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      69.84 % ;
+; Total nodes checked                                 ; 63           ;
+; Total output ports checked                          ; 63           ;
+; Total output ports with complete 1/0-value coverage ; 44           ;
+; Total output ports with no 1/0-value coverage       ; 8            ;
+; Total output ports with no 1-value coverage         ; 10           ;
+; Total output ports with no 0-value coverage         ; 17           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                    ;
++------------------------------+------------------------------+------------------+
+; Node Name                    ; Output Port Name             ; Output Port Type ;
++------------------------------+------------------------------+------------------+
+; |REGA_V|c_out[2]~reg0        ; |REGA_V|c_out[2]~reg0        ; regout           ;
+; |REGA_V|c_out[4]~reg0        ; |REGA_V|c_out[4]~reg0        ; regout           ;
+; |REGA_V|c_out[5]~reg0        ; |REGA_V|c_out[5]~reg0        ; regout           ;
+; |REGA_V|c_out[6]~reg0        ; |REGA_V|c_out[6]~reg0        ; regout           ;
+; |REGA_V|c_out[7]~reg0        ; |REGA_V|c_out[7]~reg0        ; regout           ;
+; |REGA_V|c_out[9]~reg0        ; |REGA_V|c_out[9]~reg0        ; regout           ;
+; |REGA_V|c_out[10]~reg0       ; |REGA_V|c_out[10]~reg0       ; regout           ;
+; |REGA_V|c_out[11]~reg0       ; |REGA_V|c_out[11]~reg0       ; regout           ;
+; |REGA_V|c_out[13]~reg0       ; |REGA_V|c_out[13]~reg0       ; regout           ;
+; |REGA_V|c_out[15]~reg0       ; |REGA_V|c_out[15]~reg0       ; regout           ;
+; |REGA_V|c_out[2]             ; |REGA_V|c_out[2]             ; padio            ;
+; |REGA_V|c_out[4]             ; |REGA_V|c_out[4]             ; padio            ;
+; |REGA_V|c_out[5]             ; |REGA_V|c_out[5]             ; padio            ;
+; |REGA_V|c_out[6]             ; |REGA_V|c_out[6]             ; padio            ;
+; |REGA_V|c_out[7]             ; |REGA_V|c_out[7]             ; padio            ;
+; |REGA_V|c_out[9]             ; |REGA_V|c_out[9]             ; padio            ;
+; |REGA_V|c_out[10]            ; |REGA_V|c_out[10]            ; padio            ;
+; |REGA_V|c_out[11]            ; |REGA_V|c_out[11]            ; padio            ;
+; |REGA_V|c_out[13]            ; |REGA_V|c_out[13]            ; padio            ;
+; |REGA_V|c_out[15]            ; |REGA_V|c_out[15]            ; padio            ;
+; |REGA_V|clk                  ; |REGA_V|clk~corein           ; combout          ;
+; |REGA_V|rst                  ; |REGA_V|rst~corein           ; combout          ;
+; |REGA_V|load                 ; |REGA_V|load~corein          ; combout          ;
+; |REGA_V|a[1]                 ; |REGA_V|a[1]~corein          ; combout          ;
+; |REGA_V|a[2]                 ; |REGA_V|a[2]~corein          ; combout          ;
+; |REGA_V|a[5]                 ; |REGA_V|a[5]~corein          ; combout          ;
+; |REGA_V|a[7]                 ; |REGA_V|a[7]~corein          ; combout          ;
+; |REGA_V|a[8]                 ; |REGA_V|a[8]~corein          ; combout          ;
+; |REGA_V|a[9]                 ; |REGA_V|a[9]~corein          ; combout          ;
+; |REGA_V|a[10]                ; |REGA_V|a[10]~corein         ; combout          ;
+; |REGA_V|a[11]                ; |REGA_V|a[11]~corein         ; combout          ;
+; |REGA_V|a[12]                ; |REGA_V|a[12]~corein         ; combout          ;
+; |REGA_V|a[13]                ; |REGA_V|a[13]~corein         ; combout          ;
+; |REGA_V|a[14]                ; |REGA_V|a[14]~corein         ; combout          ;
+; |REGA_V|a[15]                ; |REGA_V|a[15]~corein         ; combout          ;
+; |REGA_V|clk~clkctrl          ; |REGA_V|clk~clkctrl          ; outclk           ;
+; |REGA_V|rst~clkctrl          ; |REGA_V|rst~clkctrl          ; outclk           ;
+; |REGA_V|c_out[5]~reg0feeder  ; |REGA_V|c_out[5]~reg0feeder  ; combout          ;
+; |REGA_V|c_out[8]~reg0feeder  ; |REGA_V|c_out[8]~reg0feeder  ; combout          ;
+; |REGA_V|c_out[10]~reg0feeder ; |REGA_V|c_out[10]~reg0feeder ; combout          ;
+; |REGA_V|c_out[11]~reg0feeder ; |REGA_V|c_out[11]~reg0feeder ; combout          ;
+; |REGA_V|c_out[12]~reg0feeder ; |REGA_V|c_out[12]~reg0feeder ; combout          ;
+; |REGA_V|c_out[13]~reg0feeder ; |REGA_V|c_out[13]~reg0feeder ; combout          ;
+; |REGA_V|c_out[14]~reg0feeder ; |REGA_V|c_out[14]~reg0feeder ; combout          ;
++------------------------------+------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                     ;
++-----------------------------+-----------------------------+------------------+
+; Node Name                   ; Output Port Name            ; Output Port Type ;
++-----------------------------+-----------------------------+------------------+
+; |REGA_V|c_out[0]~reg0       ; |REGA_V|c_out[0]~reg0       ; regout           ;
+; |REGA_V|c_out[3]~reg0       ; |REGA_V|c_out[3]~reg0       ; regout           ;
+; |REGA_V|c_out[0]            ; |REGA_V|c_out[0]            ; padio            ;
+; |REGA_V|c_out[3]            ; |REGA_V|c_out[3]            ; padio            ;
+; |REGA_V|a[0]                ; |REGA_V|a[0]~corein         ; combout          ;
+; |REGA_V|a[3]                ; |REGA_V|a[3]~corein         ; combout          ;
+; |REGA_V|a[4]                ; |REGA_V|a[4]~corein         ; combout          ;
+; |REGA_V|c_out[0]~reg0feeder ; |REGA_V|c_out[0]~reg0feeder ; combout          ;
+; |REGA_V|c_out[3]~reg0feeder ; |REGA_V|c_out[3]~reg0feeder ; combout          ;
+; |REGA_V|c_out[4]~reg0feeder ; |REGA_V|c_out[4]~reg0feeder ; combout          ;
++-----------------------------+-----------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                     ;
++-----------------------------+-----------------------------+------------------+
+; Node Name                   ; Output Port Name            ; Output Port Type ;
++-----------------------------+-----------------------------+------------------+
+; |REGA_V|c_out[0]~reg0       ; |REGA_V|c_out[0]~reg0       ; regout           ;
+; |REGA_V|c_out[1]~reg0       ; |REGA_V|c_out[1]~reg0       ; regout           ;
+; |REGA_V|c_out[3]~reg0       ; |REGA_V|c_out[3]~reg0       ; regout           ;
+; |REGA_V|c_out[8]~reg0       ; |REGA_V|c_out[8]~reg0       ; regout           ;
+; |REGA_V|c_out[12]~reg0      ; |REGA_V|c_out[12]~reg0      ; regout           ;
+; |REGA_V|c_out[14]~reg0      ; |REGA_V|c_out[14]~reg0      ; regout           ;
+; |REGA_V|c_out[0]            ; |REGA_V|c_out[0]            ; padio            ;
+; |REGA_V|c_out[1]            ; |REGA_V|c_out[1]            ; padio            ;
+; |REGA_V|c_out[3]            ; |REGA_V|c_out[3]            ; padio            ;
+; |REGA_V|c_out[8]            ; |REGA_V|c_out[8]            ; padio            ;
+; |REGA_V|c_out[12]           ; |REGA_V|c_out[12]           ; padio            ;
+; |REGA_V|c_out[14]           ; |REGA_V|c_out[14]           ; padio            ;
+; |REGA_V|a[0]                ; |REGA_V|a[0]~corein         ; combout          ;
+; |REGA_V|a[4]                ; |REGA_V|a[4]~corein         ; combout          ;
+; |REGA_V|a[6]                ; |REGA_V|a[6]~corein         ; combout          ;
+; |REGA_V|c_out[0]~reg0feeder ; |REGA_V|c_out[0]~reg0feeder ; combout          ;
+; |REGA_V|c_out[4]~reg0feeder ; |REGA_V|c_out[4]~reg0feeder ; combout          ;
++-----------------------------+-----------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Thu Apr 07 23:43:17 2022
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off REGA_V -c REGA_V
+Info: Using vector source file "D:/SYNC_Cloud/Thesis/kx9016_code/test_ok/REGA_Test/REGA_V.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      69.84 %
+Info: Number of transitions in simulation is 149
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4318 megabytes
+    Info: Processing ended: Thu Apr 07 23:43:17 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

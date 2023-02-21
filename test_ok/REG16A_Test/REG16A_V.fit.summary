@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Apr 08 12:56:13 2022
+Quartus II 64-Bit Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : REG16A_V
+Top-level Entity Name : REG16A_V
+Family : Cyclone II
+Device : EP2C70F896C6
+Timing Models : Final
+Total logic elements : 16 / 68,416 ( < 1 % )
+    Total combinational functions : 0 / 68,416 ( 0 % )
+    Dedicated logic registers : 16 / 68,416 ( < 1 % )
+Total registers : 16
+Total pins : 33 / 622 ( 5 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,152,000 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 300 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
